@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    /* =========================================
+    /* =========================================================
        MOBILE MENU
-    ========================================== */
+    ========================================================= */
 
     const menuToggle = document.getElementById("menuToggle");
     const navLinks = document.getElementById("navLinks");
@@ -22,7 +22,9 @@ document.addEventListener("DOMContentLoaded", function () {
             );
         });
 
+
         navLinks.querySelectorAll("a").forEach(function (link) {
+
             link.addEventListener("click", function () {
 
                 navLinks.classList.remove("active");
@@ -34,53 +36,70 @@ document.addEventListener("DOMContentLoaded", function () {
                 );
 
             });
+
         });
 
-        document.addEventListener("keydown", function (event) {
+    }
 
-            if (event.key === "Escape") {
 
+    /* =========================================================
+       ESCAPE KEY
+    ========================================================= */
+
+    document.addEventListener("keydown", function (event) {
+
+        if (event.key === "Escape") {
+
+            if (navLinks) {
                 navLinks.classList.remove("active");
-                menuToggle.classList.remove("active");
+            }
 
+            if (menuToggle) {
+                menuToggle.classList.remove("active");
                 menuToggle.setAttribute(
                     "aria-expanded",
                     "false"
                 );
-
             }
 
-        });
-    }
+            closeLightbox();
+
+        }
+
+    });
 
 
-    /* =========================================
+    /* =========================================================
        WELCOME GIRL
-       REAL IMAGE:
+       IMAGE:
        assets/girl-icon.png
-    ========================================== */
+    ========================================================= */
 
-    const girlWelcome = document.getElementById("girlWelcome");
-    const girlIcon = document.getElementById("girlIcon");
+    const girlWelcome =
+        document.getElementById("girlWelcome");
+
+    const girlIcon =
+        document.getElementById("girlIcon");
+
 
     if (girlWelcome && girlIcon) {
 
-        // Make absolutely sure the correct image is used
-        girlIcon.setAttribute(
-            "src",
-            "assets/girl-icon.png"
-        );
+        girlIcon.src =
+            "assets/girl-icon.png";
 
-        girlIcon.setAttribute(
-            "alt",
-            "Welcome to Lenie Joy Badil's Portfolio"
-        );
+        girlIcon.alt =
+            "Welcome to Lenie Joy Badil's Portfolio";
 
         girlWelcome.classList.remove("hidden");
 
-        let girlTimer = setTimeout(function () {
-            girlWelcome.classList.add("hidden");
-        }, 10000);
+
+        let girlTimer =
+            setTimeout(function () {
+
+                girlWelcome.classList.add("hidden");
+
+            }, 10000);
+
 
         girlIcon.addEventListener("click", function () {
 
@@ -89,12 +108,13 @@ document.addEventListener("DOMContentLoaded", function () {
             girlWelcome.classList.toggle("hidden");
 
         });
+
     }
 
 
-    /* =========================================
-       LIGHTBOX ELEMENTS
-    ========================================== */
+    /* =========================================================
+       LIGHTBOX
+    ========================================================= */
 
     const lightbox =
         document.getElementById("lightbox");
@@ -109,9 +129,9 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("lightboxClose");
 
 
-    /* =========================================
+    /* =========================================================
        OPEN LIGHTBOX
-    ========================================== */
+    ========================================================= */
 
     function openLightbox(image, title) {
 
@@ -119,15 +139,20 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
+
         lightboxImage.src = image;
 
         lightboxImage.alt =
             title || "Portfolio image";
 
+
         if (lightboxTitle) {
+
             lightboxTitle.textContent =
                 title || "";
+
         }
+
 
         lightbox.classList.add("active");
 
@@ -136,9 +161,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* =========================================
+    /* =========================================================
        CLOSE LIGHTBOX
-    ========================================== */
+    ========================================================= */
 
     function closeLightbox() {
 
@@ -146,9 +171,11 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
+
         lightbox.classList.remove("active");
 
         document.body.classList.remove("no-scroll");
+
 
         setTimeout(function () {
 
@@ -156,7 +183,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 !lightbox.classList.contains("active") &&
                 lightboxImage
             ) {
+
                 lightboxImage.src = "";
+
             }
 
         }, 200);
@@ -164,19 +193,29 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* =========================================
-       ALL LIGHTBOX TRIGGERS
-    ========================================== */
+    /* =========================================================
+       GLOBAL LIGHTBOX FUNCTION
+       Allows HTML onclick to use it
+    ========================================================= */
 
-    const lightboxTriggers =
-        document.querySelectorAll(
-            ".lightbox-trigger"
-        );
+    window.openPortfolioLightbox =
+        function (image, title) {
+
+            openLightbox(image, title);
+
+        };
 
 
-    lightboxTriggers.forEach(function (item) {
+    /* =========================================================
+       LIGHTBOX TRIGGERS
+    ========================================================= */
+
+    document.querySelectorAll(
+        ".lightbox-trigger"
+    ).forEach(function (item) {
 
         item.style.cursor = "pointer";
+
 
         item.addEventListener(
             "click",
@@ -185,10 +224,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 event.preventDefault();
                 event.stopPropagation();
 
+
                 const image =
                     item.getAttribute(
                         "data-image"
                     );
+
 
                 const title =
                     item.getAttribute(
@@ -211,10 +252,9 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-    /* =========================================
-       MAKE IMAGES WITH data-image CLICKABLE
-       EVEN IF CLASS IS MISSING
-    ========================================== */
+    /* =========================================================
+       ANY ELEMENT WITH data-image
+    ========================================================= */
 
     document.querySelectorAll(
         "[data-image]"
@@ -228,22 +268,39 @@ document.addEventListener("DOMContentLoaded", function () {
 
             item.style.cursor = "pointer";
 
+
             item.addEventListener(
                 "click",
                 function (event) {
 
+                    /*
+                       Don't interfere with buttons
+                       or normal links.
+                    */
+
+                    if (
+                        item.tagName === "A" ||
+                        item.tagName === "BUTTON"
+                    ) {
+                        return;
+                    }
+
+
                     event.preventDefault();
                     event.stopPropagation();
+
 
                     const image =
                         item.getAttribute(
                             "data-image"
                         );
 
+
                     const title =
                         item.getAttribute(
                             "data-title"
                         );
+
 
                     if (image) {
 
@@ -256,14 +313,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 }
             );
+
         }
 
     });
 
 
-    /* =========================================
-       CLOSE BUTTON
-    ========================================== */
+    /* =========================================================
+       LIGHTBOX CLOSE BUTTON
+    ========================================================= */
 
     if (lightboxClose) {
 
@@ -282,9 +340,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* =========================================
-       CLICK BACKGROUND TO CLOSE
-    ========================================== */
+    /* =========================================================
+       CLICK OUTSIDE IMAGE TO CLOSE
+    ========================================================= */
 
     if (lightbox) {
 
@@ -306,147 +364,139 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* =========================================
-       ESCAPE KEY
-    ========================================== */
+    /* =========================================================
+       TECHNICAL / IoT GALLERY
+       
+       Matches:
+       
+       onclick="changeTechnicalImage(
+           'assets/technical/tomatrix-1.jpg',
+           'Tomatrix 1',
+           this
+       )"
+    ========================================================= */
 
-    document.addEventListener(
-        "keydown",
-        function (event) {
+    window.changeTechnicalImage =
+        function (image, title, thumbnail) {
 
-            if (event.key === "Escape") {
+            const mainImage =
+                document.getElementById(
+                    "technicalMainImage"
+                );
 
-                closeLightbox();
+
+            const mainLink =
+                document.getElementById(
+                    "technicalMainLink"
+                );
+
+
+            if (!mainImage || !image) {
+                return;
+            }
+
+
+            /* -----------------------------------------
+               CHANGE MAIN IMAGE
+            ----------------------------------------- */
+
+            mainImage.src = image;
+
+            mainImage.alt =
+                title || "Technical & IoT Project";
+
+
+            /* -----------------------------------------
+               UPDATE MAIN CLICKABLE LINK
+            ----------------------------------------- */
+
+            if (mainLink) {
+
+                mainLink.href = image;
+
+                mainLink.setAttribute(
+                    "data-image",
+                    image
+                );
+
+                mainLink.setAttribute(
+                    "data-title",
+                    title ||
+                    "Technical & IoT Project"
+                );
 
             }
 
-        }
-    );
+
+            /* -----------------------------------------
+               UPDATE ACTIVE THUMBNAIL
+            ----------------------------------------- */
+
+            document.querySelectorAll(
+                ".thumbnail"
+            ).forEach(function (item) {
+
+                item.classList.remove(
+                    "active"
+                );
+
+            });
 
 
-    /* =========================================
-       TECHNICAL / IoT GALLERY
-    ========================================== */
+            if (thumbnail) {
+
+                thumbnail.classList.add(
+                    "active"
+                );
+
+            }
+
+        };
+
+
+    /* =========================================================
+       TECHNICAL MAIN IMAGE
+       
+       Clicking the big image opens the CURRENT image.
+    ========================================================= */
 
     const technicalMainImage =
         document.getElementById(
             "technicalMainImage"
         );
 
-    const galleryMain =
-        document.querySelector(
-            ".gallery-main"
-        );
 
-    const thumbnails =
-        document.querySelectorAll(
-            ".thumbnail"
+    const technicalMainLink =
+        document.getElementById(
+            "technicalMainLink"
         );
 
 
     if (
         technicalMainImage &&
-        thumbnails.length
+        technicalMainLink
     ) {
 
-        thumbnails.forEach(
-            function (thumbnail) {
-
-                thumbnail.addEventListener(
-                    "click",
-                    function (event) {
-
-                        event.preventDefault();
-                        event.stopPropagation();
-
-                        const newImage =
-                            thumbnail.getAttribute(
-                                "data-main"
-                            );
-
-                        if (!newImage) {
-                            return;
-                        }
-
-
-                        /* Change main image */
-
-                        technicalMainImage.src =
-                            newImage;
-
-
-                        /* Update active thumbnail */
-
-                        thumbnails.forEach(
-                            function (item) {
-
-                                item.classList.remove(
-                                    "active"
-                                );
-
-                            }
-                        );
-
-                        thumbnail.classList.add(
-                            "active"
-                        );
-
-
-                        /* Update lightbox */
-
-                        if (galleryMain) {
-
-                            galleryMain.setAttribute(
-                                "data-image",
-                                newImage
-                            );
-
-                            galleryMain.setAttribute(
-                                "data-title",
-                                thumbnail.getAttribute(
-                                    "data-title"
-                                ) ||
-                                "Technical & IoT Project"
-                            );
-
-                        }
-
-                    }
-                );
-
-            }
-        );
-    }
-
-
-    /* =========================================
-       TECHNICAL MAIN IMAGE CLICK
-    ========================================== */
-
-    if (technicalMainImage) {
-
-        technicalMainImage.style.cursor =
-            "pointer";
-
-        technicalMainImage.addEventListener(
+        technicalMainLink.addEventListener(
             "click",
             function (event) {
 
                 event.preventDefault();
 
+
                 const image =
-                    technicalMainImage.getAttribute(
-                        "src"
-                    );
+                    technicalMainImage.src;
 
-                if (image) {
 
-                    openLightbox(
-                        image,
-                        "Technical & IoT Project"
-                    );
+                const title =
+                    technicalMainImage.alt ||
+                    "Technical & IoT Project";
 
-                }
+
+                openLightbox(
+                    image,
+                    title
+                );
 
             }
         );
@@ -454,15 +504,77 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* =========================================
-       AUTOMATICALLY MAKE NORMAL PORTFOLIO
-       IMAGES CLICKABLE
+    /* =========================================================
+       TECHNICAL THUMBNAILS
        
-       Excludes:
-       - girl icon
-       - lightbox image
-       - thumbnails
-    ========================================== */
+       Supports the new BUTTON version.
+       
+       The onclick already calls:
+       changeTechnicalImage(...)
+       
+       This section also supports thumbnails that
+       use data-main instead.
+    ========================================================= */
+
+    document.querySelectorAll(
+        ".thumbnail"
+    ).forEach(function (thumbnail) {
+
+        /*
+           If the thumbnail already has an
+           onclick="changeTechnicalImage(...)",
+           do not add another click handler.
+        */
+
+        if (
+            thumbnail.hasAttribute(
+                "onclick"
+            )
+        ) {
+            return;
+        }
+
+
+        const image =
+            thumbnail.getAttribute(
+                "data-main"
+            );
+
+
+        if (!image) {
+            return;
+        }
+
+
+        thumbnail.addEventListener(
+            "click",
+            function (event) {
+
+                event.preventDefault();
+
+                const title =
+                    thumbnail.getAttribute(
+                        "data-title"
+                    ) ||
+                    "Technical & IoT Project";
+
+
+                window.changeTechnicalImage(
+                    image,
+                    title,
+                    thumbnail
+                );
+
+            }
+        );
+
+    });
+
+
+    /* =========================================================
+       MAKE NORMAL PORTFOLIO IMAGES
+       ERROR CHECK
+    ========================================================= */
 
     document.querySelectorAll(
         "img"
@@ -483,19 +595,23 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-    /* =========================================
-       NO SCROLL WHILE LIGHTBOX IS OPEN
-    ========================================== */
+    /* =========================================================
+       NO SCROLL WHEN LIGHTBOX IS OPEN
+    ========================================================= */
 
-    if (!document.getElementById(
-        "lightboxNoScrollStyle"
-    )) {
+    if (
+        !document.getElementById(
+            "lightboxNoScrollStyle"
+        )
+    ) {
 
         const style =
             document.createElement("style");
 
+
         style.id =
             "lightboxNoScrollStyle";
+
 
         style.textContent = `
             body.no-scroll {
@@ -503,23 +619,30 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         `;
 
+
         document.head.appendChild(style);
 
     }
 
 
-    /* =========================================
+    /* =========================================================
        PAGE LOAD
        START AT TOP
-    ========================================== */
+    ========================================================= */
 
-    if ("scrollRestoration" in history) {
+    if (
+        "scrollRestoration" in history
+    ) {
 
         history.scrollRestoration =
             "manual";
 
     }
 
-    window.scrollTo(0, 0);
+
+    window.scrollTo(
+        0,
+        0
+    );
 
 });

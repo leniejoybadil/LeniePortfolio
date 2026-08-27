@@ -1,559 +1,244 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Technical & IoT | Lenie Joy Badil</title>
-
-    <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-
-<div class="background">
-    <div class="orb orb1"></div>
-    <div class="orb orb2"></div>
-    <div class="grid"></div>
-</div>
-
-
 <!-- ================================
-     NAVIGATION
-================================ -->
+     TOMATRIX
+================================= -->
 
-<header class="navbar">
+<section class="project-feature">
 
-    <a href="index.html" class="logo">
-        <span>LB</span>
+    <!-- GALLERY -->
+    <div class="project-gallery">
 
-        <div>
-            <strong>LENIE JOY</strong>
-            <small>PORTFOLIO</small>
-        </div>
-    </a>
-
-
-    <button
-        class="menu-toggle"
-        id="menuToggle"
-        type="button"
-        aria-label="Open navigation"
-        aria-expanded="false"
-    >
-        <span></span>
-        <span></span>
-        <span></span>
-    </button>
-
-
-    <nav class="nav-links" id="navLinks">
-
-        <a href="index.html">
-            Home
-        </a>
-
-        <a href="technical.html" class="active">
-            My Work
-        </a>
-
-        <a href="resume.html">
-            Resume
-        </a>
-
-        <a href="contact.html">
-            Contact
-        </a>
-
-    </nav>
-
-</header>
-
-
-<!-- ================================
-     MAIN CONTENT
-================================ -->
-
-<main class="project-page">
-
-
-    <!-- PAGE HEADER -->
-
-    <section class="page-header">
-
-        <span class="section-number">
-            01 / MY WORK
-        </span>
-
-        <h1>
-            Technical <span>& IoT</span>
-        </h1>
-
-        <p>
-            Engineering projects involving IoT, electronics,
-            sensors, automation and embedded systems.
-        </p>
-
-    </section>
-
-
-
-    <!-- ================================
-         TOMATRIX
-    ================================= -->
-
-    <section class="project-feature">
-
-
-        <!-- GALLERY -->
-
-        <div class="project-gallery">
-
-
-            <!-- MAIN IMAGE -->
-
-            <a
-                href="assets/technical/tomatrix-1.jpg"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="gallery-main"
+        <!-- MAIN IMAGE -->
+        <a
+            href="assets/technical/tomatrix-1.jpg"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="gallery-main"
+            id="technicalMainLink"
+        >
+            <img
+                id="technicalMainImage"
+                src="assets/technical/tomatrix-1.jpg"
+                alt="Tomatrix"
             >
 
+            <div class="image-overlay">
+                <span>VIEW IMAGE ↗</span>
+            </div>
+        </a>
+
+
+        <!-- THUMBNAILS -->
+        <div class="thumbnail-row">
+
+            <button
+                type="button"
+                class="thumbnail active"
+                onclick="changeTechnicalImage(
+                    'assets/technical/tomatrix-1.jpg',
+                    'Tomatrix 1',
+                    this
+                )"
+            >
                 <img
-                    id="technicalMainImage"
                     src="assets/technical/tomatrix-1.jpg"
-                    alt="Tomatrix"
+                    alt="Tomatrix 1"
                 >
-
-                <div class="image-overlay">
-                    <span>
-                        VIEW IMAGE ↗
-                    </span>
-                </div>
-
-            </a>
+            </button>
 
 
-
-            <!-- THUMBNAILS -->
-
-            <div class="thumbnail-row">
-
-
-                <a
-                    href="assets/technical/tomatrix-1.jpg"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="thumbnail active"
+            <button
+                type="button"
+                class="thumbnail"
+                onclick="changeTechnicalImage(
+                    'assets/technical/tomatrix-2.jpg',
+                    'Tomatrix 2',
+                    this
+                )"
+            >
+                <img
+                    src="assets/technical/tomatrix-2.jpg"
+                    alt="Tomatrix 2"
                 >
-                    <img
-                        src="assets/technical/tomatrix-1.jpg"
-                        alt="Tomatrix 1"
-                    >
-                </a>
+            </button>
 
 
-                <a
-                    href="assets/technical/tomatrix-2.jpg"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="thumbnail"
+            <button
+                type="button"
+                class="thumbnail"
+                onclick="changeTechnicalImage(
+                    'assets/technical/tomatrix-3.jpg',
+                    'Tomatrix 3',
+                    this
+                )"
+            >
+                <img
+                    src="assets/technical/tomatrix-3.jpg"
+                    alt="Tomatrix 3"
                 >
-                    <img
-                        src="assets/technical/tomatrix-2.jpg"
-                        alt="Tomatrix 2"
-                    >
-                </a>
+            </button>
 
 
-                <a
-                    href="assets/technical/tomatrix-3.jpg"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="thumbnail"
+            <button
+                type="button"
+                class="thumbnail"
+                onclick="changeTechnicalImage(
+                    'assets/technical/tomatrix-4.jpg',
+                    'Tomatrix 4',
+                    this
+                )"
+            >
+                <img
+                    src="assets/technical/tomatrix-4.jpg"
+                    alt="Tomatrix 4"
                 >
-                    <img
-                        src="assets/technical/tomatrix-3.jpg"
-                        alt="Tomatrix 3"
-                    >
-                </a>
+            </button>
 
 
-                <a
-                    href="assets/technical/tomatrix-4.jpg"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="thumbnail"
+            <button
+                type="button"
+                class="thumbnail"
+                onclick="changeTechnicalImage(
+                    'assets/technical/tomatrix-5.jpg',
+                    'Tomatrix 5',
+                    this
+                )"
+            >
+                <img
+                    src="assets/technical/tomatrix-5.jpg"
+                    alt="Tomatrix 5"
                 >
-                    <img
-                        src="assets/technical/tomatrix-4.jpg"
-                        alt="Tomatrix 4"
-                    >
-                </a>
-
-
-                <a
-                    href="assets/technical/tomatrix-5.jpg"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="thumbnail"
-                >
-                    <img
-                        src="assets/technical/tomatrix-5.jpg"
-                        alt="Tomatrix 5"
-                    >
-                </a>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- PROJECT INFORMATION -->
-
-        <div class="project-content">
-
-            <span class="project-tag">
-                THESIS • IoT • RESEARCH
-            </span>
-
-            <h2>
-                Tomatrix: UV-C Irradiation IoT-Based System
-                Incorporating Gas Chemosensing, Temperature
-                Monitoring and Humidity Measurement for
-                <i>Solanum lycopersicum L.</i>
-                Post-Harvest Shelf-Life Extension
-            </h2>
-
-
-            <h3>
-                Project Description
-            </h3>
-
-            <p>
-                Tomatrix is an IoT-based post-harvest system designed
-                to support the shelf-life extension of tomatoes using
-                UV-C irradiation, gas chemosensing, temperature monitoring
-                and humidity measurement.
-            </p>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- ================================
-         AWARDS
-    ================================= -->
-
-    <section class="awards-section">
-
-        <div class="section-heading">
-
-            <span class="small-label">
-                RECOGNITION
-            </span>
-
-            <h2>
-                Awards & <em>Recognition</em>
-            </h2>
-
-        </div>
-
-
-        <div class="award-grid">
-
-
-            <div class="award-card">
-
-                <span>🏆</span>
-
-                <small>
-                    SCHOOL BASED
-                </small>
-
-                <h3>
-                    BEST IN THESIS
-                </h3>
-
-                <p>
-                    CHAMPION
-                </p>
-
-            </div>
-
-
-
-            <div class="award-card">
-
-                <span>★</span>
-
-                <small>
-                    SCHOOL BASED
-                </small>
-
-                <h3>
-                    MOST VISITED BOOTH
-                </h3>
-
-            </div>
-
-
-
-            <div class="award-card">
-
-                <span>🏆</span>
-
-                <small>
-                    REGIONAL
-                </small>
-
-                <h3>
-                    CHAMPION
-                </h3>
-
-                <p>
-                    Commercial Category
-                </p>
-
-            </div>
-
-
-
-            <div class="award-card">
-
-                <span>◆</span>
-
-                <small>
-                    REGIONAL
-                </small>
-
-                <h3>
-                    2ND RUNNER UP
-                </h3>
-
-                <p>
-                    Merged Category
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- ================================
-         OTHER PROJECTS
-    ================================= -->
-
-    <section class="projects-section">
-
-        <div class="section-heading">
-
-            <span class="small-label">
-                OTHER PROJECTS
-            </span>
-
-            <h2>
-                School & Internship <em>Projects</em>
-            </h2>
-
-        </div>
-
-
-        <div class="project-list">
-
-
-            <!-- PROJECT 1 -->
-
-            <div class="project-row">
-
-                <div>
-
-                    <span>
-                        01
-                    </span>
-
-                    <h3>
-                        Smart Parking System
-                    </h3>
-
-                    <p>
-                        An automated parking project using sensors
-                        and embedded technology.
-                    </p>
-
-                </div>
-
-
-                <a
-                    href="https://youtube.com/shorts/vI7QOOwtUyY?si=i7RnkWNWheSgfL3E"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="project-button"
-                >
-                    VIEW PROJECT ↗
-                </a>
-
-            </div>
-
-
-
-            <!-- PROJECT 2 -->
-
-            <div class="project-row">
-
-                <div>
-
-                    <span>
-                        02
-                    </span>
-
-                    <h3>
-                        ESP32-CAM with Motion Sensor
-                    </h3>
-
-                    <p>
-                        Camera and motion detection project
-                        using ESP32-CAM.
-                    </p>
-
-                </div>
-
-
-                <a
-                    href="https://youtube.com/shorts/EN4DI047kI0?si=4TV7FbfOgAcG7m89"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="project-button"
-                >
-                    VIEW PROJECT ↗
-                </a>
-
-            </div>
-
-
-
-            <!-- PROJECT 3 -->
-
-            <div class="project-row">
-
-                <div>
-
-                    <span>
-                        03
-                    </span>
-
-                    <h3>
-                        RGB Lamp with Touch Sensor
-                    </h3>
-
-                    <p>
-                        Interactive RGB lighting project
-                        controlled through touch sensing.
-                    </p>
-
-                </div>
-
-
-                <a
-                    href="https://youtube.com/shorts/TkioNBVU7x4?si=DO-uyKxS3OxHY4Th"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="project-button"
-                >
-                    VIEW PROJECT ↗
-                </a>
-
-            </div>
-
-
-        </div>
-
-    </section>
-
-
-
-    <!-- ================================
-         PAGE NAVIGATION
-    ================================= -->
-
-    <section class="page-navigation">
-
-        <a href="index.html">
-            ← BACK HOME
-        </a>
-
-        <a href="website.html">
-            NEXT: WEBSITE DEVELOPMENT →
-        </a>
-
-    </section>
-
-
-</main>
-
-
-
-<!-- ================================
-     FOOTER
-================================ -->
-
-<footer>
-
-    <div class="footer-top">
-
-        <div>
-
-            <h3>
-                LENIE JOY <span>BADIL</span>
-            </h3>
-
-            <p>
-                Computer Engineering • Creative Technology
-            </p>
-
-        </div>
-
-
-        <div class="footer-links">
-
-            <a href="index.html">
-                Home
-            </a>
-
-            <a href="resume.html">
-                Resume
-            </a>
-
-            <a href="contact.html">
-                Contact
-            </a>
+            </button>
 
         </div>
 
     </div>
 
 
-    <div class="footer-bottom">
-        © 2026 Lenie Joy Cases Badil. All Rights Reserved.
+    <!-- PROJECT INFORMATION -->
+    <div class="project-content">
+
+        <span class="project-tag">
+            THESIS • IoT • RESEARCH
+        </span>
+
+        <h2>
+            Tomatrix: UV-C Irradiation IoT-Based System
+            Incorporating Gas Chemosensing, Temperature
+            Monitoring and Humidity Measurement for
+            <i>Solanum lycopersicum L.</i>
+            Post-Harvest Shelf-Life Extension
+        </h2>
+
+        <h3>
+            Project Description
+        </h3>
+
+        <p>
+            Tomatrix is an IoT-based post-harvest system designed
+            to support the shelf-life extension of tomatoes using
+            UV-C irradiation, gas chemosensing, temperature monitoring
+            and humidity measurement.
+        </p>
+
     </div>
 
-</footer>
+</section>
+ <!-- ================================
+     AWARDS & RECOGNITION
+================================= -->
+
+<section class="awards-section">
+
+    <div class="section-heading">
+
+        <span class="small-label">
+            RECOGNITION
+        </span>
+
+        <h2>
+            Awards & <em>Recognition</em>
+        </h2>
+
+    </div>
 
 
-<!-- IMPORTANT:
-     No lightbox is used on this page.
-     Images open directly in a new browser tab.
--->
+    <div class="award-grid">
+
+        <!-- AWARD 1 -->
+        <div class="award-card">
+
+            <span>🏆</span>
+
+            <small>
+                SCHOOL BASED
+            </small>
+
+            <h3>
+                BEST IN THESIS
+            </h3>
+
+            <p>
+                CHAMPION
+            </p>
+
+        </div>
 
 
-<script src="script.js"></script>
+        <!-- AWARD 2 -->
+        <div class="award-card">
 
-</body>
-</html>
+            <span>★</span>
+
+            <small>
+                SCHOOL BASED
+            </small>
+
+            <h3>
+                MOST VISITED BOOTH
+            </h3>
+
+        </div>
+
+
+        <!-- AWARD 3 -->
+        <div class="award-card">
+
+            <span>🏆</span>
+
+            <small>
+                REGIONAL
+            </small>
+
+            <h3>
+                CHAMPION
+            </h3>
+
+            <p>
+                Commercial Category
+            </p>
+
+        </div>
+
+
+        <!-- AWARD 4 -->
+        <div class="award-card">
+
+            <span>◆</span>
+
+            <small>
+                REGIONAL
+            </small>
+
+            <h3>
+                2ND RUNNER UP
+            </h3>
+
+            <p>
+                Merged Category
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
