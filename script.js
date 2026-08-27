@@ -1,185 +1,122 @@
-/* =========================================
-   GIRL INTRO
-   ========================================= */
+document.addEventListener("DOMContentLoaded", function () {
 
-const introCharacter = document.getElementById("introCharacter");
-const bubbleMessage = document.getElementById("bubbleMessage");
+    /* =========================================
+       MOBILE MENU
+    ========================================== */
 
-const introMessage =
-    "TAKE A LOOK AT MY PROJECTS, SKILLS, AND EXPERIENCES!";
+    const menuToggle =
+        document.getElementById("menuToggle");
 
-let messageIndex = 0;
-let typingTimer;
-
-
-/* =========================================
-   TYPE THE INTRO MESSAGE
-   ========================================= */
-
-function typeIntroMessage() {
-
-    if (!bubbleMessage) return;
-
-    if (messageIndex < introMessage.length) {
-
-        bubbleMessage.textContent +=
-            introMessage.charAt(messageIndex);
-
-        messageIndex++;
-
-        typingTimer = setTimeout(
-            typeIntroMessage,
-            55
-        );
-
-    }
-}
+    const navLinks =
+        document.getElementById("navLinks");
 
 
-/* =========================================
-   START INTRO
-   ========================================= */
+    if (menuToggle && navLinks) {
 
-function startIntro() {
+        menuToggle.addEventListener("click", function () {
 
-    if (!bubbleMessage) return;
-
-    bubbleMessage.textContent = "";
-    messageIndex = 0;
-
-    clearTimeout(typingTimer);
-
-    setTimeout(() => {
-        typeIntroMessage();
-    }, 900);
-}
+            const opened =
+                navLinks.classList.toggle("active");
 
 
-/* =========================================
-   CLOSE GIRL INTRO
-   ========================================= */
-
-function closeCharacter() {
-
-    if (!introCharacter) return;
-
-    introCharacter.style.display = "none";
-
-    clearTimeout(typingTimer);
-}
+            menuToggle.classList.toggle(
+                "active",
+                opened
+            );
 
 
-/* =========================================
-   START WHEN PAGE LOADS
-   ========================================= */
+            menuToggle.setAttribute(
+                "aria-expanded",
+                opened
+            );
 
-window.addEventListener("load", function () {
-
-    startIntro();
-
-});
+        });
 
 
-/* =========================================
-   SMOOTH SCROLL
-   ========================================= */
+        /* Close menu after clicking a link */
 
-document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+        const navigationLinks =
+            navLinks.querySelectorAll("a");
 
-    link.addEventListener("click", function (event) {
 
-        const targetId = this.getAttribute("href");
+        navigationLinks.forEach(function (link) {
 
-        if (targetId === "#") return;
+            link.addEventListener("click", function () {
 
-        const target = document.querySelector(targetId);
+                navLinks.classList.remove("active");
 
-        if (target) {
+                menuToggle.classList.remove("active");
 
-            event.preventDefault();
+                menuToggle.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
 
-            target.scrollIntoView({
-                behavior: "smooth",
-                block: "start"
             });
 
-        }
-
-    });
-
-});
+        });
 
 
-/* =========================================
-   ACTIVE NAVIGATION
-   ========================================= */
+        /* Close menu with ESC */
 
-const currentPage =
-    window.location.pathname.split("/").pop() || "index.html";
+        document.addEventListener("keydown", function (event) {
 
-document.querySelectorAll(".navbar nav a").forEach(function (link) {
+            if (event.key === "Escape") {
 
-    const linkPage =
-        link.getAttribute("href").split("/").pop();
+                navLinks.classList.remove("active");
 
-    if (linkPage === currentPage) {
+                menuToggle.classList.remove("active");
 
-        link.classList.add("active");
+                menuToggle.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
 
-    } else {
+            }
 
-        link.classList.remove("active");
+        });
 
     }
 
-});
+
+    /* =========================================
+       GIRL WELCOME
+    ========================================== */
+
+    const girlWelcome =
+        document.getElementById("girlWelcome");
+
+    const girlIcon =
+        document.getElementById("girlIcon");
 
 
-/* =========================================
-   BACKGROUND ORB MOVEMENT
-   ========================================= */
+    if (girlWelcome && girlIcon) {
 
-window.addEventListener("mousemove", function (event) {
+        /* Show when Home loads */
 
-    const x =
-        (event.clientX / window.innerWidth - 0.5) * 20;
+        girlWelcome.classList.remove("hidden");
 
-    const y =
-        (event.clientY / window.innerHeight - 0.5) * 20;
 
-    const orb1 = document.querySelector(".orb1");
-    const orb2 = document.querySelector(".orb2");
+        /* Automatically hide after 8 seconds */
 
-    if (orb1) {
+        const timer = setTimeout(function () {
 
-        orb1.style.transform =
-            `translate(${x}px, ${y}px)`;
+            girlWelcome.classList.add("hidden");
+
+        }, 8000);
+
+
+        /* Clicking girl closes it */
+
+        girlIcon.addEventListener("click", function () {
+
+            clearTimeout(timer);
+
+            girlWelcome.classList.add("hidden");
+
+        });
 
     }
 
-    if (orb2) {
-
-        orb2.style.transform =
-            `translate(${-x}px, ${-y}px)`;
-
-    }
-
-});
-
-
-/* =========================================
-   IMAGE ERROR CHECK
-   ========================================= */
-
-document.querySelectorAll("img").forEach(function (image) {
-
-    image.addEventListener("error", function () {
-
-        console.warn(
-            "Image could not be loaded:",
-            image.src
-        );
-
-    });
 
 });
