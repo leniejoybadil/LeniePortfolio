@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,47 +12,68 @@
 
 <body>
 
-<!-- BACKGROUND -->
+<!-- =====================================================
+     BACKGROUND
+===================================================== -->
+
 <div class="background">
+
     <div class="orb orb1"></div>
     <div class="orb orb2"></div>
     <div class="grid"></div>
+
 </div>
 
 
-<!-- =========================
+
+<!-- =====================================================
      NAVIGATION
-========================= -->
+===================================================== -->
+
 <header class="navbar">
 
+    <!-- LOGO / HOME -->
     <a href="index.html" class="logo">
+
         <span>LB</span>
 
         <div>
             <strong>LENIE JOY</strong>
             <small>PORTFOLIO</small>
         </div>
+
     </a>
 
 
-    <!-- MOBILE MENU BUTTON -->
+    <!-- HAMBURGER MENU
+         VISIBLE ON DESKTOP + MOBILE -->
+
     <button
         class="menu-toggle"
         id="menuToggle"
+        type="button"
         aria-label="Open navigation"
         aria-expanded="false"
-        type="button"
     >
+
         <span></span>
         <span></span>
         <span></span>
+
     </button>
 
 
     <!-- NAVIGATION LINKS -->
-    <nav class="nav-links" id="navLinks">
 
-        <a href="index.html" class="active">
+    <nav
+        class="nav-links"
+        id="navLinks"
+    >
+
+        <a
+            href="index.html"
+            class="active"
+        >
             Home
         </a>
 
@@ -72,18 +94,26 @@
 </header>
 
 
-<!-- =========================
+
+<!-- =====================================================
      MAIN
-========================= -->
+===================================================== -->
+
 <main>
 
 
-<!-- =========================
-     HERO
-========================= -->
+
+<!-- =====================================================
+     HERO SECTION
+===================================================== -->
+
 <section class="hero">
 
-    <!-- HERO TEXT -->
+
+    <!-- =================================================
+         HERO TEXT
+    ================================================== -->
+
     <div class="hero-text">
 
         <span class="small-label">
@@ -92,8 +122,13 @@
 
 
         <h1>
+
             Lenie Joy
-            <span> Cases Badil</span>
+
+            <span>
+                Cases Badil
+            </span>
+
         </h1>
 
 
@@ -103,13 +138,16 @@
 
 
         <p class="hero-description">
+
             A Computer Engineering graduate combining technology,
             creativity, digital design, web development and community
             experience to create meaningful digital solutions.
+
         </p>
 
 
         <!-- HERO BUTTONS -->
+
         <div class="hero-buttons">
 
             <a
@@ -132,17 +170,25 @@
     </div>
 
 
-    <!-- =========================
-         PROFILE AREA
-    ========================= -->
+
+    <!-- =================================================
+         PROFILE + COVER
+         DESKTOP = RIGHT SIDE
+    ================================================== -->
+
     <div class="hero-profile">
 
 
-        <!-- COVER PHOTO -->
-        <div
-            class="cover-card lightbox-trigger"
-            data-image="assets/cover.jpg"
-            data-title="Lenie Joy Badil"
+        <!-- =================================================
+             CLICKABLE COVER PHOTO
+        ================================================== -->
+
+        <a
+            href="assets/cover.jpg"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="cover-card"
+            aria-label="Open cover photo"
         >
 
             <img
@@ -150,22 +196,25 @@
                 alt="Lenie Joy Badil Cover"
             >
 
-            <div class="image-overlay">
-                <span>VIEW COVER ↗</span>
-            </div>
-
-        </div>
+        </a>
 
 
-        <!-- PROFILE CARD -->
+
+        <!-- =================================================
+             PROFILE CARD
+        ================================================== -->
+
         <div class="profile-card">
 
 
-            <!-- PROFILE PHOTO -->
-            <div
-                class="profile-photo lightbox-trigger"
-                data-image="assets/profile.jpg"
-                data-title="Lenie Joy Badil"
+            <!-- CLICKABLE PROFILE PHOTO -->
+
+            <a
+                href="assets/profile.jpg"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="profile-photo"
+                aria-label="Open profile photo"
             >
 
                 <img
@@ -173,14 +222,12 @@
                     alt="Lenie Joy Badil Profile"
                 >
 
-                <div class="profile-overlay">
-                    <span>↗</span>
-                </div>
+            </a>
 
-            </div>
 
 
             <!-- PROFILE INFORMATION -->
+
             <div class="profile-content">
 
                 <h2>
@@ -210,10 +257,12 @@
 
 
 
-<!-- =========================
+<!-- =====================================================
      ABOUT ME
-========================= -->
+===================================================== -->
+
 <section class="profile-section">
+
 
     <div class="section-heading">
 
@@ -223,31 +272,40 @@
 
 
         <h2>
+
             Where technology<br>
+
             meets <em>creativity.</em>
+
         </h2>
 
     </div>
+
 
 
     <div class="about-content">
 
 
         <!-- ABOUT TEXT -->
+
         <div class="about-text">
 
             <p>
+
                 I am a Computer Engineering graduate with experience
                 in web development, IoT, electronics, digital design,
                 photography, social media management and community
                 projects.
+
             </p>
 
 
             <p>
+
                 My work combines technical problem-solving with
                 creative communication. I enjoy turning ideas into
                 organized, functional and visually engaging projects.
+
             </p>
 
 
@@ -261,7 +319,9 @@
         </div>
 
 
+
         <!-- INFORMATION BOXES -->
+
         <div class="info-grid">
 
 
@@ -278,6 +338,7 @@
             </div>
 
 
+
             <div class="info-box">
 
                 <span>
@@ -291,6 +352,7 @@
             </div>
 
 
+
             <div class="info-box">
 
                 <span>
@@ -302,6 +364,7 @@
                 </strong>
 
             </div>
+
 
 
             <div class="info-box">
@@ -324,9 +387,10 @@
 
 
 
-<!-- =========================
+<!-- =====================================================
      SELECTED WORK
-========================= -->
+===================================================== -->
+
 <section class="work-section">
 
 
@@ -343,21 +407,23 @@
 
 
         <p>
+
             Explore different areas of my technical,
             creative and professional experience.
+
         </p>
 
     </div>
 
 
 
-    <!-- =========================
-         WORK CARDS
-    ========================= -->
+    <!-- WORK LINKS -->
+
     <div class="work-links">
 
 
         <!-- 01 -->
+
         <a
             href="technical.html"
             class="work-link"
@@ -391,6 +457,7 @@
 
 
         <!-- 02 -->
+
         <a
             href="website.html"
             class="work-link"
@@ -423,6 +490,7 @@
 
 
         <!-- 03 -->
+
         <a
             href="graphic-design.html"
             class="work-link"
@@ -455,6 +523,7 @@
 
 
         <!-- 04 -->
+
         <a
             href="photography.html"
             class="work-link"
@@ -487,6 +556,7 @@
 
 
         <!-- 05 -->
+
         <a
             href="social-media.html"
             class="work-link"
@@ -519,6 +589,7 @@
 
 
         <!-- 06 -->
+
         <a
             href="leadership.html"
             class="work-link"
@@ -551,6 +622,7 @@
 
 
         <!-- 07 -->
+
         <a
             href="internship.html"
             class="work-link"
@@ -583,6 +655,7 @@
 
 
         <!-- 08 -->
+
         <a
             href="tools.html"
             class="work-link"
@@ -620,15 +693,18 @@
 
 
 
-<!-- =========================
+<!-- =====================================================
      WELCOME GIRL
-========================= -->
+===================================================== -->
+
 <div
     class="girl-welcome"
     id="girlWelcome"
 >
 
+
     <!-- SPEECH BUBBLE -->
+
     <div class="welcome-message">
 
         <strong>
@@ -643,6 +719,7 @@
 
 
     <!-- GIRL ICON -->
+
     <img
         src="assets/girl-icon.png"
         id="girlIcon"
@@ -654,10 +731,12 @@
 
 
 
-<!-- =========================
+<!-- =====================================================
      FOOTER
-========================= -->
+===================================================== -->
+
 <footer>
+
 
     <div class="footer-top">
 
@@ -668,6 +747,7 @@
                 LENIE JOY <span>BADIL</span>
             </h3>
 
+
             <p>
                 Computer Engineering • Creative Technology • Leadership
             </p>
@@ -675,7 +755,12 @@
         </div>
 
 
+
         <div class="footer-links">
+
+            <a href="index.html">
+                Home
+            </a>
 
             <a href="technical.html">
                 My Work
@@ -694,6 +779,7 @@
     </div>
 
 
+
     <div class="footer-bottom">
 
         © 2026 Lenie Joy Cases Badil. All Rights Reserved.
@@ -704,41 +790,10 @@
 
 
 
-<!-- =========================
-     LIGHTBOX
-========================= -->
-<div
-    class="lightbox"
-    id="lightbox"
->
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
 
-    <button
-        class="lightbox-close"
-        id="lightboxClose"
-        type="button"
-        aria-label="Close image"
-    >
-        ×
-    </button>
-
-
-    <img
-        id="lightboxImage"
-        src=""
-        alt=""
-    >
-
-
-    <div
-        class="lightbox-title"
-        id="lightboxTitle"
-    ></div>
-
-</div>
-
-
-
-<!-- JAVASCRIPT -->
 <script src="script.js"></script>
 
 </body>
