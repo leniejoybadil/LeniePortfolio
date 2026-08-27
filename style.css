@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
 /* =========================================================
    LENIE JOY BADIL — PORTFOLIO
@@ -726,7 +726,6 @@ img {
 
 /* =========================================================
    TECHNICAL GALLERY
-   SMALLER / CONTROLLED SIZE
 ========================================================= */
 
 .project-gallery {
@@ -735,7 +734,6 @@ img {
     margin: 0 auto;
 }
 
-/* Main clickable image container */
 .gallery-main {
     position: relative;
     display: block;
@@ -748,7 +746,6 @@ img {
     cursor: pointer;
 }
 
-/* Main technical image */
 .gallery-main img,
 #technicalMainImage {
     width: 100%;
@@ -757,7 +754,6 @@ img {
     display: block;
 }
 
-/* Hover overlay */
 .gallery-main .image-overlay {
     position: absolute;
     inset: 0;
@@ -1200,9 +1196,9 @@ img {
     background: var(--border);
 }
 
-/* =====================================================
+/* =========================================================
    PHOTOGRAPHY FLOATING CARDS
-===================================================== */
+========================================================= */
 
 .floating-media-grid {
     display: grid;
@@ -1212,316 +1208,151 @@ img {
     margin-top: 35px;
 }
 
-
-/* =====================================================
-   FLOATING MEDIA CARD
-===================================================== */
-
 .floating-media-card {
     position: relative;
     display: flex;
     flex-direction: column;
-
     min-height: 330px;
     padding: 30px;
-
     text-decoration: none;
-
     border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 18px;
-
     background:
         linear-gradient(
             145deg,
             rgba(255, 255, 255, 0.07),
             rgba(255, 255, 255, 0.025)
         );
-
     backdrop-filter: blur(12px);
-
     box-shadow:
         0 18px 45px rgba(0, 0, 0, 0.18);
-
     overflow: hidden;
-
     transition:
         transform 0.35s ease,
         border-color 0.35s ease,
         box-shadow 0.35s ease;
 }
 
-
-/* subtle glow */
-
 .floating-media-card::before {
     content: "";
-
     position: absolute;
-
     width: 180px;
     height: 180px;
-
     top: -90px;
     right: -90px;
-
     border-radius: 50%;
-
     background: rgba(255, 255, 255, 0.08);
-
     filter: blur(35px);
-
     pointer-events: none;
 }
 
-
-/* hover */
-
 .floating-media-card:hover {
-
     transform: translateY(-8px);
-
     border-color: rgba(255, 255, 255, 0.28);
-
     box-shadow:
         0 28px 60px rgba(0, 0, 0, 0.28);
-
 }
-
-
-/* =====================================================
-   CARD TOP
-===================================================== */
 
 .media-card-top {
     display: flex;
     align-items: center;
     gap: 12px;
-
     margin-bottom: 45px;
 }
 
-
 .media-number {
     font-family: "Space Grotesk", sans-serif;
-
     font-size: 0.75rem;
     font-weight: 700;
-
     letter-spacing: 0.12em;
-
     opacity: 0.5;
 }
-
 
 .media-icon {
     display: flex;
     align-items: center;
     justify-content: center;
-
     width: 42px;
     height: 42px;
-
     border: 1px solid rgba(255, 255, 255, 0.15);
-
     border-radius: 50%;
-
     font-size: 1rem;
-
     background: rgba(255, 255, 255, 0.05);
 }
 
-
 .media-type {
-
     margin-left: auto;
-
     font-size: 0.65rem;
     font-weight: 700;
-
     letter-spacing: 0.15em;
-
     opacity: 0.55;
 }
-
-
-/* =====================================================
-   CARD CONTENT
-===================================================== */
 
 .media-card-content {
     flex: 1;
 }
 
-
 .media-card-content small {
-
     display: block;
-
     margin-bottom: 10px;
-
     font-size: 0.65rem;
     font-weight: 700;
-
     letter-spacing: 0.18em;
-
     opacity: 0.5;
 }
 
-
 .media-card-content h3 {
-
     margin: 0 0 14px;
-
     font-family: "Space Grotesk", sans-serif;
-
     font-size: clamp(1.5rem, 2.3vw, 2.2rem);
-
     line-height: 1.05;
-
     letter-spacing: -0.03em;
 }
 
-
 .media-card-content p {
-
     max-width: 520px;
-
     margin: 0;
-
     font-size: 0.95rem;
-
     line-height: 1.7;
-
     opacity: 0.65;
 }
 
-
-/* =====================================================
-   CARD FOOTER
-===================================================== */
-
 .media-card-footer {
-
     display: flex;
-
     align-items: center;
     justify-content: space-between;
-
     margin-top: 35px;
-
     padding-top: 18px;
-
     border-top: 1px solid rgba(255, 255, 255, 0.1);
-
 }
 
-
 .media-card-footer span {
-
     font-size: 0.65rem;
-
     font-weight: 700;
-
     letter-spacing: 0.15em;
-
     opacity: 0.45;
 }
 
-
 .media-card-footer strong {
-
     font-size: 0.72rem;
-
     letter-spacing: 0.1em;
-
     transition: transform 0.3s ease;
 }
 
-
-.floating-media-card:hover
-.media-card-footer strong {
-
+.floating-media-card:hover .media-card-footer strong {
     transform: translateX(5px);
 }
 
-
-/* =====================================================
-   CATEGORY SPACING
-===================================================== */
-
 .media-category {
-
     margin-top: 120px;
 }
 
-
 .media-category-heading {
-
     margin-bottom: 10px;
 }
 
-
 .media-category-heading h2 {
-
     margin-top: 12px;
-}
-
-
-/* =====================================================
-   TABLET
-===================================================== */
-
-@media (max-width: 900px) {
-
-    .floating-media-grid {
-
-        grid-template-columns: 1fr;
-
-        gap: 22px;
-    }
-
-}
-
-
-/* =====================================================
-   MOBILE
-===================================================== */
-
-@media (max-width: 600px) {
-
-    .floating-media-card {
-
-        min-height: 300px;
-
-        padding: 24px;
-
-        border-radius: 15px;
-    }
-
-
-    .media-card-top {
-
-        margin-bottom: 35px;
-    }
-
-
-    .media-card-content h3 {
-
-        font-size: 1.5rem;
-    }
-
-
-    .media-card-content p {
-
-        font-size: 0.88rem;
-    }
-
-
-    .media-card-footer {
-
-        margin-top: 28px;
-    }
-
 }
 
 /* =========================================================
@@ -2132,7 +1963,7 @@ footer {
         letter-spacing: -2px;
     }
 
-    /* SMALLER TECHNICAL IMAGE */
+    /* TECHNICAL IMAGE */
 
     .project-gallery {
         max-width: 100%;
@@ -2360,7 +2191,7 @@ footer {
         font-size: 24px;
     }
 
-    /* SMALLER TECHNICAL IMAGE */
+    /* TECHNICAL IMAGE */
 
     .gallery-main {
         height: 205px;
