@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
 
+
     /* =========================================
        MOBILE MENU
     ========================================== */
@@ -33,8 +34,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
 
-        /* Close menu after clicking a link */
-
         const navigationLinks =
             navLinks.querySelectorAll("a");
 
@@ -57,8 +56,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
 
-        /* Close menu with ESC */
-
         document.addEventListener("keydown", function (event) {
 
             if (event.key === "Escape") {
@@ -80,7 +77,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =========================================
-       GIRL WELCOME
+       WELCOME GIRL
     ========================================== */
 
     const girlWelcome =
@@ -92,12 +89,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (girlWelcome && girlIcon) {
 
-        /* Show when Home loads */
-
         girlWelcome.classList.remove("hidden");
 
-
-        /* Automatically hide after 8 seconds */
 
         const timer = setTimeout(function () {
 
@@ -105,8 +98,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         }, 8000);
 
-
-        /* Clicking girl closes it */
 
         girlIcon.addEventListener("click", function () {
 
@@ -118,5 +109,192 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
+
+    /* =========================================
+       LIGHTBOX
+    ========================================== */
+
+    const lightbox =
+        document.getElementById("lightbox");
+
+    const lightboxImage =
+        document.getElementById("lightboxImage");
+
+    const lightboxTitle =
+        document.getElementById("lightboxTitle");
+
+    const lightboxClose =
+        document.getElementById("lightboxClose");
+
+
+    const lightboxTriggers =
+        document.querySelectorAll(".lightbox-trigger");
+
+
+    function openLightbox(image, title) {
+
+        if (!lightbox || !lightboxImage) {
+            return;
+        }
+
+
+        lightboxImage.src = image;
+
+        lightboxImage.alt = title || "Portfolio image";
+
+        if (lightboxTitle) {
+            lightboxTitle.textContent = title || "";
+        }
+
+
+        lightbox.classList.add("active");
+
+        document.body.classList.add("no-scroll");
+
+    }
+
+
+    function closeLightbox() {
+
+        if (!lightbox) {
+            return;
+        }
+
+
+        lightbox.classList.remove("active");
+
+        document.body.classList.remove("no-scroll");
+
+    }
+
+
+    lightboxTriggers.forEach(function (item) {
+
+        item.addEventListener("click", function () {
+
+            const image =
+                item.getAttribute("data-image");
+
+            const title =
+                item.getAttribute("data-title");
+
+
+            if (image) {
+
+                openLightbox(
+                    image,
+                    title
+                );
+
+            }
+
+        });
+
+    });
+
+
+    if (lightboxClose) {
+
+        lightboxClose.addEventListener(
+            "click",
+            closeLightbox
+        );
+
+    }
+
+
+    if (lightbox) {
+
+        lightbox.addEventListener(
+            "click",
+            function (event) {
+
+                if (event.target === lightbox) {
+
+                    closeLightbox();
+
+                }
+
+            }
+        );
+
+    }
+
+
+    document.addEventListener(
+        "keydown",
+        function (event) {
+
+            if (event.key === "Escape") {
+
+                closeLightbox();
+
+            }
+
+        }
+    );
+
+
+    /* =========================================
+       TECHNICAL GALLERY
+    ========================================== */
+
+    const technicalMainImage =
+        document.getElementById("technicalMainImage");
+
+    const thumbnails =
+        document.querySelectorAll(".thumbnail");
+
+
+    if (technicalMainImage && thumbnails.length) {
+
+        thumbnails.forEach(function (thumbnail) {
+
+            thumbnail.addEventListener(
+                "click",
+                function () {
+
+                    const newImage =
+                        thumbnail.getAttribute("data-main");
+
+
+                    if (!newImage) {
+                        return;
+                    }
+
+
+                    technicalMainImage.src =
+                        newImage;
+
+
+                    thumbnails.forEach(function (item) {
+
+                        item.classList.remove("active");
+
+                    });
+
+
+                    thumbnail.classList.add("active");
+
+
+                    const galleryMain =
+                        document.querySelector(".gallery-main");
+
+
+                    if (galleryMain) {
+
+                        galleryMain.setAttribute(
+                            "data-image",
+                            newImage
+                        );
+
+                    }
+
+                }
+            );
+
+        });
+
+    }
 
 });

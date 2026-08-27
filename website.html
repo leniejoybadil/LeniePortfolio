@@ -2,416 +2,403 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Website Developer | Lenie Joy Badil</title>
 
     <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
 
-<!-- BACKGROUND -->
 <div class="background">
+
     <div class="orb orb1"></div>
     <div class="orb orb2"></div>
     <div class="grid"></div>
+
 </div>
 
 
-<!-- NAVIGATION -->
 <header class="navbar">
 
-    <div class="logo">
+    <a href="index.html" class="logo">
+
         <span>LB</span>
 
         <div>
             <strong>LENIE JOY</strong>
             <small>PORTFOLIO</small>
         </div>
-    </div>
 
-    <nav>
+    </a>
+
+
+    <button class="menu-toggle"
+            id="menuToggle"
+            aria-expanded="false">
+
+        <span></span>
+        <span></span>
+        <span></span>
+
+    </button>
+
+
+    <nav class="nav-links" id="navLinks">
+
         <a href="index.html">Home</a>
         <a href="technical.html" class="active">My Work</a>
         <a href="resume.html">Resume</a>
         <a href="contact.html">Contact</a>
+
     </nav>
 
 </header>
 
 
-<!-- MAIN -->
 <main class="project-page">
 
 
-    <!-- PAGE HEADER -->
-    <section class="page-header">
+<section class="page-header">
 
-        <span class="section-number">
-            02 / MY WORK
-        </span>
+    <span class="section-number">
+        02 / MY WORK
+    </span>
 
-        <h1>
-            Website <span>Developer</span>
-        </h1>
+    <h1>
+        Website <span>Developer</span>
+    </h1>
 
-        <p>
-            Websites, portals and digital systems designed to
-            improve accessibility, organization and user experience.
-        </p>
+    <p>
+        Websites, portals and digital systems designed to
+        improve accessibility, organization and user experience.
+    </p>
 
-    </section>
-
+</section>
 
 
-    <!-- PROJECT 1 -->
-    <section class="project-detail">
+<section class="project-detail">
 
-        <div class="project-number">
-            01
+    <div class="project-number">
+        01
+    </div>
+
+
+    <div class="project-content">
+
+        <div class="project-heading">
+
+            <span class="project-category">
+                WEB DEVELOPMENT
+            </span>
+
+            <h2>
+                SK Dalagdag Portal
+            </h2>
+
+            <p>
+                A digital community portal developed for
+                Sangguniang Kabataan Barangay Dalagdag.
+            </p>
+
         </div>
 
-        <div class="project-content">
 
-            <div class="project-heading">
+        <div class="project-image-large lightbox-trigger"
+             data-image="assets/website/sk-portal.jpg"
+             data-title="SK Dalagdag Portal">
 
-                <span class="project-category">
-                    WEB DEVELOPMENT
-                </span>
+            <img src="assets/website/sk-portal.jpg"
+                 alt="SK Dalagdag Portal">
 
-                <h2>
-                    SK Dalagdag Portal
-                </h2>
+            <div class="image-overlay">
+                <span>VIEW PROJECT IMAGE ↗</span>
+            </div>
+
+        </div>
+
+
+        <div class="project-description-grid">
+
+            <div>
+
+                <h3>PROJECT OVERVIEW</h3>
 
                 <p>
-                    A digital community portal developed for
-                    Sangguniang Kabataan Barangay Dalagdag.
+                    The SK Dalagdag Portal is a web-based platform
+                    designed to provide residents and young people
+                    with easier access to announcements, projects,
+                    events, committees and other youth-related
+                    information.
+                </p>
+
+                <p>
+                    The project focuses on creating a simple,
+                    mobile-friendly and organized digital space
+                    for the community.
                 </p>
 
             </div>
 
 
-            <!-- PROJECT IMAGE -->
-            <div class="project-image-large">
+            <div>
 
-                <img
-                    src="assets/website/sk-portal.jpg"
-                    alt="SK Dalagdag Portal"
-                >
+                <h3>FEATURES</h3>
 
-            </div>
+                <ul class="feature-list">
 
+                    <li>SK Announcements</li>
+                    <li>Committees</li>
+                    <li>Events & Activities</li>
+                    <li>KK Profiling</li>
+                    <li>SK Projects</li>
+                    <li>Suggestions</li>
+                    <li>Mobile-Friendly Interface</li>
 
-            <!-- DESCRIPTION -->
-            <div class="project-description-grid">
-
-                <div>
-
-                    <h3>PROJECT OVERVIEW</h3>
-
-                    <p>
-                        The SK Dalagdag Portal is a web-based platform
-                        designed to provide residents and young people
-                        with easier access to announcements, projects,
-                        events, committees and other youth-related
-                        information.
-                    </p>
-
-                    <p>
-                        The project focuses on creating a simple,
-                        mobile-friendly and organized digital space
-                        for the community.
-                    </p>
-
-                </div>
-
-
-                <div>
-
-                    <h3>FEATURES</h3>
-
-                    <ul class="feature-list">
-
-                        <li>
-                            SK Announcements
-                        </li>
-
-                        <li>
-                            Committees
-                        </li>
-
-                        <li>
-                            Events & Activities
-                        </li>
-
-                        <li>
-                            KK Profiling
-                        </li>
-
-                        <li>
-                            SK Projects
-                        </li>
-
-                        <li>
-                            Suggestions
-                        </li>
-
-                        <li>
-                            Mobile-Friendly Interface
-                        </li>
-
-                    </ul>
-
-                </div>
-
-            </div>
-
-
-            <!-- TECHNOLOGIES -->
-            <div class="technology-box">
-
-                <span>TECHNOLOGIES</span>
-
-                <div class="technology-tags">
-
-                    <span>HTML</span>
-                    <span>CSS</span>
-                    <span>JavaScript</span>
-                    <span>Tailwind CSS</span>
-                    <span>Google Sheets</span>
-                    <span>Google Apps Script</span>
-                    <span>GitHub</span>
-                    <span>Render</span>
-
-                </div>
-
-            </div>
-
-
-            <!-- BUTTON -->
-            <div class="project-actions">
-
-                <a
-                    href="https://sk-web-2bmt.onrender.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="main-button"
-                >
-                    <span>VISIT SK DALAGDAG PORTAL</span>
-                    <b>↗</b>
-                </a>
+                </ul>
 
             </div>
 
         </div>
 
-    </section>
 
+        <div class="technology-box">
 
+            <span>TECHNOLOGIES</span>
 
-    <!-- DIVIDER -->
-    <div class="project-divider"></div>
+            <div class="technology-tags">
 
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+                <span>Tailwind CSS</span>
+                <span>Google Sheets</span>
+                <span>Google Apps Script</span>
+                <span>GitHub</span>
+                <span>Render</span>
 
+            </div>
 
-    <!-- PROJECT 2 -->
-    <section class="project-detail">
-
-        <div class="project-number">
-            02
         </div>
 
-        <div class="project-content">
 
-            <div class="project-heading">
+        <div class="project-actions">
 
-                <span class="project-category">
-                    WEB SYSTEM
-                </span>
+            <a href="https://sk-web-2bmt.onrender.com"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="main-button">
 
-                <h2>
-                    Seat Reservation System
-                </h2>
+                <span>VISIT SK DALAGDAG PORTAL</span>
+                <b>↗</b>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<div class="project-divider"></div>
+
+
+<section class="project-detail">
+
+    <div class="project-number">
+        02
+    </div>
+
+
+    <div class="project-content">
+
+        <div class="project-heading">
+
+            <span class="project-category">
+                WEB SYSTEM
+            </span>
+
+            <h2>
+                Seat Reservation System
+            </h2>
+
+            <p>
+                A digital seat reservation system created for
+                organized event seating and registration.
+            </p>
+
+        </div>
+
+
+        <div class="project-image-large lightbox-trigger"
+             data-image="assets/website/seat-reservation.jpg"
+             data-title="Seat Reservation System">
+
+            <img src="assets/website/seat-reservation.jpg"
+                 alt="Seat Reservation System">
+
+            <div class="image-overlay">
+                <span>VIEW PROJECT IMAGE ↗</span>
+            </div>
+
+        </div>
+
+
+        <div class="project-description-grid">
+
+            <div>
+
+                <h3>PROJECT OVERVIEW</h3>
 
                 <p>
-                    A digital seat reservation system created for
-                    organized event seating and registration.
+                    The Seat Reservation System was designed to
+                    simplify event seating by allowing users to
+                    select and reserve available seats through
+                    a digital interface.
+                </p>
+
+                <p>
+                    The system was developed with an interactive
+                    seating layout representing tables and chairs,
+                    making event registration more organized and
+                    easier to manage.
                 </p>
 
             </div>
 
 
-            <!-- PROJECT IMAGE -->
-            <div class="project-image-large">
+            <div>
 
-                <img
-                    src="assets/website/seat-reservation.jpg"
-                    alt="Seat Reservation System"
-                >
+                <h3>SYSTEM FEATURES</h3>
 
-            </div>
+                <ul class="feature-list">
 
+                    <li>Interactive Seating Layout</li>
+                    <li>Table & Chair Arrangement</li>
+                    <li>Seat Selection</li>
+                    <li>Reservation Status</li>
+                    <li>Event Registration</li>
+                    <li>Digital Record Keeping</li>
 
-            <!-- DESCRIPTION -->
-            <div class="project-description-grid">
-
-                <div>
-
-                    <h3>PROJECT OVERVIEW</h3>
-
-                    <p>
-                        The Seat Reservation System was designed to
-                        simplify event seating by allowing users to
-                        select and reserve available seats through
-                        a digital interface.
-                    </p>
-
-                    <p>
-                        The system was developed with an interactive
-                        seating layout representing tables and chairs,
-                        making event registration more organized and
-                        easier to manage.
-                    </p>
-
-                </div>
-
-
-                <div>
-
-                    <h3>SYSTEM FEATURES</h3>
-
-                    <ul class="feature-list">
-
-                        <li>
-                            Interactive Seating Layout
-                        </li>
-
-                        <li>
-                            Table & Chair Arrangement
-                        </li>
-
-                        <li>
-                            Seat Selection
-                        </li>
-
-                        <li>
-                            Reservation Status
-                        </li>
-
-                        <li>
-                            Event Registration
-                        </li>
-
-                        <li>
-                            Digital Record Keeping
-                        </li>
-
-                    </ul>
-
-                </div>
-
-            </div>
-
-
-            <!-- ROLE -->
-            <div class="role-box">
-
-                <div>
-
-                    <span>MY ROLE</span>
-
-                    <strong>
-                        Web Developer • System Designer
-                    </strong>
-
-                </div>
-
-                <div>
-
-                    <span>PROJECT TYPE</span>
-
-                    <strong>
-                        Event Management System
-                    </strong>
-
-                </div>
-
-            </div>
-
-
-            <!-- DRIVE BUTTON -->
-            <div class="project-actions">
-
-                <a
-                    href="https://www.facebook.com/share/v/1D2Jy3Z4LW/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="main-button"
-                >
-                    <span>VIEW PROJECT</span>
-                    <b>↗</b>
-                </a>
+                </ul>
 
             </div>
 
         </div>
 
-    </section>
+
+        <div class="role-box">
+
+            <div>
+
+                <span>MY ROLE</span>
+
+                <strong>
+                    Web Developer • System Designer
+                </strong>
+
+            </div>
+
+            <div>
+
+                <span>PROJECT TYPE</span>
+
+                <strong>
+                    Event Management System
+                </strong>
+
+            </div>
+
+        </div>
 
 
+        <div class="project-actions">
 
-    <!-- BACK TO WORK -->
-    <section class="back-section">
+            <a href="https://www.facebook.com/share/v/1D2Jy3Z4LW/"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="main-button">
 
-        <a href="index.html" class="outline-button">
-            ← BACK TO HOME
-        </a>
+                <span>VIEW PROJECT</span>
+                <b>↗</b>
 
-        <a href="technical.html" class="outline-button">
-            TECHNICAL & IoT →
-        </a>
+            </a>
 
-    </section>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="back-section">
+
+    <a href="index.html" class="outline-button">
+        ← BACK TO HOME
+    </a>
+
+    <a href="technical.html" class="outline-button">
+        TECHNICAL & IoT →
+    </a>
+
+</section>
 
 
 </main>
 
 
-
-<!-- FOOTER -->
 <footer>
 
-    <div class="footer-logo">
-        LENIE JOY <span>BADIL</span>
+    <div class="footer-top">
+
+        <div>
+
+            <h3>
+                LENIE JOY <span>BADIL</span>
+            </h3>
+
+            <p>
+                Computer Engineering • Creative Technology • Leadership
+            </p>
+
+        </div>
+
+        <div class="footer-links">
+
+            <a href="contact.html">Contact</a>
+            <a href="resume.html">Resume</a>
+
+        </div>
+
     </div>
 
-    <p>
-        Computer Engineering • Creative Technology • Leadership
-    </p>
 
-    <div class="footer-links">
+    <div class="footer-bottom">
 
-        <a href="contact.html">
-            Contact
-        </a>
-
-        <a href="resume.html">
-            Resume
-        </a>
-
-    </div>
-
-    <small>
         © 2026 Lenie Joy Cases Badil. All Rights Reserved.
-    </small>
+
+    </div>
 
 </footer>
+
+
+<div class="lightbox" id="lightbox">
+
+    <button class="lightbox-close" id="lightboxClose">×</button>
+
+    <img id="lightboxImage" src="" alt="">
+
+    <div class="lightbox-title" id="lightboxTitle"></div>
+
+</div>
 
 
 <script src="script.js"></script>
 
 </body>
-
 </html>

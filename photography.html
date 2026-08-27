@@ -1,343 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Photography & Videography | Lenie Joy Badil</title>
+    <title>Photography | Lenie Joy Badil</title>
 
     <link rel="stylesheet" href="style.css">
 
-    <style>
-        /* =========================================================
-           PHOTOGRAPHY & VIDEOGRAPHY PAGE
-           ========================================================= */
-
-        .creative-section {
-            margin-top: 80px;
-        }
-
-        .creative-intro {
-            max-width: 700px;
-            margin-bottom: 35px;
-        }
-
-        .creative-intro .category-label {
-            display: inline-block;
-            font-size: 12px;
-            font-weight: 800;
-            letter-spacing: 2px;
-            color: #ff8a00;
-            margin-bottom: 10px;
-        }
-
-        .creative-intro h2 {
-            font-size: clamp(30px, 5vw, 48px);
-            line-height: 1.1;
-            margin: 0 0 15px;
-        }
-
-        .creative-intro h2 em {
-            font-style: normal;
-            color: #ff8a00;
-        }
-
-        .creative-intro p {
-            color: rgba(255,255,255,0.65);
-            line-height: 1.7;
-            margin: 0;
-        }
-
-        /* Portfolio category */
-
-        .portfolio-category {
-            margin-top: 55px;
-        }
-
-        .portfolio-category-header {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 22px;
-        }
-
-        .portfolio-category-number {
-            width: 42px;
-            height: 42px;
-            border-radius: 12px;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            background: rgba(255,138,0,0.12);
-            border: 1px solid rgba(255,138,0,0.35);
-
-            color: #ff8a00;
-            font-size: 13px;
-            font-weight: 800;
-            flex-shrink: 0;
-        }
-
-        .portfolio-category-header h3 {
-            margin: 0;
-            font-size: 25px;
-        }
-
-        .portfolio-category-header p {
-            margin: 4px 0 0;
-            font-size: 13px;
-            color: rgba(255,255,255,0.5);
-        }
-
-        /* Portfolio cards */
-
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 18px;
-        }
-
-        .portfolio-card {
-            position: relative;
-            min-height: 185px;
-
-            padding: 28px;
-
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-
-            text-decoration: none;
-            color: inherit;
-
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 22px;
-
-            background:
-                linear-gradient(
-                    145deg,
-                    rgba(255,255,255,0.07),
-                    rgba(255,255,255,0.025)
-                );
-
-            overflow: hidden;
-
-            transition:
-                transform 0.3s ease,
-                border-color 0.3s ease,
-                box-shadow 0.3s ease;
-        }
-
-        .portfolio-card::before {
-            content: "";
-            position: absolute;
-
-            width: 150px;
-            height: 150px;
-
-            right: -60px;
-            top: -60px;
-
-            border-radius: 50%;
-
-            background: rgba(255,138,0,0.12);
-
-            transition: transform 0.4s ease;
-        }
-
-        .portfolio-card:hover {
-            transform: translateY(-6px);
-
-            border-color: rgba(255,138,0,0.5);
-
-            box-shadow:
-                0 18px 45px rgba(0,0,0,0.25),
-                0 0 30px rgba(255,138,0,0.08);
-        }
-
-        .portfolio-card:hover::before {
-            transform: scale(1.5);
-        }
-
-        .portfolio-card-top {
-            position: relative;
-            z-index: 1;
-
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-
-            margin-bottom: 25px;
-        }
-
-        .portfolio-icon {
-            width: 48px;
-            height: 48px;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            border-radius: 14px;
-
-            background: rgba(255,138,0,0.12);
-            border: 1px solid rgba(255,138,0,0.25);
-
-            font-size: 21px;
-        }
-
-        .portfolio-arrow {
-            font-size: 20px;
-            color: rgba(255,255,255,0.5);
-
-            transition:
-                transform 0.3s ease,
-                color 0.3s ease;
-        }
-
-        .portfolio-card:hover .portfolio-arrow {
-            transform: translate(4px,-4px);
-            color: #ff8a00;
-        }
-
-        .portfolio-card-content {
-            position: relative;
-            z-index: 1;
-        }
-
-        .portfolio-card-content .tag {
-            display: block;
-
-            margin-bottom: 7px;
-
-            font-size: 10px;
-            font-weight: 800;
-            letter-spacing: 1.8px;
-
-            color: #ff8a00;
-        }
-
-        .portfolio-card-content h4 {
-            margin: 0 0 8px;
-
-            font-size: 22px;
-            line-height: 1.2;
-        }
-
-        .portfolio-card-content p {
-            margin: 0;
-
-            font-size: 13px;
-            line-height: 1.6;
-
-            color: rgba(255,255,255,0.55);
-        }
-
-        /* Featured card */
-
-        .portfolio-card.featured {
-            grid-column: span 2;
-
-            min-height: 220px;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    rgba(255,138,0,0.13),
-                    rgba(255,255,255,0.035)
-                );
-        }
-
-        .portfolio-card.featured .portfolio-icon {
-            background: rgba(255,138,0,0.18);
-        }
-
-        /* Note */
-
-        .creative-note {
-            margin-top: 50px;
-
-            padding: 25px 28px;
-
-            border-left: 3px solid #ff8a00;
-            border-radius: 0 15px 15px 0;
-
-            background: rgba(255,138,0,0.06);
-        }
-
-        .creative-note strong {
-            display: block;
-
-            margin-bottom: 8px;
-
-            font-size: 11px;
-            letter-spacing: 2px;
-
-            color: #ff8a00;
-        }
-
-        .creative-note p {
-            margin: 0;
-
-            font-size: 14px;
-            line-height: 1.7;
-
-            color: rgba(255,255,255,0.62);
-        }
-
-        /* Mobile */
-
-        @media (max-width: 700px) {
-
-            .creative-section {
-                margin-top: 55px;
-            }
-
-            .portfolio-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .portfolio-card,
-            .portfolio-card.featured {
-                grid-column: span 1;
-                min-height: 180px;
-            }
-
-            .portfolio-category-header h3 {
-                font-size: 21px;
-            }
-
-            .portfolio-card-content h4 {
-                font-size: 20px;
-            }
-        }
-    </style>
 </head>
 
-
 <body>
-
-
-<!-- =========================================================
-     BACKGROUND
-     ========================================================= -->
 
 <div class="background">
 
     <div class="orb orb1"></div>
-
     <div class="orb orb2"></div>
-
     <div class="grid"></div>
 
 </div>
 
-
-
-<!-- =========================================================
-     NAVIGATION
-     ========================================================= -->
 
 <header class="navbar">
 
@@ -346,1277 +30,195 @@
         <span>LB</span>
 
         <div>
-
             <strong>LENIE JOY</strong>
-
             <small>PORTFOLIO</small>
-
         </div>
 
     </a>
 
 
-    <nav>
+    <button class="menu-toggle"
+            id="menuToggle"
+            aria-expanded="false">
 
-        <a href="index.html">
-            Home
-        </a>
+        <span></span>
+        <span></span>
+        <span></span>
 
-        <a href="technical.html" class="active">
-            My Work
-        </a>
+    </button>
 
-        <a href="resume.html">
-            Resume
-        </a>
 
-        <a href="contact.html">
-            Contact
-        </a>
+    <nav class="nav-links" id="navLinks">
+
+        <a href="index.html">Home</a>
+        <a href="technical.html" class="active">My Work</a>
+        <a href="resume.html">Resume</a>
+        <a href="contact.html">Contact</a>
 
     </nav>
 
 </header>
 
 
-
-<!-- =========================================================
-     MAIN
-     ========================================================= -->
-
-<main class="inner-page">
+<main class="project-page">
 
 
-    <!-- =====================================================
-         PAGE HEADING
-         ===================================================== -->
+<section class="page-header">
 
-    <div class="page-heading">
+    <span class="section-number">
+        04 / MY WORK
+    </span>
 
-        <span>05 / MY WORK</span>
+    <h1>
+        Photo<span>graphy</span>
+    </h1>
 
-        <h1>
-            Photography <em>& Videography</em>
-        </h1>
+    <p>
+        Event, community and creative photography
+        documenting people, moments and experiences.
+    </p>
 
-        <p>
-            Capturing events, people, stories and moments
-            through photography, videography and creative
-            video editing.
-        </p>
+</section>
+
+
+<section class="visual-gallery-page">
+
+    <div class="visual-gallery">
+
+
+        <div class="visual-card lightbox-trigger"
+             data-image="assets/photography/photo-1.jpg"
+             data-title="Photography 01">
+
+            <img src="assets/photography/photo-1.jpg"
+                 alt="Photography 1">
+
+            <div class="image-overlay">
+                <span>VIEW ↗</span>
+            </div>
+
+        </div>
+
+
+        <div class="visual-card lightbox-trigger"
+             data-image="assets/photography/photo-2.jpg"
+             data-title="Photography 02">
+
+            <img src="assets/photography/photo-2.jpg"
+                 alt="Photography 2">
+
+            <div class="image-overlay">
+                <span>VIEW ↗</span>
+            </div>
+
+        </div>
+
+
+        <div class="visual-card lightbox-trigger"
+             data-image="assets/photography/photo-3.jpg"
+             data-title="Photography 03">
+
+            <img src="assets/photography/photo-3.jpg"
+                 alt="Photography 3">
+
+            <div class="image-overlay">
+                <span>VIEW ↗</span>
+            </div>
+
+        </div>
+
+
+        <div class="visual-card lightbox-trigger"
+             data-image="assets/photography/photo-4.jpg"
+             data-title="Photography 04">
+
+            <img src="assets/photography/photo-4.jpg"
+                 alt="Photography 4">
+
+            <div class="image-overlay">
+                <span>VIEW ↗</span>
+            </div>
+
+        </div>
+
+
+        <div class="visual-card lightbox-trigger"
+             data-image="assets/photography/photo-5.jpg"
+             data-title="Photography 05">
+
+            <img src="assets/photography/photo-5.jpg"
+                 alt="Photography 5">
+
+            <div class="image-overlay">
+                <span>VIEW ↗</span>
+            </div>
+
+        </div>
+
 
     </div>
 
+</section>
 
 
-    <!-- =====================================================
-         PHOTO MOSAIC
-         ===================================================== -->
+<div class="page-navigation">
 
-    <section class="photo-mosaic">
+    <a href="graphic-design.html">
+        ← GRAPHIC DESIGN
+    </a>
 
-        <div class="photo-large">
+    <a href="social-media.html">
+        NEXT: SOCIAL MEDIA →
+    </a>
 
-            <img
-                src="assets/photography/photo-1.jpg"
-                alt="Photography portfolio"
-            >
-
-        </div>
-
-
-        <div>
-
-            <img
-                src="assets/photography/photo-2.jpg"
-                alt="Photography portfolio"
-            >
-
-        </div>
-
-
-        <div>
-
-            <img
-                src="assets/photography/photo-3.jpg"
-                alt="Photography portfolio"
-            >
-
-        </div>
-
-
-        <div>
-
-            <img
-                src="assets/photography/photo-4.jpg"
-                alt="Photography portfolio"
-            >
-
-        </div>
-
-
-        <div>
-
-            <img
-                src="assets/photography/photo-5.jpg"
-                alt="Photography portfolio"
-            >
-
-        </div>
-
-
-        <div>
-
-            <img
-                src="assets/photography/photo-6.jpg"
-                alt="Photography portfolio"
-            >
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =====================================================
-         CREATIVE PORTFOLIO
-         ===================================================== -->
-
-    <section class="creative-section">
-
-
-        <!-- INTRO -->
-
-        <div class="creative-intro">
-
-            <span class="category-label">
-                CREATIVE PORTFOLIO
-            </span>
-
-            <h2>
-                Videography <em>& Video Editing</em>
-            </h2>
-
-            <p>
-                Selected event teasers, community videos and
-                creative video projects. Click any project to
-                view the original work on Facebook.
-            </p>
-
-        </div>
-
-
-
-        <!-- =================================================
-             VIDEOGRAPHY — EVENTS TEASERS
-             ================================================= -->
-
-        <div class="portfolio-category">
-
-            <div class="portfolio-category-header">
-
-                <div class="portfolio-category-number">
-                    01
-                </div>
-
-                <div>
-
-                    <h3>
-                        Events Teasers
-                    </h3>
-
-                    <p>
-                        Event promotion, highlights and teaser videos
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <div class="portfolio-grid">
-
-
-                <!-- HIYAS NG DALAGDAG -->
-
-                <a
-                    href="https://www.facebook.com/share/v/1EjSkJibvV/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="portfolio-card featured"
-                >
-
-                    <div class="portfolio-card-top">
-
-                        <div class="portfolio-icon">
-                            ▶
-                        </div>
-
-                        <div class="portfolio-arrow">
-                            ↗
-                        </div>
-
-                    </div>
-
-
-                    <div class="portfolio-card-content">
-
-                        <span class="tag">
-                            EVENT TEASER
-                        </span>
-
-                        <h4>
-                            HIYAS NG DALAGDAG
-                        </h4>
-
-                        <p>
-                            Event teaser and promotional video
-                            showcasing the HIYAS NG DALAGDAG event.
-                        </p>
-
-                    </div>
-
-                </a>
-
-
-
-                <!-- LINGGO NG KABATAAN -->
-
-                <a
-                    href="https://www.facebook.com/share/v/1XWYCayWr3/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="portfolio-card"
-                >
-
-                    <div class="portfolio-card-top">
-
-                        <div class="portfolio-icon">
-                            ▶
-                        </div>
-
-                        <div class="portfolio-arrow">
-                            ↗
-                        </div>
-
-                    </div>
-
-
-                    <div class="portfolio-card-content">
-
-                        <span class="tag">
-                            EVENT TEASER
-                        </span>
-
-                        <h4>
-                            LINGGO NG KABATAAN
-                        </h4>
-
-                        <p>
-                            Creative event teaser and highlights
-                            for Linggo ng Kabataan.
-                        </p>
-
-                    </div>
-
-                </a>
-
-
-
-                <!-- COMMUNITY VIDEO -->
-
-                <a
-                    href="https://www.facebook.com/share/v/1KDsHS3ikQ/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="portfolio-card"
-                >
-
-                    <div class="portfolio-card-top">
-
-                        <div class="portfolio-icon">
-                            ▶
-                        </div>
-
-                        <div class="portfolio-arrow">
-                            ↗
-                        </div>
-
-                    </div>
-
-
-                    <div class="portfolio-card-content">
-
-                        <span class="tag">
-                            COMMUNITY VIDEO
-                        </span>
-
-                        <h4>
-                            Community Video
-                        </h4>
-
-                        <p>
-                            Community-focused video content
-                            documenting local activities and stories.
-                        </p>
-
-                    </div>
-
-                </a>
-
-
-
-                <!-- PRE-DEBUT SHOOT -->
-
-                <a
-                    href="https://www.facebook.com/share/v/1D78QfxRCY/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="portfolio-card"
-                >
-
-                    <div class="portfolio-card-top">
-
-                        <div class="portfolio-icon">
-                            ▶
-                        </div>
-
-                        <div class="portfolio-arrow">
-                            ↗
-                        </div>
-
-                    </div>
-
-
-                    <div class="portfolio-card-content">
-
-                        <span class="tag">
-                            CREATIVE VIDEO
-                        </span>
-
-                        <h4>
-                            Pre-Debut Shoot
-                        </h4>
-
-                        <p>
-                            Creative video coverage from a
-                            pre-debut photoshoot.
-                        </p>
-
-                    </div>
-
-                </a>
-
-
-            </div>
-
-        </div>
-
-
-
-        <!-- =================================================
-             PHOTOGRAPHY
-             ================================================= -->
-
-        <div class="portfolio-category">
-
-            <div class="portfolio-category-header">
-
-                <div class="portfolio-category-number">
-                    02
-                </div>
-
-                <div>
-
-                    <h3>
-                        Photography
-                    </h3>
-
-                    <p>
-                        Pageants, birthdays, debuts and special events
-                    </p>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- =================================================
-                 PAGEANTS
-                 ================================================= -->
-
-            <div class="portfolio-category">
-
-                <div class="portfolio-category-header">
-
-                    <div class="portfolio-category-number">
-                        A
-                    </div>
-
-                    <div>
-
-                        <h3>
-                            Pageants
-                        </h3>
-
-                        <p>
-                            Portraits, stage moments and event coverage
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <div class="portfolio-grid">
-
-
-                    <!-- HOT MAMA 01 -->
-
-                    <a
-                        href="https://www.facebook.com/share/p/1K9QzUrNPe/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="portfolio-card"
-                    >
-
-                        <div class="portfolio-card-top">
-
-                            <div class="portfolio-icon">
-                                📸
-                            </div>
-
-                            <div class="portfolio-arrow">
-                                ↗
-                            </div>
-
-                        </div>
-
-
-                        <div class="portfolio-card-content">
-
-                            <span class="tag">
-                                PAGEANT PHOTOGRAPHY
-                            </span>
-
-                            <h4>
-                                HOT MAMA
-                            </h4>
-
-                            <p>
-                                Pageant photography and event coverage.
-                            </p>
-
-                        </div>
-
-                    </a>
-
-
-
-                    <!-- HOT MAMA 02 -->
-
-                    <a
-                        href="https://www.facebook.com/share/p/1DEdiku9Kx/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="portfolio-card"
-                    >
-
-                        <div class="portfolio-card-top">
-
-                            <div class="portfolio-icon">
-                                📸
-                            </div>
-
-                            <div class="portfolio-arrow">
-                                ↗
-                            </div>
-
-                        </div>
-
-
-                        <div class="portfolio-card-content">
-
-                            <span class="tag">
-                                PAGEANT PHOTOGRAPHY
-                            </span>
-
-                            <h4>
-                                HOT MAMA
-                            </h4>
-
-                            <p>
-                                Additional event photography collection.
-                            </p>
-
-                        </div>
-
-                    </a>
-
-
-
-                    <!-- HIYAS 01 -->
-
-                    <a
-                        href="https://www.facebook.com/share/p/1EPQBw7S9q/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="portfolio-card"
-                    >
-
-                        <div class="portfolio-card-top">
-
-                            <div class="portfolio-icon">
-                                📸
-                            </div>
-
-                            <div class="portfolio-arrow">
-                                ↗
-                            </div>
-
-                        </div>
-
-
-                        <div class="portfolio-card-content">
-
-                            <span class="tag">
-                                PAGEANT PHOTOGRAPHY
-                            </span>
-
-                            <h4>
-                                HIYAS NG DALAGDAG
-                            </h4>
-
-                            <p>
-                                Pageant photography featuring
-                                event highlights and portraits.
-                            </p>
-
-                        </div>
-
-                    </a>
-
-
-
-                    <!-- HIYAS 02 -->
-
-                    <a
-                        href="https://www.facebook.com/share/p/14m7WFAwdt6/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="portfolio-card"
-                    >
-
-                        <div class="portfolio-card-top">
-
-                            <div class="portfolio-icon">
-                                📸
-                            </div>
-
-                            <div class="portfolio-arrow">
-                                ↗
-                            </div>
-
-                        </div>
-
-
-                        <div class="portfolio-card-content">
-
-                            <span class="tag">
-                                PAGEANT PHOTOGRAPHY
-                            </span>
-
-                            <h4>
-                                HIYAS NG DALAGDAG
-                            </h4>
-
-                            <p>
-                                Additional photographs from the event.
-                            </p>
-
-                        </div>
-
-                    </a>
-
-
-                </div>
-
-            </div>
-
-
-
-            <!-- =================================================
-                 BIRTHDAY
-                 ================================================= -->
-
-            <div class="portfolio-category">
-
-                <div class="portfolio-category-header">
-
-                    <div class="portfolio-category-number">
-                        B
-                    </div>
-
-                    <div>
-
-                        <h3>
-                            Birthday
-                        </h3>
-
-                        <p>
-                            Birthday celebrations and special moments
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <div class="portfolio-grid">
-
-
-                    <a
-                        href="https://www.facebook.com/share/p/1D5Hb6yRKY/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="portfolio-card featured"
-                    >
-
-                        <div class="portfolio-card-top">
-
-                            <div class="portfolio-icon">
-                                📸
-                            </div>
-
-                            <div class="portfolio-arrow">
-                                ↗
-                            </div>
-
-                        </div>
-
-
-                        <div class="portfolio-card-content">
-
-                            <span class="tag">
-                                EVENT PHOTOGRAPHY
-                            </span>
-
-                            <h4>
-                                Birthday Celebration
-                            </h4>
-
-                            <p>
-                                Photography coverage capturing
-                                memorable birthday moments.
-                            </p>
-
-                        </div>
-
-                    </a>
-
-
-                </div>
-
-            </div>
-
-
-
-            <!-- =================================================
-                 DEBUT
-                 ================================================= -->
-
-            <div class="portfolio-category">
-
-                <div class="portfolio-category-header">
-
-                    <div class="portfolio-category-number">
-                        C
-                    </div>
-
-                    <div>
-
-                        <h3>
-                            Debut
-                        </h3>
-
-                        <p>
-                            Portraits, celebrations and debut event coverage
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <div class="portfolio-grid">
-
-
-                    <!-- DEBUT 01 -->
-
-                    <a
-                        href="https://www.facebook.com/share/p/1EqCkuN2v3/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="portfolio-card"
-                    >
-
-                        <div class="portfolio-card-top">
-
-                            <div class="portfolio-icon">
-                                📸
-                            </div>
-
-                            <div class="portfolio-arrow">
-                                ↗
-                            </div>
-
-                        </div>
-
-
-                        <div class="portfolio-card-content">
-
-                            <span class="tag">
-                                DEBUT PHOTOGRAPHY
-                            </span>
-
-                            <h4>
-                                Debut Collection 01
-                            </h4>
-
-                            <p>
-                                Debut event photography and portraits.
-                            </p>
-
-                        </div>
-
-                    </a>
-
-
-
-                    <!-- DEBUT 02 -->
-
-                    <a
-                        href="https://www.facebook.com/share/p/1EadYn9VM7/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="portfolio-card"
-                    >
-
-                        <div class="portfolio-card-top">
-
-                            <div class="portfolio-icon">
-                                📸
-                            </div>
-
-                            <div class="portfolio-arrow">
-                                ↗
-                            </div>
-
-                        </div>
-
-
-                        <div class="portfolio-card-content">
-
-                            <span class="tag">
-                                DEBUT PHOTOGRAPHY
-                            </span>
-
-                            <h4>
-                                Debut Collection 02
-                            </h4>
-
-                            <p>
-                                Additional debut portraits and event moments.
-                            </p>
-
-                        </div>
-
-                    </a>
-
-
-
-                    <!-- DEBUT 03 -->
-
-                    <a
-                        href="https://www.facebook.com/share/p/1CEAKb6B3T/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="portfolio-card"
-                    >
-
-                        <div class="portfolio-card-top">
-
-                            <div class="portfolio-icon">
-                                📸
-                            </div>
-
-                            <div class="portfolio-arrow">
-                                ↗
-                            </div>
-
-                        </div>
-
-
-                        <div class="portfolio-card-content">
-
-                            <span class="tag">
-                                DEBUT PHOTOGRAPHY
-                            </span>
-
-                            <h4>
-                                Debut Collection 03
-                            </h4>
-
-                            <p>
-                                Event photography collection.
-                            </p>
-
-                        </div>
-
-                    </a>
-
-
-
-                    <!-- DEBUT 04 -->
-
-                    <a
-                        href="https://www.facebook.com/share/p/184uusYBKH/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="portfolio-card"
-                    >
-
-                        <div class="portfolio-card-top">
-
-                            <div class="portfolio-icon">
-                                📸
-                            </div>
-
-                            <div class="portfolio-arrow">
-                                ↗
-                            </div>
-
-                        </div>
-
-
-                        <div class="portfolio-card-content">
-
-                            <span class="tag">
-                                DEBUT PHOTOGRAPHY
-                            </span>
-
-                            <h4>
-                                Debut Collection 04
-                            </h4>
-
-                            <p>
-                                Portrait and celebration coverage.
-                            </p>
-
-                        </div>
-
-                    </a>
-
-
-
-                    <!-- DEBUT 05 -->
-
-                    <a
-                        href="https://www.facebook.com/share/p/1CQzV9e8FF/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="portfolio-card"
-                    >
-
-                        <div class="portfolio-card-top">
-
-                            <div class="portfolio-icon">
-                                📸
-                            </div>
-
-                            <div class="portfolio-arrow">
-                                ↗
-                            </div>
-
-                        </div>
-
-
-                        <div class="portfolio-card-content">
-
-                            <span class="tag">
-                                DEBUT PHOTOGRAPHY
-                            </span>
-
-                            <h4>
-                                Debut Collection 05
-                            </h4>
-
-                            <p>
-                                Event photography and special moments.
-                            </p>
-
-                        </div>
-
-                    </a>
-
-
-
-                    <!-- DEBUT 06 -->
-
-                    <a
-                        href="https://www.facebook.com/share/p/19PxKf3gBN/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="portfolio-card"
-                    >
-
-                        <div class="portfolio-card-top">
-
-                            <div class="portfolio-icon">
-                                📸
-                            </div>
-
-                            <div class="portfolio-arrow">
-                                ↗
-                            </div>
-
-                        </div>
-
-
-                        <div class="portfolio-card-content">
-
-                            <span class="tag">
-                                DEBUT PHOTOGRAPHY
-                            </span>
-
-                            <h4>
-                                Debut Collection 06
-                            </h4>
-
-                            <p>
-                                Additional debut photography collection.
-                            </p>
-
-                        </div>
-
-                    </a>
-
-
-                </div>
-
-            </div>
-
-
-
-            <!-- =================================================
-                 PRENUP
-                 ================================================= -->
-
-            <div class="portfolio-category">
-
-                <div class="portfolio-category-header">
-
-                    <div class="portfolio-category-number">
-                        D
-                    </div>
-
-                    <div>
-
-                        <h3>
-                            Prenup
-                        </h3>
-
-                        <p>
-                            Pre-wedding portraits, couple sessions and creative shoots
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <div class="portfolio-grid">
-
-
-                    <!-- PRENUP 01 -->
-
-                    <a
-                        href="https://www.facebook.com/share/p/1CVaY3qtMF/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="portfolio-card"
-                    >
-
-                        <div class="portfolio-card-top">
-
-                            <div class="portfolio-icon">
-                                📸
-                            </div>
-
-                            <div class="portfolio-arrow">
-                                ↗
-                            </div>
-
-                        </div>
-
-
-                        <div class="portfolio-card-content">
-
-                            <span class="tag">
-                                PRENUP PHOTOGRAPHY
-                            </span>
-
-                            <h4>
-                                Prenup Collection 01
-                            </h4>
-
-                            <p>
-                                Couple portraits and pre-wedding photography.
-                            </p>
-
-                        </div>
-
-                    </a>
-
-
-
-                    <!-- PRENUP 02 -->
-
-                    <a
-                        href="https://www.facebook.com/share/p/1Gpf3SQ9mD/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="portfolio-card"
-                    >
-
-                        <div class="portfolio-card-top">
-
-                            <div class="portfolio-icon">
-                                📸
-                            </div>
-
-                            <div class="portfolio-arrow">
-                                ↗
-                            </div>
-
-                        </div>
-
-
-                        <div class="portfolio-card-content">
-
-                            <span class="tag">
-                                PRENUP PHOTOGRAPHY
-                            </span>
-
-                            <h4>
-                                Prenup Collection 02
-                            </h4>
-
-                            <p>
-                                Creative couple portraits and pre-wedding moments.
-                            </p>
-
-                        </div>
-
-                    </a>
-
-
-
-                    <!-- PRENUP 03 -->
-
-                    <a
-                        href="https://www.facebook.com/share/p/1E8GAhnqWx/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="portfolio-card"
-                    >
-
-                        <div class="portfolio-card-top">
-
-                            <div class="portfolio-icon">
-                                📸
-                            </div>
-
-                            <div class="portfolio-arrow">
-                                ↗
-                            </div>
-
-                        </div>
-
-
-                        <div class="portfolio-card-content">
-
-                            <span class="tag">
-                                PRENUP PHOTOGRAPHY
-                            </span>
-
-                            <h4>
-                                Prenup Collection 03
-                            </h4>
-
-                            <p>
-                                Lifestyle portraits and creative pre-wedding photography.
-                            </p>
-
-                        </div>
-
-                    </a>
-
-
-
-                    <!-- PRENUP 04 -->
-
-                    <a
-                        href="https://www.facebook.com/share/p/1DfLiSUUby/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="portfolio-card"
-                    >
-
-                        <div class="portfolio-card-top">
-
-                            <div class="portfolio-icon">
-                                📸
-                            </div>
-
-                            <div class="portfolio-arrow">
-                                ↗
-                            </div>
-
-                        </div>
-
-
-                        <div class="portfolio-card-content">
-
-                            <span class="tag">
-                                PRENUP PHOTOGRAPHY
-                            </span>
-
-                            <h4>
-                                Prenup Collection 04
-                            </h4>
-
-                            <p>
-                                Couple session featuring natural and creative portraits.
-                            </p>
-
-                        </div>
-
-                    </a>
-
-
-
-                    <!-- PRENUP 05 -->
-
-                    <a
-                        href="https://www.facebook.com/share/p/1BsN3eJRmi/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="portfolio-card"
-                    >
-
-                        <div class="portfolio-card-top">
-
-                            <div class="portfolio-icon">
-                                📸
-                            </div>
-
-                            <div class="portfolio-arrow">
-                                ↗
-                            </div>
-
-                        </div>
-
-
-                        <div class="portfolio-card-content">
-
-                            <span class="tag">
-                                PRENUP PHOTOGRAPHY
-                            </span>
-
-                            <h4>
-                                Prenup Collection 05
-                            </h4>
-
-                            <p>
-                                Additional pre-wedding portraits and special moments.
-                            </p>
-
-                        </div>
-
-                    </a>
-
-
-                </div>
-
-            </div>
-
-
-        </div>
-
-
-
-        <!-- =====================================================
-             NOTE
-             ===================================================== -->
-
-        <div class="creative-note">
-
-            <strong>
-                VIEW ORIGINAL WORK
-            </strong>
-
-            <p>
-                Each portfolio card links directly to the original
-                photography or video post on Facebook. Click a project
-                to view the complete work, photos and videos.
-            </p>
-
-        </div>
-
-
-    </section>
-
-
-
-    <!-- =====================================================
-         PAGE NAVIGATION
-         ===================================================== -->
-
-    <div class="page-navigation">
-
-        <a href="graphic-design.html">
-            ← PREVIOUS
-        </a>
-
-        <a href="leadership.html">
-            NEXT: LEADERSHIP →
-        </a>
-
-    </div>
+</div>
 
 
 </main>
 
 
-
-<!-- =========================================================
-     FOOTER
-     ========================================================= -->
-
 <footer>
 
-    <div class="footer-logo">
-        LENIE JOY <span>BADIL</span>
+    <div class="footer-top">
+
+        <div>
+
+            <h3>
+                LENIE JOY <span>BADIL</span>
+            </h3>
+
+            <p>
+                Photography • Visual Storytelling
+            </p>
+
+        </div>
+
+        <div class="footer-links">
+
+            <a href="resume.html">Resume</a>
+            <a href="contact.html">Contact</a>
+
+        </div>
+
     </div>
 
-    <small>
-        © 2026 Lenie Joy Cases Badil
-    </small>
+
+    <div class="footer-bottom">
+        © 2026 Lenie Joy Cases Badil. All Rights Reserved.
+    </div>
 
 </footer>
 
+
+<div class="lightbox" id="lightbox">
+
+    <button class="lightbox-close" id="lightboxClose">×</button>
+
+    <img id="lightboxImage" src="" alt="">
+
+    <div class="lightbox-title" id="lightboxTitle"></div>
+
+</div>
 
 
 <script src="script.js"></script>

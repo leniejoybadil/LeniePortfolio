@@ -1,35 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Resume | Lenie Joy Badil</title>
+
     <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
 
 <div class="background">
+
     <div class="orb orb1"></div>
     <div class="orb orb2"></div>
     <div class="grid"></div>
+
 </div>
+
 
 <header class="navbar">
 
     <a href="index.html" class="logo">
+
         <span>LB</span>
+
         <div>
             <strong>LENIE JOY</strong>
             <small>PORTFOLIO</small>
         </div>
+
     </a>
 
-    <nav>
+
+    <button class="menu-toggle"
+            id="menuToggle"
+            aria-expanded="false">
+
+        <span></span>
+        <span></span>
+        <span></span>
+
+    </button>
+
+
+    <nav class="nav-links" id="navLinks">
+
         <a href="index.html">Home</a>
         <a href="technical.html">My Work</a>
         <a href="resume.html" class="active">Resume</a>
         <a href="contact.html">Contact</a>
+
     </nav>
 
 </header>
@@ -37,57 +62,106 @@
 
 <main class="inner-page">
 
-    <div class="page-heading">
 
-        <span>PROFESSIONAL PROFILE</span>
+<div class="page-heading">
 
-        <h1>My <em>Resume</em></h1>
+    <span>PROFESSIONAL PROFILE</span>
 
-        <p>
-            Download my resume to learn more about my
-            education, skills, experience and qualifications.
-        </p>
+    <h1>
+        My <em>Resume</em>
+    </h1>
 
+    <p>
+        Download my resume to learn more about my
+        education, skills, experience and qualifications.
+    </p>
+
+</div>
+
+
+<section class="resume-card">
+
+    <div class="resume-icon">
+        ↓
     </div>
 
 
-    <section class="resume-card">
+    <div>
 
-        <div class="resume-icon">
-            ↓
-        </div>
+        <span class="project-tag">
+            PDF DOCUMENT
+        </span>
 
-        <div>
+        <h2>
+            Lenie Joy Cases Badil
+        </h2>
 
-            <span class="project-tag">
-                PDF DOCUMENT
-            </span>
+        <p>
+            Computer Engineering Graduate
+        </p>
 
-            <h2>
-                Lenie Joy Cases Badil
-            </h2>
 
-            <p>
-                Computer Engineering Graduate
-            </p>
+        <div class="resume-actions">
 
             <a href="assets/resume.pdf"
                download
                class="main-button">
+
                 DOWNLOAD RESUME ↓
+
+            </a>
+
+
+            <a href="assets/resume.pdf"
+               target="_blank"
+               class="outline-button">
+
+                VIEW RESUME ↗
+
             </a>
 
         </div>
 
-    </section>
+    </div>
+
+</section>
+
 
 </main>
 
 
 <footer>
-    <div class="footer-logo">LENIE JOY <span>BADIL</span></div>
-    <small>© 2026 Lenie Joy Cases Badil</small>
+
+    <div class="footer-top">
+
+        <div>
+
+            <h3>
+                LENIE JOY <span>BADIL</span>
+            </h3>
+
+            <p>
+                Computer Engineering • Creative Technology
+            </p>
+
+        </div>
+
+        <div class="footer-links">
+
+            <a href="index.html">Home</a>
+            <a href="contact.html">Contact</a>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+        © 2026 Lenie Joy Cases Badil. All Rights Reserved.
+    </div>
+
 </footer>
+
 
 <script src="script.js"></script>
 

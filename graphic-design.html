@@ -1,119 +1,218 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Graphic Design | Lenie Joy Badil</title>
+
     <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
 
 <div class="background">
+
     <div class="orb orb1"></div>
     <div class="orb orb2"></div>
     <div class="grid"></div>
+
 </div>
+
 
 <header class="navbar">
 
     <a href="index.html" class="logo">
+
         <span>LB</span>
+
         <div>
             <strong>LENIE JOY</strong>
             <small>PORTFOLIO</small>
         </div>
+
     </a>
 
-    <nav>
+
+    <button class="menu-toggle"
+            id="menuToggle"
+            aria-expanded="false">
+
+        <span></span>
+        <span></span>
+        <span></span>
+
+    </button>
+
+
+    <nav class="nav-links" id="navLinks">
+
         <a href="index.html">Home</a>
         <a href="technical.html" class="active">My Work</a>
         <a href="resume.html">Resume</a>
         <a href="contact.html">Contact</a>
+
     </nav>
 
 </header>
 
 
-<main class="inner-page">
-
-    <div class="page-heading">
-
-        <span>04 / MY WORK</span>
-
-        <h1>Graphic <em>Design</em></h1>
-
-        <p>
-            Visual designs, posters, social media graphics,
-            layouts and promotional materials.
-        </p>
-
-    </div>
+<main class="project-page">
 
 
-    <section class="design-gallery">
+<section class="page-header">
 
-        <div class="gallery-intro">
-            <span>SELECTED WORKS</span>
-            <h2>Creative Visuals</h2>
-            <p>
-                Scroll through the collection to explore
-                selected graphic design projects.
-            </p>
-        </div>
+    <span class="section-number">
+        03 / MY WORK
+    </span>
+
+    <h1>
+        Graphic <span>Design</span>
+    </h1>
+
+    <p>
+        Visual communication, posters, layouts,
+        branding and digital creative work.
+    </p>
+
+</section>
 
 
-        <div class="horizontal-gallery">
+<section class="visual-gallery-page">
 
-            <div class="design-item">
-                <span>01</span>
-                <img src="assets/graphics/design-1.jpg">
-            </div>
+    <div class="visual-gallery">
 
-            <div class="design-item">
-                <span>02</span>
-                <img src="assets/graphics/design-2.jpg">
-            </div>
+        <div class="visual-card lightbox-trigger"
+             data-image="assets/graphics/design-1.jpg"
+             data-title="Graphic Design 01">
 
-            <div class="design-item">
-                <span>03</span>
-                <img src="assets/graphics/design-3.jpg">
-            </div>
+            <img src="assets/graphics/design-1.jpg"
+                 alt="Graphic Design 1">
 
-            <div class="design-item">
-                <span>04</span>
-                <img src="assets/graphics/design-4.jpg">
-            </div>
-
-            <div class="design-item">
-                <span>05</span>
-                <img src="assets/graphics/design-5.jpg">
+            <div class="image-overlay">
+                <span>VIEW ↗</span>
             </div>
 
         </div>
 
-    </section>
+
+        <div class="visual-card lightbox-trigger"
+             data-image="assets/graphics/design-2.jpg"
+             data-title="Graphic Design 02">
+
+            <img src="assets/graphics/design-2.jpg"
+                 alt="Graphic Design 2">
+
+            <div class="image-overlay">
+                <span>VIEW ↗</span>
+            </div>
+
+        </div>
 
 
-    <div class="scroll-hint">
-        ← DRAG / SCROLL TO EXPLORE →
+        <div class="visual-card lightbox-trigger"
+             data-image="assets/graphics/design-3.jpg"
+             data-title="Graphic Design 03">
+
+            <img src="assets/graphics/design-3.jpg"
+                 alt="Graphic Design 3">
+
+            <div class="image-overlay">
+                <span>VIEW ↗</span>
+            </div>
+
+        </div>
+
+
+        <div class="visual-card lightbox-trigger"
+             data-image="assets/graphics/design-4.jpg"
+             data-title="Graphic Design 04">
+
+            <img src="assets/graphics/design-4.jpg"
+                 alt="Graphic Design 4">
+
+            <div class="image-overlay">
+                <span>VIEW ↗</span>
+            </div>
+
+        </div>
+
+
+        <div class="visual-card lightbox-trigger"
+             data-image="assets/graphics/design-5.jpg"
+             data-title="Graphic Design 05">
+
+            <img src="assets/graphics/design-5.jpg"
+                 alt="Graphic Design 5">
+
+            <div class="image-overlay">
+                <span>VIEW ↗</span>
+            </div>
+
+        </div>
+
     </div>
 
+</section>
 
-    <div class="page-navigation">
 
-        <a href="social-media.html">← PREVIOUS</a>
-        <a href="photography.html">NEXT: PHOTOGRAPHY →</a>
+<div class="page-navigation">
 
-    </div>
+    <a href="index.html">
+        ← BACK HOME
+    </a>
+
+    <a href="photography.html">
+        NEXT: PHOTOGRAPHY →
+    </a>
+
+</div>
+
 
 </main>
 
 
 <footer>
-    <div class="footer-logo">LENIE JOY <span>BADIL</span></div>
-    <small>© 2026 Lenie Joy Cases Badil</small>
+
+    <div class="footer-top">
+
+        <div>
+            <h3>
+                LENIE JOY <span>BADIL</span>
+            </h3>
+
+            <p>
+                Graphic Design • Visual Communication
+            </p>
+        </div>
+
+        <div class="footer-links">
+            <a href="resume.html">Resume</a>
+            <a href="contact.html">Contact</a>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        © 2026 Lenie Joy Cases Badil. All Rights Reserved.
+    </div>
+
 </footer>
+
+
+<div class="lightbox" id="lightbox">
+
+    <button class="lightbox-close" id="lightboxClose">×</button>
+
+    <img id="lightboxImage" src="" alt="">
+
+    <div class="lightbox-title" id="lightboxTitle"></div>
+
+</div>
+
 
 <script src="script.js"></script>
 
