@@ -145,20 +145,16 @@
 
         <!-- =================================================
              FLOATING PHOTO CARDS
-             
-             ONLY THE PHOTO IS CLICKABLE
-             NO VIEW PHOTO OVERLAY
         ================================================= -->
-
 
         <div class="floating-media-grid photography-grid">
 
 
-            <!-- =================================================
-                 PHOTO 01
-            ================================================= -->
+            <!-- PHOTO 01 -->
 
-            <div class="floating-media-card photo-floating-card">
+            <div
+                class="floating-media-card photo-floating-card"
+            >
 
                 <div class="media-card-top">
 
@@ -175,19 +171,20 @@
 
                 <!-- CLICKABLE PHOTO -->
 
-                <div
-                    class="photo-preview photography-lightbox-trigger"
+                <a
+                    href="assets/photography/photo-1.jpg"
+                    class="photo-preview lightbox-trigger"
                     data-image="assets/photography/photo-1.jpg"
                     data-title="Photography 01"
                 >
 
                     <img
                         src="assets/photography/photo-1.jpg"
-                        alt="Photography 1"
+                        alt="Photography 01"
                         loading="lazy"
                     >
 
-                </div>
+                </a>
 
 
                 <div class="media-card-content">
@@ -222,11 +219,11 @@
 
 
 
-            <!-- =================================================
-                 PHOTO 02
-            ================================================= -->
+            <!-- PHOTO 02 -->
 
-            <div class="floating-media-card photo-floating-card">
+            <div
+                class="floating-media-card photo-floating-card"
+            >
 
                 <div class="media-card-top">
 
@@ -243,19 +240,20 @@
 
                 <!-- CLICKABLE PHOTO -->
 
-                <div
-                    class="photo-preview photography-lightbox-trigger"
+                <a
+                    href="assets/photography/photo-2.jpg"
+                    class="photo-preview lightbox-trigger"
                     data-image="assets/photography/photo-2.jpg"
                     data-title="Photography 02"
                 >
 
                     <img
                         src="assets/photography/photo-2.jpg"
-                        alt="Photography 2"
+                        alt="Photography 02"
                         loading="lazy"
                     >
 
-                </div>
+                </a>
 
 
                 <div class="media-card-content">
@@ -290,11 +288,11 @@
 
 
 
-            <!-- =================================================
-                 PHOTO 03
-            ================================================= -->
+            <!-- PHOTO 03 -->
 
-            <div class="floating-media-card photo-floating-card">
+            <div
+                class="floating-media-card photo-floating-card"
+            >
 
                 <div class="media-card-top">
 
@@ -311,19 +309,20 @@
 
                 <!-- CLICKABLE PHOTO -->
 
-                <div
-                    class="photo-preview photography-lightbox-trigger"
+                <a
+                    href="assets/photography/photo-3.jpg"
+                    class="photo-preview lightbox-trigger"
                     data-image="assets/photography/photo-3.jpg"
                     data-title="Photography 03"
                 >
 
                     <img
                         src="assets/photography/photo-3.jpg"
-                        alt="Photography 3"
+                        alt="Photography 03"
                         loading="lazy"
                     >
 
-                </div>
+                </a>
 
 
                 <div class="media-card-content">
@@ -358,11 +357,11 @@
 
 
 
-            <!-- =================================================
-                 PHOTO 04
-            ================================================= -->
+            <!-- PHOTO 04 -->
 
-            <div class="floating-media-card photo-floating-card">
+            <div
+                class="floating-media-card photo-floating-card"
+            >
 
                 <div class="media-card-top">
 
@@ -379,19 +378,20 @@
 
                 <!-- CLICKABLE PHOTO -->
 
-                <div
-                    class="photo-preview photography-lightbox-trigger"
+                <a
+                    href="assets/photography/photo-4.jpg"
+                    class="photo-preview lightbox-trigger"
                     data-image="assets/photography/photo-4.jpg"
                     data-title="Photography 04"
                 >
 
                     <img
                         src="assets/photography/photo-4.jpg"
-                        alt="Photography 4"
+                        alt="Photography 04"
                         loading="lazy"
                     >
 
-                </div>
+                </a>
 
 
                 <div class="media-card-content">
@@ -426,11 +426,11 @@
 
 
 
-            <!-- =================================================
-                 PHOTO 05
-            ================================================= -->
+            <!-- PHOTO 05 -->
 
-            <div class="floating-media-card photo-floating-card">
+            <div
+                class="floating-media-card photo-floating-card"
+            >
 
                 <div class="media-card-top">
 
@@ -447,19 +447,20 @@
 
                 <!-- CLICKABLE PHOTO -->
 
-                <div
-                    class="photo-preview photography-lightbox-trigger"
+                <a
+                    href="assets/photography/photo-5.jpg"
+                    class="photo-preview lightbox-trigger"
                     data-image="assets/photography/photo-5.jpg"
                     data-title="Photography 05"
                 >
 
                     <img
                         src="assets/photography/photo-5.jpg"
-                        alt="Photography 5"
+                        alt="Photography 05"
                         loading="lazy"
                     >
 
-                </div>
+                </a>
 
 
                 <div class="media-card-content">
@@ -1709,20 +1710,17 @@
 
 </footer>
 
+
+
 <!-- =========================================================
      LIGHTBOX
+     NO X BUTTON
 ========================================================= -->
 
-<div class="lightbox" id="lightbox">
-
-    <button
-        class="lightbox-close"
-        id="lightboxClose"
-        type="button"
-        aria-label="Close image"
-    >
-        ×
-    </button>
+<div
+    class="lightbox"
+    id="lightbox"
+>
 
     <img
         id="lightboxImage"
@@ -1738,12 +1736,12 @@
 </div>
 
 
+
 <!-- =========================================================
      SCRIPT
 ========================================================= -->
 
 <script src="script.js"></script>
-
 
 </body>
 

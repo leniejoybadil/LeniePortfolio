@@ -13,13 +13,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
             event.preventDefault();
 
-            const opened =
-                navLinks.classList.toggle("active");
+            const opened = navLinks.classList.toggle("active");
 
-            menuToggle.classList.toggle(
-                "active",
-                opened
-            );
+            menuToggle.classList.toggle("active", opened);
 
             menuToggle.setAttribute(
                 "aria-expanded",
@@ -48,6 +44,36 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
+    /* =========================================================
+       WELCOME GIRL ICON
+       
+       Shows for 8 seconds.
+       Disappears automatically.
+       Appears again when the page is refreshed/reloaded.
+    ========================================================= */
+
+    const girlWelcome = document.getElementById("girlWelcome");
+    const girlIcon = document.getElementById("girlIcon");
+
+    if (girlWelcome && girlIcon) {
+
+        girlIcon.src = "assets/girl-icon.png";
+
+        girlIcon.alt =
+            "Welcome to Lenie Joy Badil's Portfolio";
+
+        /* Show when page loads */
+        girlWelcome.classList.remove("hidden");
+
+        /* Hide after exactly 8 seconds */
+        setTimeout(function () {
+
+            girlWelcome.classList.add("hidden");
+
+        }, 8000);
+
+    }
+
 
     /* =========================================================
        LIGHTBOX ELEMENTS
@@ -64,7 +90,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const lightboxClose =
         document.getElementById("lightboxClose");
-
 
 
     /* =========================================================
@@ -96,7 +121,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-
     /* =========================================================
        CLOSE LIGHTBOX
     ========================================================= */
@@ -112,11 +136,12 @@ document.addEventListener("DOMContentLoaded", function () {
         document.body.classList.remove("no-scroll");
 
         if (lightboxImage) {
+
             lightboxImage.src = "";
+
         }
 
     }
-
 
 
     /* =========================================================
@@ -131,9 +156,11 @@ document.addEventListener("DOMContentLoaded", function () {
         };
 
 
-
     /* =========================================================
        PHOTOGRAPHY CLICKABLE IMAGES
+       
+       Clicking the photography picture opens it
+       exactly like the Technical & IoT image.
     ========================================================= */
 
     document.querySelectorAll(
@@ -174,10 +201,71 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
+    /* =========================================================
+       PHOTOGRAPHY IMAGE DIRECT SUPPORT
+       
+       Also supports:
+       data-image="assets/photography/photo-1.jpg"
+    ========================================================= */
+
+    document.querySelectorAll(
+        "[data-image]"
+    ).forEach(function (item) {
+
+        if (
+            item.classList.contains(
+                "lightbox-trigger"
+            )
+        ) {
+            return;
+        }
+
+        if (
+            item.tagName === "A" ||
+            item.tagName === "BUTTON"
+        ) {
+            return;
+        }
+
+        item.style.cursor = "pointer";
+
+        item.addEventListener(
+            "click",
+            function (event) {
+
+                event.preventDefault();
+                event.stopPropagation();
+
+                const image =
+                    item.getAttribute(
+                        "data-image"
+                    );
+
+                const title =
+                    item.getAttribute(
+                        "data-title"
+                    );
+
+                if (image) {
+
+                    openLightbox(
+                        image,
+                        title
+                    );
+
+                }
+
+            }
+        );
+
+    });
+
 
     /* =========================================================
        LIGHTBOX CLOSE X
-       THE X IS FULLY CLICKABLE
+       
+       FULLY CLICKABLE
+       LARGE CLICK AREA
     ========================================================= */
 
     if (lightboxClose) {
@@ -194,8 +282,16 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         );
 
-    }
+        /*
+           Make sure the X is above everything
+           and can always receive clicks.
+        */
 
+        lightboxClose.style.pointerEvents = "auto";
+        lightboxClose.style.cursor = "pointer";
+        lightboxClose.style.zIndex = "100002";
+
+    }
 
 
     /* =========================================================
@@ -208,7 +304,9 @@ document.addEventListener("DOMContentLoaded", function () {
             "click",
             function (event) {
 
-                if (event.target === lightbox) {
+                if (
+                    event.target === lightbox
+                ) {
 
                     closeLightbox();
 
@@ -218,7 +316,6 @@ document.addEventListener("DOMContentLoaded", function () {
         );
 
     }
-
 
 
     /* =========================================================
@@ -260,7 +357,6 @@ document.addEventListener("DOMContentLoaded", function () {
     );
 
 
-
     /* =========================================================
        TECHNICAL / IoT GALLERY
     ========================================================= */
@@ -283,12 +379,16 @@ document.addEventListener("DOMContentLoaded", function () {
             }
 
 
+            /* CHANGE MAIN IMAGE */
+
             mainImage.src = image;
 
             mainImage.alt =
                 title ||
                 "Technical & IoT Project";
 
+
+            /* UPDATE MAIN IMAGE LINK */
 
             if (mainLink) {
 
@@ -307,6 +407,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
             }
 
+
+            /* UPDATE ACTIVE THUMBNAIL */
 
             document.querySelectorAll(
                 ".thumbnail"
@@ -330,9 +432,10 @@ document.addEventListener("DOMContentLoaded", function () {
         };
 
 
-
     /* =========================================================
        TECHNICAL MAIN IMAGE
+       
+       Clicking the large image opens the current image.
     ========================================================= */
 
     const technicalMainImage =
@@ -356,6 +459,7 @@ document.addEventListener("DOMContentLoaded", function () {
             function (event) {
 
                 event.preventDefault();
+                event.stopPropagation();
 
                 openLightbox(
                     technicalMainImage.src,
@@ -368,7 +472,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-
     /* =========================================================
        TECHNICAL THUMBNAILS
     ========================================================= */
@@ -376,6 +479,11 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll(
         ".thumbnail"
     ).forEach(function (thumbnail) {
+
+        /*
+           If the HTML already has onclick,
+           leave it alone.
+        */
 
         if (
             thumbnail.hasAttribute(
@@ -424,7 +532,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-
     /* =========================================================
        IMAGE ERROR CHECK
     ========================================================= */
@@ -448,9 +555,10 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-
     /* =========================================================
-       NO SCROLL WHEN LIGHTBOX IS OPEN
+       LIGHTBOX / X FIX
+       
+       Ensures the close button stays clickable.
     ========================================================= */
 
     if (
@@ -478,21 +586,31 @@ document.addEventListener("DOMContentLoaded", function () {
             }
 
             .lightbox-close {
-                position: absolute;
-                top: 25px;
-                right: 25px;
-                z-index: 100001;
+                position: absolute !important;
 
-                width: 50px;
-                height: 50px;
+                top: 20px !important;
+                right: 20px !important;
 
-                cursor: pointer;
+                width: 55px !important;
+                height: 55px !important;
 
-                pointer-events: auto;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
 
-                display: flex;
-                align-items: center;
-                justify-content: center;
+                cursor: pointer !important;
+
+                pointer-events: auto !important;
+
+                z-index: 100002 !important;
+
+                border: none;
+
+                font-size: 32px;
+
+                line-height: 1;
+
+                touch-action: manipulation;
             }
 
             .lightbox img {
@@ -500,12 +618,33 @@ document.addEventListener("DOMContentLoaded", function () {
                 z-index: 100000;
             }
 
+            .lightbox-title {
+                position: relative;
+                z-index: 100001;
+            }
+
+            /*
+               Photography images behave like
+               the Technical & IoT gallery.
+            */
+
+            .photo-floating-card {
+                cursor: pointer;
+            }
+
+            .photo-preview {
+                cursor: pointer;
+            }
+
+            .photo-preview img {
+                cursor: pointer;
+            }
+
         `;
 
         document.head.appendChild(style);
 
     }
-
 
 
     /* =========================================================
