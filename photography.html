@@ -1,227 +1,1504 @@
-<!DOCTYPE html>
-<html lang="en">
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap');
+
+
+/* =========================================
+   VARIABLES
+========================================= */
+
+:root {
+    --cream: #f4ede3;
+    --cream-light: #fffdf9;
+    --cream-dark: #e5d5c1;
+
+    --brown: #9a7450;
+    --brown-dark: #4b392c;
+
+    --text: #2c241e;
+    --muted: #766c62;
+
+    --border: #d9c8b4;
+    --white: #ffffff;
+
+    --shadow:
+        0 20px 60px rgba(60, 45, 30, .10);
+}
+
+
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "DM Sans", sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font-family: inherit;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+
+/* =========================================
+   BACKGROUND
+========================================= */
+
+.background {
+    position: fixed;
+    inset: 0;
+    z-index: -10;
+    overflow: hidden;
+    background: var(--cream);
+}
+
+.orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: .20;
+}
+
+.orb1 {
+    width: 400px;
+    height: 400px;
+    top: -180px;
+    right: -100px;
+    background: #c9a27b;
+}
+
+.orb2 {
+    width: 350px;
+    height: 350px;
+    bottom: -160px;
+    left: -120px;
+    background: #d8b997;
+}
+
+.grid {
+    position: absolute;
+    inset: 0;
+    opacity: .15;
 
-<head>
+    background-image:
+        linear-gradient(
+            rgba(154,116,80,.08) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(154,116,80,.08) 1px,
+            transparent 1px
+        );
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    background-size: 55px 55px;
+}
 
-    <title>Photography | Lenie Joy Badil</title>
 
-    <link rel="stylesheet" href="style.css">
+/* =========================================
+   NAVBAR
+========================================= */
 
-</head>
+.navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
 
-<body>
+    width: 100%;
 
-<div class="background">
+    padding: 25px 7%;
 
-    <div class="orb orb1"></div>
-    <div class="orb orb2"></div>
-    <div class="grid"></div>
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-</div>
+    z-index: 1000;
+}
 
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 
-<header class="navbar">
+    color: var(--brown-dark);
+}
 
-    <a href="index.html" class="logo">
+.logo > span {
+    width: 43px;
+    height: 43px;
 
-        <span>LB</span>
+    display: grid;
+    place-items: center;
 
-        <div>
-            <strong>LENIE JOY</strong>
-            <small>PORTFOLIO</small>
-        </div>
+    border: 1px solid var(--brown);
+    border-radius: 50%;
 
-    </a>
+    font-family: "Playfair Display", serif;
+    font-size: 15px;
+    font-weight: 700;
+}
 
+.logo > div {
+    display: flex;
+    flex-direction: column;
+}
 
-    <button class="menu-toggle"
-            id="menuToggle"
-            aria-expanded="false">
+.logo strong {
+    font-family: "Playfair Display", serif;
+    font-size: 14px;
+    line-height: 1;
+}
 
-        <span></span>
-        <span></span>
-        <span></span>
+.logo small {
+    margin-top: 4px;
 
-    </button>
+    font-size: 7px;
+    font-weight: 700;
+    letter-spacing: 2px;
 
+    color: var(--brown);
+}
 
-    <nav class="nav-links" id="navLinks">
 
-        <a href="index.html">Home</a>
-        <a href="technical.html" class="active">My Work</a>
-        <a href="resume.html">Resume</a>
-        <a href="contact.html">Contact</a>
+/* =========================================
+   NAV LINKS
+========================================= */
 
-    </nav>
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
 
-</header>
+.nav-links a {
+    position: relative;
 
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
 
-<main class="project-page">
+    transition: .25s ease;
+}
 
+.nav-links a::after {
+    content: "";
 
-<section class="page-header">
+    position: absolute;
 
-    <span class="section-number">
-        04 / MY WORK
-    </span>
+    left: 0;
+    bottom: -7px;
 
-    <h1>
-        Photo<span>graphy</span>
-    </h1>
+    width: 0;
+    height: 1px;
 
-    <p>
-        Event, community and creative photography
-        documenting people, moments and experiences.
-    </p>
+    background: var(--brown);
 
-</section>
+    transition: .25s ease;
+}
 
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--brown);
+}
 
-<section class="visual-gallery-page">
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
 
-    <div class="visual-gallery">
 
+/* =========================================
+   MOBILE MENU
+========================================= */
 
-        <div class="visual-card lightbox-trigger"
-             data-image="assets/photography/photo-1.jpg"
-             data-title="Photography 01">
+.menu-toggle {
+    display: none;
 
-            <img src="assets/photography/photo-1.jpg"
-                 alt="Photography 1">
+    width: 43px;
+    height: 43px;
 
-            <div class="image-overlay">
-                <span>VIEW ↗</span>
-            </div>
+    padding: 9px;
 
-        </div>
+    border: 1px solid var(--border);
+    border-radius: 10px;
 
+    background: rgba(255,255,255,.75);
 
-        <div class="visual-card lightbox-trigger"
-             data-image="assets/photography/photo-2.jpg"
-             data-title="Photography 02">
+    cursor: pointer;
+}
 
-            <img src="assets/photography/photo-2.jpg"
-                 alt="Photography 2">
+.menu-toggle span {
+    display: block;
 
-            <div class="image-overlay">
-                <span>VIEW ↗</span>
-            </div>
+    width: 100%;
+    height: 2px;
 
-        </div>
+    margin: 5px 0;
 
+    background: var(--brown-dark);
 
-        <div class="visual-card lightbox-trigger"
-             data-image="assets/photography/photo-3.jpg"
-             data-title="Photography 03">
+    transition: .25s ease;
+}
 
-            <img src="assets/photography/photo-3.jpg"
-                 alt="Photography 3">
+.menu-toggle.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
 
-            <div class="image-overlay">
-                <span>VIEW ↗</span>
-            </div>
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
 
-        </div>
+.menu-toggle.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
 
 
-        <div class="visual-card lightbox-trigger"
-             data-image="assets/photography/photo-4.jpg"
-             data-title="Photography 04">
+/* =========================================
+   PROJECT PAGE
+========================================= */
 
-            <img src="assets/photography/photo-4.jpg"
-                 alt="Photography 4">
+.project-page {
+    width: 100%;
+    padding-top: 140px;
+}
 
-            <div class="image-overlay">
-                <span>VIEW ↗</span>
-            </div>
 
-        </div>
+/* =========================================
+   PAGE HEADER
+========================================= */
 
+.page-header {
+    width: min(1100px, 86%);
+    margin: 0 auto;
 
-        <div class="visual-card lightbox-trigger"
-             data-image="assets/photography/photo-5.jpg"
-             data-title="Photography 05">
+    padding: 50px 0 75px;
+}
 
-            <img src="assets/photography/photo-5.jpg"
-                 alt="Photography 5">
+.page-header .section-number {
+    display: block;
 
-            <div class="image-overlay">
-                <span>VIEW ↗</span>
-            </div>
+    color: var(--brown);
 
-        </div>
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
 
+.page-header h1 {
+    margin-top: 14px;
 
-    </div>
+    font-family: "Playfair Display", serif;
 
-</section>
+    font-size: clamp(55px, 8vw, 100px);
+    line-height: .9;
 
+    letter-spacing: -4px;
+}
 
-<div class="page-navigation">
+.page-header h1 span {
+    color: var(--brown);
+}
 
-    <a href="graphic-design.html">
-        ← GRAPHIC DESIGN
-    </a>
+.page-header p {
+    max-width: 600px;
 
-    <a href="social-media.html">
-        NEXT: SOCIAL MEDIA →
-    </a>
+    margin-top: 20px;
 
-</div>
+    color: var(--muted);
 
+    font-size: 14px;
+    line-height: 1.8;
+}
 
-</main>
 
+/* =========================================
+   PHOTO SHOWCASE
+========================================= */
 
-<footer>
+.photo-showcase {
+    width: 100%;
 
-    <div class="footer-top">
+    padding: 70px 0 90px;
 
-        <div>
+    background:
+        rgba(255,253,249,.70);
 
-            <h3>
-                LENIE JOY <span>BADIL</span>
-            </h3>
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
 
-            <p>
-                Photography • Visual Storytelling
-            </p>
+.showcase-heading {
+    width: min(1100px, 86%);
+    margin: 0 auto 35px;
 
-        </div>
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
 
-        <div class="footer-links">
+    gap: 40px;
+}
 
-            <a href="resume.html">Resume</a>
-            <a href="contact.html">Contact</a>
+.showcase-heading span,
+.visual-section-heading > span {
+    color: var(--brown);
 
-        </div>
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
 
-    </div>
+.showcase-heading h2,
+.visual-section-heading h2 {
+    margin-top: 10px;
 
+    font-family: "Playfair Display", serif;
 
-    <div class="footer-bottom">
-        © 2026 Lenie Joy Cases Badil. All Rights Reserved.
-    </div>
+    font-size: clamp(38px, 5vw, 60px);
+    line-height: 1;
+}
 
-</footer>
+.showcase-heading h2 em,
+.visual-section-heading h2 em {
+    color: var(--brown);
+}
 
+.showcase-heading p {
+    max-width: 300px;
 
-<div class="lightbox" id="lightbox">
+    color: var(--muted);
 
-    <button class="lightbox-close" id="lightboxClose">×</button>
+    font-size: 11px;
+    line-height: 1.7;
+}
 
-    <img id="lightboxImage" src="" alt="">
 
-    <div class="lightbox-title" id="lightboxTitle"></div>
+/* =========================================
+   HORIZONTAL PHOTO SCROLL
+========================================= */
 
-</div>
+.photo-scroll {
+    width: 100%;
 
+    display: flex;
 
-<script src="script.js"></script>
+    gap: 18px;
 
-</body>
-</html>
+    padding:
+        10px
+        max(7%, calc((100vw - 1100px) / 2))
+        25px;
+
+    overflow-x: auto;
+
+    scroll-snap-type: x mandatory;
+
+    scrollbar-width: thin;
+    scrollbar-color: var(--brown) transparent;
+
+    cursor: grab;
+}
+
+.photo-scroll:active {
+    cursor: grabbing;
+}
+
+.photo-scroll::-webkit-scrollbar {
+    height: 5px;
+}
+
+.photo-scroll::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.photo-scroll::-webkit-scrollbar-thumb {
+    background: var(--brown);
+    border-radius: 20px;
+}
+
+
+/* =========================================
+   PHOTO ITEM
+========================================= */
+
+.photo-item {
+    position: relative;
+
+    flex: 0 0 330px;
+
+    height: 470px;
+
+    overflow: hidden;
+
+    border: 1px solid var(--border);
+    border-radius: 5px;
+
+    background: var(--cream-dark);
+
+    scroll-snap-align: center;
+
+    cursor: pointer;
+
+    box-shadow: 0 15px 40px rgba(50,40,30,.08);
+
+    transition:
+        transform .4s ease,
+        box-shadow .4s ease;
+}
+
+.photo-item:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 25px 60px rgba(50,40,30,.16);
+}
+
+.photo-item img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform .6s ease,
+        filter .4s ease;
+}
+
+.photo-item:hover img {
+    transform: scale(1.05);
+}
+
+.photo-number {
+    position: absolute;
+
+    top: 18px;
+    left: 18px;
+
+    width: 38px;
+    height: 38px;
+
+    display: grid;
+    place-items: center;
+
+    border: 1px solid rgba(255,255,255,.55);
+    border-radius: 50%;
+
+    background: rgba(40,30,20,.30);
+
+    color: white;
+
+    font-size: 9px;
+    font-weight: 700;
+
+    backdrop-filter: blur(5px);
+}
+
+.photo-overlay {
+    position: absolute;
+    inset: auto 0 0 0;
+
+    padding: 28px 20px 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            transparent,
+            rgba(35,25,18,.75)
+        );
+
+    opacity: 0;
+
+    transform: translateY(15px);
+
+    transition:
+        opacity .35s ease,
+        transform .35s ease;
+}
+
+.photo-item:hover .photo-overlay {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.photo-overlay span {
+    font-size: 8px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.photo-overlay b {
+    font-size: 18px;
+}
+
+
+/* =========================================
+   SCROLL HINT
+========================================= */
+
+.scroll-hint {
+    width: min(1100px, 86%);
+    margin: 25px auto 0;
+
+    color: var(--muted);
+
+    font-size: 8px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+
+/* =========================================
+   VISUAL CATEGORY SECTION
+========================================= */
+
+.visual-category-section {
+    width: min(1100px, 86%);
+
+    margin: auto;
+
+    padding: 100px 0;
+}
+
+.visual-section-heading {
+    margin-bottom: 55px;
+}
+
+.visual-section-heading p {
+    max-width: 550px;
+
+    margin-top: 14px;
+
+    color: var(--muted);
+
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   CATEGORY
+========================================= */
+
+.visual-category {
+    padding: 35px 0;
+
+    border-top: 1px solid var(--border);
+}
+
+.category-title {
+    display: flex;
+    align-items: center;
+
+    gap: 18px;
+
+    margin-bottom: 22px;
+}
+
+.category-title > span {
+    color: var(--brown);
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 20px;
+}
+
+.category-title small {
+    color: var(--brown);
+
+    font-size: 8px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.category-title h3 {
+    margin-top: 4px;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 29px;
+}
+
+
+/* =========================================
+   SOCIAL PHOTO LINKS
+========================================= */
+
+.link-gallery {
+    display: flex;
+
+    gap: 10px;
+
+    overflow-x: auto;
+
+    padding-bottom: 10px;
+
+    scrollbar-width: thin;
+}
+
+.link-gallery::-webkit-scrollbar {
+    height: 4px;
+}
+
+.link-gallery::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 20px;
+}
+
+.social-photo-link {
+    flex: 0 0 220px;
+
+    min-height: 125px;
+
+    padding: 18px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    border: 1px solid var(--border);
+    border-radius: 8px;
+
+    background: rgba(255,253,249,.70);
+
+    transition:
+        transform .25s ease,
+        background .25s ease,
+        border-color .25s ease;
+}
+
+.social-photo-link:hover {
+    transform: translateY(-5px);
+
+    background: white;
+
+    border-color: var(--brown);
+}
+
+.social-photo-link span {
+    font-family: "Playfair Display", serif;
+
+    font-size: 17px;
+}
+
+.social-photo-link b {
+    color: var(--brown);
+
+    font-size: 8px;
+    letter-spacing: 1.5px;
+}
+
+
+/* =========================================
+   VIDEO SECTION
+========================================= */
+
+.video-section {
+    padding: 100px 7%;
+
+    background: var(--cream-light);
+
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.video-section .visual-section-heading {
+    width: min(1100px, 100%);
+    margin: 0 auto 50px;
+}
+
+
+/* =========================================
+   VIDEO GRID
+========================================= */
+
+.video-grid {
+    width: min(1100px, 100%);
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 14px;
+}
+
+
+/* =========================================
+   VIDEO CARD
+========================================= */
+
+.video-card {
+    position: relative;
+
+    min-height: 250px;
+
+    padding: 25px;
+
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    border: 1px solid var(--border);
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(154,116,80,.12),
+            rgba(255,255,255,.8)
+        );
+
+    transition:
+        transform .3s ease,
+        border-color .3s ease,
+        box-shadow .3s ease;
+}
+
+.video-card::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            120deg,
+            transparent,
+            rgba(255,255,255,.5),
+            transparent
+        );
+
+    transform: translateX(-100%);
+
+    transition: transform .7s ease;
+}
+
+.video-card:hover::before {
+    transform: translateX(100%);
+}
+
+.video-card:hover {
+    transform: translateY(-6px);
+
+    border-color: var(--brown);
+
+    box-shadow: var(--shadow);
+}
+
+.video-number {
+    color: var(--brown);
+
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.video-icon {
+    width: 55px;
+    height: 55px;
+
+    display: grid;
+    place-items: center;
+
+    border: 1px solid var(--brown);
+
+    border-radius: 50%;
+
+    color: var(--brown);
+
+    font-size: 16px;
+
+    transition:
+        background .3s ease,
+        color .3s ease;
+}
+
+.video-card:hover .video-icon {
+    background: var(--brown);
+    color: white;
+}
+
+.video-info small {
+    color: var(--brown);
+
+    font-size: 8px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.video-info h3 {
+    margin-top: 7px;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 25px;
+}
+
+.video-info span {
+    display: inline-block;
+
+    margin-top: 12px;
+
+    color: var(--brown);
+
+    font-size: 8px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+
+/* =========================================
+   PAGE NAVIGATION
+========================================= */
+
+.page-navigation {
+    width: min(1100px, 86%);
+
+    margin: 0 auto;
+
+    padding: 65px 0;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 15px;
+}
+
+.page-navigation a {
+    padding: 13px 18px;
+
+    border: 1px solid var(--border);
+    border-radius: 50px;
+
+    background: rgba(255,255,255,.35);
+
+    font-size: 8px;
+    font-weight: 800;
+    letter-spacing: 1px;
+
+    transition: .25s ease;
+}
+
+.page-navigation a:hover {
+    background: var(--brown-dark);
+    color: white;
+
+    border-color: var(--brown-dark);
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   LIGHTBOX
+========================================= */
+
+.lightbox {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 10000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 40px;
+
+    background:
+        rgba(35,27,21,.94);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+        opacity .3s ease,
+        visibility .3s ease;
+}
+
+.lightbox.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.lightbox-content {
+    max-width: 90vw;
+    max-height: 90vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 12px;
+}
+
+.lightbox-content img {
+    max-width: 85vw;
+    max-height: 82vh;
+
+    width: auto;
+    height: auto;
+
+    object-fit: contain;
+
+    border: 1px solid rgba(255,255,255,.2);
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.4);
+}
+
+.lightbox-title {
+    color: white;
+
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.lightbox-close,
+.lightbox-prev,
+.lightbox-next {
+    position: absolute;
+
+    width: 48px;
+    height: 48px;
+
+    display: grid;
+    place-items: center;
+
+    border: 1px solid rgba(255,255,255,.3);
+    border-radius: 50%;
+
+    background: rgba(255,255,255,.08);
+
+    color: white;
+
+    cursor: pointer;
+
+    transition:
+        background .25s ease,
+        transform .25s ease;
+}
+
+.lightbox-close:hover,
+.lightbox-prev:hover,
+.lightbox-next:hover {
+    background: var(--brown);
+
+    transform: scale(1.05);
+}
+
+.lightbox-close {
+    top: 25px;
+    right: 25px;
+
+    font-size: 25px;
+}
+
+.lightbox-prev {
+    left: 25px;
+
+    font-size: 20px;
+}
+
+.lightbox-next {
+    right: 25px;
+
+    font-size: 20px;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+    padding: 55px 7% 25px;
+
+    background: #29211b;
+
+    color: var(--cream-light);
+}
+
+.footer-top {
+    width: min(1100px, 100%);
+    margin: auto;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+.footer-top h3 {
+    font-family: "Playfair Display", serif;
+
+    font-size: 20px;
+}
+
+.footer-top h3 span {
+    color: var(--brown);
+}
+
+.footer-top p {
+    margin-top: 7px;
+
+    color: #afa399;
+
+    font-size: 10px;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 18px;
+}
+
+.footer-links a {
+    color: #d9d0c7;
+
+    font-size: 10px;
+
+    transition: .25s ease;
+}
+
+.footer-links a:hover {
+    color: white;
+}
+
+.footer-bottom {
+    width: min(1100px, 100%);
+
+    margin: 35px auto 0;
+
+    padding-top: 18px;
+
+    border-top: 1px solid rgba(255,255,255,.1);
+
+    color: #847a71;
+
+    font-size: 9px;
+}
+
+
+/* =========================================
+   GIRL WELCOME
+========================================= */
+
+.girl-welcome {
+    position: fixed;
+
+    right: 22px;
+    bottom: 20px;
+
+    z-index: 9999;
+
+    display: flex;
+    align-items: flex-end;
+
+    gap: 8px;
+
+    opacity: 1;
+    visibility: visible;
+
+    transition:
+        opacity .3s ease,
+        transform .3s ease,
+        visibility .3s ease;
+}
+
+.girl-welcome.hidden {
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(20px);
+
+    pointer-events: none;
+}
+
+.girl-icon {
+    width: 145px;
+    height: 145px;
+
+    object-fit: contain;
+
+    cursor: pointer;
+
+    filter:
+        drop-shadow(
+            0 10px 20px rgba(40,30,20,.22)
+        );
+
+    transition:
+        transform .25s ease;
+}
+
+.girl-icon:hover {
+    transform:
+        translateY(-8px)
+        scale(1.04);
+}
+
+.welcome-message {
+    width: 220px;
+
+    padding: 15px 17px;
+
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 15px 40px rgba(50,40,30,.14);
+}
+
+.welcome-message strong {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: var(--brown-dark);
+
+    font-size: 12px;
+}
+
+.welcome-message span {
+    color: var(--muted);
+
+    font-size: 10px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .project-page {
+        padding-top: 120px;
+    }
+
+    .photo-item {
+        flex-basis: 300px;
+        height: 430px;
+    }
+
+    .video-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .girl-icon {
+        width: 125px;
+        height: 125px;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+    .navbar {
+        position: fixed;
+
+        padding: 14px 5%;
+
+        background:
+            rgba(244,237,227,.95);
+
+        backdrop-filter: blur(10px);
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        position: fixed;
+
+        top: 0;
+        right: -100%;
+
+        width: min(82vw, 320px);
+        height: 100vh;
+
+        padding: 85px 28px 30px;
+
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 0;
+
+        background: var(--cream-light);
+
+        border-left: 1px solid var(--border);
+
+        box-shadow:
+            -15px 0 35px rgba(40,30,20,.12);
+
+        transition: right .3s ease;
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-links a {
+        width: 100%;
+
+        padding: 17px 0;
+
+        border-bottom: 1px solid var(--border);
+
+        font-size: 11px;
+    }
+
+
+    /* PAGE */
+
+    .project-page {
+        padding-top: 95px;
+    }
+
+    .page-header {
+        width: 90%;
+
+        padding: 40px 0 55px;
+    }
+
+    .page-header h1 {
+        font-size: clamp(52px, 16vw, 75px);
+
+        letter-spacing: -3px;
+    }
+
+    .page-header p {
+        font-size: 12px;
+    }
+
+
+    /* SHOWCASE */
+
+    .photo-showcase {
+        padding: 55px 0 65px;
+    }
+
+    .showcase-heading {
+        width: 90%;
+
+        display: block;
+    }
+
+    .showcase-heading h2 {
+        font-size: 42px;
+    }
+
+    .showcase-heading p {
+        margin-top: 14px;
+    }
+
+    .photo-scroll {
+        padding-left: 5%;
+        padding-right: 5%;
+
+        gap: 12px;
+    }
+
+    .photo-item {
+        flex: 0 0 78vw;
+
+        height: 105vw;
+
+        max-height: 500px;
+
+        border-radius: 7px;
+    }
+
+    .photo-overlay {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+
+
+    /* CATEGORY */
+
+    .visual-category-section {
+        width: 90%;
+
+        padding: 70px 0;
+    }
+
+    .visual-section-heading h2 {
+        font-size: 42px;
+    }
+
+    .category-title h3 {
+        font-size: 25px;
+    }
+
+    .social-photo-link {
+        flex-basis: 190px;
+    }
+
+
+    /* VIDEO */
+
+    .video-section {
+        padding: 70px 5%;
+    }
+
+    .video-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .video-card {
+        min-height: 230px;
+    }
+
+
+    /* NAVIGATION */
+
+    .page-navigation {
+        width: 90%;
+
+        flex-direction: column;
+    }
+
+    .page-navigation a {
+        text-align: center;
+    }
+
+
+    /* LIGHTBOX */
+
+    .lightbox {
+        padding: 20px;
+    }
+
+    .lightbox-content img {
+        max-width: 90vw;
+        max-height: 78vh;
+    }
+
+    .lightbox-prev,
+    .lightbox-next {
+        width: 42px;
+        height: 42px;
+    }
+
+    .lightbox-prev {
+        left: 10px;
+    }
+
+    .lightbox-next {
+        right: 10px;
+    }
+
+    .lightbox-close {
+        top: 15px;
+        right: 15px;
+    }
+
+
+    /* GIRL */
+
+    .girl-welcome {
+        right: 8px;
+        bottom: 8px;
+    }
+
+    .girl-icon {
+        width: 105px;
+        height: 105px;
+    }
+
+    .welcome-message {
+        width: 160px;
+
+        padding: 11px 13px;
+    }
+
+    .welcome-message strong {
+        font-size: 10px;
+    }
+
+    .welcome-message span {
+        font-size: 9px;
+    }
+
+
+    /* FOOTER */
+
+    .footer-top {
+        flex-direction: column;
+    }
+}
+
+
+/* =========================================
+   SMALL PHONES
+========================================= */
+
+@media (max-width: 380px) {
+
+    .logo strong {
+        font-size: 12px;
+    }
+
+    .photo-item {
+        flex-basis: 82vw;
+    }
+
+    .social-photo-link {
+        flex-basis: 175px;
+    }
+
+    .girl-icon {
+        width: 90px;
+        height: 90px;
+    }
+
+    .welcome-message {
+        width: 145px;
+    }
+}
