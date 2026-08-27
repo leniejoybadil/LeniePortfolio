@@ -34,7 +34,6 @@ document.addEventListener("DOMContentLoaded", function () {
             link.addEventListener("click", function () {
 
                 navLinks.classList.remove("active");
-
                 menuToggle.classList.remove("active");
 
                 menuToggle.setAttribute(
@@ -47,6 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
     }
+
 
 
     /* =========================================================
@@ -62,6 +62,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const lightboxTitle =
         document.getElementById("lightboxTitle");
 
+    const lightboxClose =
+        document.getElementById("lightboxClose");
+
+
 
     /* =========================================================
        OPEN LIGHTBOX
@@ -73,12 +77,10 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-
         lightboxImage.src = image;
 
         lightboxImage.alt =
             title || "Portfolio image";
-
 
         if (lightboxTitle) {
 
@@ -87,25 +89,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
         }
 
-
         lightbox.classList.add("active");
 
-        lightbox.setAttribute(
-            "aria-hidden",
-            "false"
-        );
-
-        document.body.classList.add(
-            "no-scroll"
-        );
+        document.body.classList.add("no-scroll");
 
     }
 
 
+
     /* =========================================================
        CLOSE LIGHTBOX
-       
-       There is NO X BUTTON.
     ========================================================= */
 
     function closeLightbox() {
@@ -114,33 +107,16 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-
         lightbox.classList.remove("active");
 
-        lightbox.setAttribute(
-            "aria-hidden",
-            "true"
-        );
+        document.body.classList.remove("no-scroll");
 
-        document.body.classList.remove(
-            "no-scroll"
-        );
-
-
-        setTimeout(function () {
-
-            if (
-                !lightbox.classList.contains("active") &&
-                lightboxImage
-            ) {
-
-                lightboxImage.src = "";
-
-            }
-
-        }, 200);
+        if (lightboxImage) {
+            lightboxImage.src = "";
+        }
 
     }
+
 
 
     /* =========================================================
@@ -150,16 +126,14 @@ document.addEventListener("DOMContentLoaded", function () {
     window.openPortfolioLightbox =
         function (image, title) {
 
-            openLightbox(
-                image,
-                title
-            );
+            openLightbox(image, title);
 
         };
 
 
+
     /* =========================================================
-       PHOTOGRAPHY LIGHTBOX TRIGGERS
+       PHOTOGRAPHY CLICKABLE IMAGES
     ========================================================= */
 
     document.querySelectorAll(
@@ -168,27 +142,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
         item.style.cursor = "pointer";
 
-
         item.addEventListener(
             "click",
             function (event) {
 
                 event.preventDefault();
-
                 event.stopPropagation();
-
 
                 const image =
                     item.getAttribute(
                         "data-image"
                     );
 
-
                 const title =
                     item.getAttribute(
                         "data-title"
                     );
-
 
                 if (image) {
 
@@ -205,75 +174,32 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
+
     /* =========================================================
-       ANY ELEMENT WITH data-image
+       LIGHTBOX CLOSE X
+       THE X IS FULLY CLICKABLE
     ========================================================= */
 
-    document.querySelectorAll(
-        "[data-image]"
-    ).forEach(function (item) {
+    if (lightboxClose) {
 
-        if (
-            item.classList.contains(
-                "lightbox-trigger"
-            )
-        ) {
-            return;
-        }
-
-
-        item.style.cursor = "pointer";
-
-
-        item.addEventListener(
+        lightboxClose.addEventListener(
             "click",
             function (event) {
 
-                if (
-                    item.tagName === "A" ||
-                    item.tagName === "BUTTON"
-                ) {
-                    return;
-                }
-
-
                 event.preventDefault();
-
                 event.stopPropagation();
 
-
-                const image =
-                    item.getAttribute(
-                        "data-image"
-                    );
-
-
-                const title =
-                    item.getAttribute(
-                        "data-title"
-                    );
-
-
-                if (image) {
-
-                    openLightbox(
-                        image,
-                        title
-                    );
-
-                }
+                closeLightbox();
 
             }
         );
 
-    });
+    }
+
 
 
     /* =========================================================
-       CLICK OUTSIDE IMAGE TO CLOSE
-       
-       Clicking the actual image DOES NOT close it.
-       Clicking the dark background closes it.
+       CLICK BACKGROUND TO CLOSE
     ========================================================= */
 
     if (lightbox) {
@@ -282,9 +208,7 @@ document.addEventListener("DOMContentLoaded", function () {
             "click",
             function (event) {
 
-                if (
-                    event.target === lightbox
-                ) {
+                if (event.target === lightbox) {
 
                     closeLightbox();
 
@@ -296,11 +220,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
+
     /* =========================================================
        ESCAPE KEY
-       
-       Escape can also close the lightbox.
-       No X button is used.
     ========================================================= */
 
     document.addEventListener(
@@ -309,6 +231,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (event.key === "Escape") {
 
+                closeLightbox();
+
                 if (navLinks) {
 
                     navLinks.classList.remove(
@@ -316,7 +240,6 @@ document.addEventListener("DOMContentLoaded", function () {
                     );
 
                 }
-
 
                 if (menuToggle) {
 
@@ -331,130 +254,45 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 }
 
-
-                closeLightbox();
-
             }
 
         }
     );
 
 
-    /* =========================================================
-       WELCOME GIRL
-       
-       IMAGE:
-       assets/girl-icon.png
-    ========================================================= */
-
-    const girlWelcome =
-        document.getElementById(
-            "girlWelcome"
-        );
-
-    const girlIcon =
-        document.getElementById(
-            "girlIcon"
-        );
-
-
-    if (girlWelcome && girlIcon) {
-
-        girlIcon.src =
-            "assets/girl-icon.png";
-
-        girlIcon.alt =
-            "Welcome to Lenie Joy Badil's Portfolio";
-
-        girlWelcome.classList.remove(
-            "hidden"
-        );
-
-
-        let girlTimer =
-            setTimeout(function () {
-
-                girlWelcome.classList.add(
-                    "hidden"
-                );
-
-            }, 10000);
-
-
-        girlIcon.addEventListener(
-            "click",
-            function () {
-
-                clearTimeout(
-                    girlTimer
-                );
-
-                girlWelcome.classList.toggle(
-                    "hidden"
-                );
-
-            }
-        );
-
-    }
-
 
     /* =========================================================
        TECHNICAL / IoT GALLERY
-       
-       Supports:
-       
-       onclick="changeTechnicalImage(
-           'assets/technical/tomatrix-1.jpg',
-           'Tomatrix 1',
-           this
-       )"
     ========================================================= */
 
     window.changeTechnicalImage =
-        function (
-            image,
-            title,
-            thumbnail
-        ) {
+        function (image, title, thumbnail) {
 
             const mainImage =
                 document.getElementById(
                     "technicalMainImage"
                 );
 
-
             const mainLink =
                 document.getElementById(
                     "technicalMainLink"
                 );
-
 
             if (!mainImage || !image) {
                 return;
             }
 
 
-            /* -----------------------------------------
-               CHANGE MAIN IMAGE
-            ----------------------------------------- */
-
-            mainImage.src =
-                image;
+            mainImage.src = image;
 
             mainImage.alt =
                 title ||
                 "Technical & IoT Project";
 
 
-            /* -----------------------------------------
-               UPDATE MAIN CLICKABLE LINK
-            ----------------------------------------- */
-
             if (mainLink) {
 
-                mainLink.href =
-                    image;
+                mainLink.href = image;
 
                 mainLink.setAttribute(
                     "data-image",
@@ -469,10 +307,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
             }
 
-
-            /* -----------------------------------------
-               UPDATE ACTIVE THUMBNAIL
-            ----------------------------------------- */
 
             document.querySelectorAll(
                 ".thumbnail"
@@ -496,17 +330,15 @@ document.addEventListener("DOMContentLoaded", function () {
         };
 
 
+
     /* =========================================================
        TECHNICAL MAIN IMAGE
-       
-       Clicking the large image opens the CURRENT image.
     ========================================================= */
 
     const technicalMainImage =
         document.getElementById(
             "technicalMainImage"
         );
-
 
     const technicalMainLink =
         document.getElementById(
@@ -525,25 +357,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 event.preventDefault();
 
-
-                const image =
-                    technicalMainImage.src;
-
-
-                const title =
-                    technicalMainImage.alt ||
-                    "Technical & IoT Project";
-
-
                 openLightbox(
-                    image,
-                    title
+                    technicalMainImage.src,
+                    technicalMainImage.alt
                 );
 
             }
         );
 
     }
+
 
 
     /* =========================================================
@@ -559,7 +382,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 "onclick"
             )
         ) {
+
             return;
+
         }
 
 
@@ -580,7 +405,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 event.preventDefault();
 
-
                 const title =
                     thumbnail.getAttribute(
                         "data-title"
@@ -598,6 +422,7 @@ document.addEventListener("DOMContentLoaded", function () {
         );
 
     });
+
 
 
     /* =========================================================
@@ -623,6 +448,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
+
     /* =========================================================
        NO SCROLL WHEN LIGHTBOX IS OPEN
     ========================================================= */
@@ -634,32 +460,56 @@ document.addEventListener("DOMContentLoaded", function () {
     ) {
 
         const style =
-            document.createElement(
-                "style"
-            );
-
+            document.createElement("style");
 
         style.id =
             "lightboxNoScrollStyle";
 
-
         style.textContent = `
+
             body.no-scroll {
                 overflow: hidden !important;
             }
+
+            .lightbox {
+                position: fixed;
+                inset: 0;
+                z-index: 99999;
+            }
+
+            .lightbox-close {
+                position: absolute;
+                top: 25px;
+                right: 25px;
+                z-index: 100001;
+
+                width: 50px;
+                height: 50px;
+
+                cursor: pointer;
+
+                pointer-events: auto;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .lightbox img {
+                position: relative;
+                z-index: 100000;
+            }
+
         `;
 
-
-        document.head.appendChild(
-            style
-        );
+        document.head.appendChild(style);
 
     }
 
 
+
     /* =========================================================
-       PAGE LOAD
-       START AT TOP
+       START PAGE AT TOP
     ========================================================= */
 
     if (

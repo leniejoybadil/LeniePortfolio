@@ -144,19 +144,21 @@
 
 
         <!-- =================================================
-             PHOTO CARDS
+             FLOATING PHOTO CARDS
+             
+             ONLY THE PHOTO IS CLICKABLE
+             NO VIEW PHOTO OVERLAY
         ================================================= -->
+
 
         <div class="floating-media-grid photography-grid">
 
 
-            <!-- PHOTO 01 -->
+            <!-- =================================================
+                 PHOTO 01
+            ================================================= -->
 
-            <div
-                class="floating-media-card photo-floating-card"
-                data-image="assets/photography/photo-1.jpg"
-                data-title="Photography 01"
-            >
+            <div class="floating-media-card photo-floating-card">
 
                 <div class="media-card-top">
 
@@ -171,7 +173,13 @@
                 </div>
 
 
-                <div class="photo-preview clickable-photo">
+                <!-- CLICKABLE PHOTO -->
+
+                <div
+                    class="photo-preview photography-lightbox-trigger"
+                    data-image="assets/photography/photo-1.jpg"
+                    data-title="Photography 01"
+                >
 
                     <img
                         src="assets/photography/photo-1.jpg"
@@ -199,17 +207,26 @@
 
                 </div>
 
+
+                <div class="facebook-button photo-view-button">
+
+                    VIEW PHOTO
+
+                    <b>
+                        ↗
+                    </b>
+
+                </div>
+
             </div>
 
 
 
-            <!-- PHOTO 02 -->
+            <!-- =================================================
+                 PHOTO 02
+            ================================================= -->
 
-            <div
-                class="floating-media-card photo-floating-card"
-                data-image="assets/photography/photo-2.jpg"
-                data-title="Photography 02"
-            >
+            <div class="floating-media-card photo-floating-card">
 
                 <div class="media-card-top">
 
@@ -224,7 +241,13 @@
                 </div>
 
 
-                <div class="photo-preview clickable-photo">
+                <!-- CLICKABLE PHOTO -->
+
+                <div
+                    class="photo-preview photography-lightbox-trigger"
+                    data-image="assets/photography/photo-2.jpg"
+                    data-title="Photography 02"
+                >
 
                     <img
                         src="assets/photography/photo-2.jpg"
@@ -252,17 +275,26 @@
 
                 </div>
 
+
+                <div class="facebook-button photo-view-button">
+
+                    VIEW PHOTO
+
+                    <b>
+                        ↗
+                    </b>
+
+                </div>
+
             </div>
 
 
 
-            <!-- PHOTO 03 -->
+            <!-- =================================================
+                 PHOTO 03
+            ================================================= -->
 
-            <div
-                class="floating-media-card photo-floating-card"
-                data-image="assets/photography/photo-3.jpg"
-                data-title="Photography 03"
-            >
+            <div class="floating-media-card photo-floating-card">
 
                 <div class="media-card-top">
 
@@ -277,7 +309,13 @@
                 </div>
 
 
-                <div class="photo-preview clickable-photo">
+                <!-- CLICKABLE PHOTO -->
+
+                <div
+                    class="photo-preview photography-lightbox-trigger"
+                    data-image="assets/photography/photo-3.jpg"
+                    data-title="Photography 03"
+                >
 
                     <img
                         src="assets/photography/photo-3.jpg"
@@ -305,17 +343,26 @@
 
                 </div>
 
+
+                <div class="facebook-button photo-view-button">
+
+                    VIEW PHOTO
+
+                    <b>
+                        ↗
+                    </b>
+
+                </div>
+
             </div>
 
 
 
-            <!-- PHOTO 04 -->
+            <!-- =================================================
+                 PHOTO 04
+            ================================================= -->
 
-            <div
-                class="floating-media-card photo-floating-card"
-                data-image="assets/photography/photo-4.jpg"
-                data-title="Photography 04"
-            >
+            <div class="floating-media-card photo-floating-card">
 
                 <div class="media-card-top">
 
@@ -330,7 +377,13 @@
                 </div>
 
 
-                <div class="photo-preview clickable-photo">
+                <!-- CLICKABLE PHOTO -->
+
+                <div
+                    class="photo-preview photography-lightbox-trigger"
+                    data-image="assets/photography/photo-4.jpg"
+                    data-title="Photography 04"
+                >
 
                     <img
                         src="assets/photography/photo-4.jpg"
@@ -358,17 +411,26 @@
 
                 </div>
 
+
+                <div class="facebook-button photo-view-button">
+
+                    VIEW PHOTO
+
+                    <b>
+                        ↗
+                    </b>
+
+                </div>
+
             </div>
 
 
 
-            <!-- PHOTO 05 -->
+            <!-- =================================================
+                 PHOTO 05
+            ================================================= -->
 
-            <div
-                class="floating-media-card photo-floating-card"
-                data-image="assets/photography/photo-5.jpg"
-                data-title="Photography 05"
-            >
+            <div class="floating-media-card photo-floating-card">
 
                 <div class="media-card-top">
 
@@ -383,7 +445,13 @@
                 </div>
 
 
-                <div class="photo-preview clickable-photo">
+                <!-- CLICKABLE PHOTO -->
+
+                <div
+                    class="photo-preview photography-lightbox-trigger"
+                    data-image="assets/photography/photo-5.jpg"
+                    data-title="Photography 05"
+                >
 
                     <img
                         src="assets/photography/photo-5.jpg"
@@ -408,6 +476,17 @@
                         Selected photography work and
                         visual storytelling.
                     </p>
+
+                </div>
+
+
+                <div class="facebook-button photo-view-button">
+
+                    VIEW PHOTO
+
+                    <b>
+                        ↗
+                    </b>
 
                 </div>
 
@@ -921,6 +1000,7 @@
 
 
         <div class="floating-media-grid">
+
 
             <a
                 href="https://www.facebook.com/share/p/1D5Hb6yRKY/"
@@ -1629,126 +1709,40 @@
 
 </footer>
 
-
-
 <!-- =========================================================
-     PHOTO LIGHTBOX
-     NO X BUTTON
+     LIGHTBOX
 ========================================================= -->
 
-<div
-    class="photo-lightbox"
-    id="photoLightbox"
-    aria-hidden="true"
->
+<div class="lightbox" id="lightbox">
+
+    <button
+        class="lightbox-close"
+        id="lightboxClose"
+        type="button"
+        aria-label="Close image"
+    >
+        ×
+    </button>
 
     <img
-        id="photoLightboxImage"
+        id="lightboxImage"
         src=""
         alt=""
     >
 
+    <div
+        class="lightbox-title"
+        id="lightboxTitle"
+    ></div>
+
 </div>
 
 
-
 <!-- =========================================================
-     MAIN SCRIPT
+     SCRIPT
 ========================================================= -->
 
 <script src="script.js"></script>
-
-
-
-<!-- =========================================================
-     PHOTOGRAPHY IMAGE SCRIPT
-========================================================= -->
-
-<script>
-
-document.addEventListener("DOMContentLoaded", function () {
-
-    const photoCards = document.querySelectorAll(".photo-floating-card");
-    const lightbox = document.getElementById("photoLightbox");
-    const lightboxImage = document.getElementById("photoLightboxImage");
-
-    if (!photoCards.length || !lightbox || !lightboxImage) {
-        return;
-    }
-
-
-    photoCards.forEach(function (card) {
-
-        const photo = card.querySelector(".clickable-photo");
-
-        if (!photo) {
-            return;
-        }
-
-
-        photo.addEventListener("click", function (event) {
-
-            event.stopPropagation();
-
-            const image = card.getAttribute("data-image");
-            const title = card.getAttribute("data-title") || "Photography";
-
-            lightboxImage.src = image;
-            lightboxImage.alt = title;
-
-            lightbox.classList.add("active");
-            lightbox.setAttribute("aria-hidden", "false");
-
-            document.body.classList.add("lightbox-open");
-
-        });
-
-    });
-
-
-    /*
-     * Close by clicking outside the image.
-     * There is intentionally NO X button.
-     */
-
-    lightbox.addEventListener("click", function (event) {
-
-        if (event.target === lightbox) {
-
-            lightbox.classList.remove("active");
-            lightbox.setAttribute("aria-hidden", "true");
-
-            lightboxImage.src = "";
-
-            document.body.classList.remove("lightbox-open");
-
-        }
-
-    });
-
-
-    /*
-     * ESC key also closes the photo.
-     */
-
-    document.addEventListener("keydown", function (event) {
-
-        if (event.key === "Escape" && lightbox.classList.contains("active")) {
-
-            lightbox.classList.remove("active");
-            lightbox.setAttribute("aria-hidden", "true");
-
-            lightboxImage.src = "";
-
-            document.body.classList.remove("lightbox-open");
-
-        }
-
-    });
-
-});
-
-</script>
 
 
 </body>
