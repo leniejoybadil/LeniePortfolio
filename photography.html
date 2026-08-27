@@ -119,380 +119,182 @@
 
     <!-- =====================================================
          PHOTOGRAPHY GALLERY
+         
+         NOW MATCHES THE TECHNICAL PAGE STYLE
     ====================================================== -->
 
-    <section class="media-category">
+    <section class="project-feature">
 
 
-        <div class="media-category-heading">
+        <!-- =================================================
+             PHOTOGRAPHY GALLERY
+        ================================================== -->
 
-            <span class="section-number">
-                00 / PHOTOGRAPHY GALLERY
-            </span>
+        <div class="project-gallery">
 
-            <h2>
-                Selected <em>Photography</em>
-            </h2>
 
-            <p>
-                A selection of photography work and visual
-                storytelling projects.
-            </p>
+            <!-- MAIN PHOTO -->
+
+            <a
+                href="assets/photography/photo-1.jpg"
+                class="gallery-main"
+                id="photographyMainLink"
+                aria-label="Open photography image"
+            >
+
+                <img
+                    id="photographyMainImage"
+                    src="assets/photography/photo-1.jpg"
+                    alt="Photography 01"
+                >
+
+            </a>
+
+
+
+            <!-- THUMBNAILS -->
+
+            <div class="thumbnail-row">
+
+
+                <!-- PHOTO 01 -->
+
+                <button
+                    type="button"
+                    class="thumbnail active"
+                    onclick="changePhotographyImage(
+                        'assets/photography/photo-1.jpg',
+                        'Photography 01',
+                        this
+                    )"
+                    aria-label="Show Photography 01"
+                >
+
+                    <img
+                        src="assets/photography/photo-1.jpg"
+                        alt="Photography 01"
+                    >
+
+                </button>
+
+
+
+                <!-- PHOTO 02 -->
+
+                <button
+                    type="button"
+                    class="thumbnail"
+                    onclick="changePhotographyImage(
+                        'assets/photography/photo-2.jpg',
+                        'Photography 02',
+                        this
+                    )"
+                    aria-label="Show Photography 02"
+                >
+
+                    <img
+                        src="assets/photography/photo-2.jpg"
+                        alt="Photography 02"
+                    >
+
+                </button>
+
+
+
+                <!-- PHOTO 03 -->
+
+                <button
+                    type="button"
+                    class="thumbnail"
+                    onclick="changePhotographyImage(
+                        'assets/photography/photo-3.jpg',
+                        'Photography 03',
+                        this
+                    )"
+                    aria-label="Show Photography 03"
+                >
+
+                    <img
+                        src="assets/photography/photo-3.jpg"
+                        alt="Photography 03"
+                    >
+
+                </button>
+
+
+
+                <!-- PHOTO 04 -->
+
+                <button
+                    type="button"
+                    class="thumbnail"
+                    onclick="changePhotographyImage(
+                        'assets/photography/photo-4.jpg',
+                        'Photography 04',
+                        this
+                    )"
+                    aria-label="Show Photography 04"
+                >
+
+                    <img
+                        src="assets/photography/photo-4.jpg"
+                        alt="Photography 04"
+                    >
+
+                </button>
+
+
+
+                <!-- PHOTO 05 -->
+
+                <button
+                    type="button"
+                    class="thumbnail"
+                    onclick="changePhotographyImage(
+                        'assets/photography/photo-5.jpg',
+                        'Photography 05',
+                        this
+                    )"
+                    aria-label="Show Photography 05"
+                >
+
+                    <img
+                        src="assets/photography/photo-5.jpg"
+                        alt="Photography 05"
+                    >
+
+                </button>
+
+
+            </div>
 
         </div>
 
 
 
         <!-- =================================================
-             FLOATING PHOTO CARDS
-        ================================================= -->
-
-        <div class="floating-media-grid photography-grid">
-
-
-            <!-- PHOTO 01 -->
-
-            <div
-                class="floating-media-card photo-floating-card"
-            >
-
-                <div class="media-card-top">
-
-                    <span class="media-icon">
-                        ✦
-                    </span>
-
-                    <span class="media-type">
-                        PHOTO
-                    </span>
-
-                </div>
-
-
-                <!-- CLICKABLE PHOTO -->
-
-                <a
-                    href="assets/photography/photo-1.jpg"
-                    class="photo-preview lightbox-trigger"
-                    data-image="assets/photography/photo-1.jpg"
-                    data-title="Photography 01"
-                >
-
-                    <img
-                        src="assets/photography/photo-1.jpg"
-                        alt="Photography 01"
-                        loading="lazy"
-                    >
-
-                </a>
-
-
-                <div class="media-card-content">
-
-                    <small>
-                        PHOTOGRAPHY
-                    </small>
-
-                    <h3>
-                        PHOTOGRAPHY 01
-                    </h3>
-
-                    <p>
-                        Selected photography work and
-                        visual storytelling.
-                    </p>
-
-                </div>
-
-
-                <div class="facebook-button photo-view-button">
-
-                    VIEW PHOTO
-
-                    <b>
-                        ↗
-                    </b>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- PHOTO 02 -->
-
-            <div
-                class="floating-media-card photo-floating-card"
-            >
-
-                <div class="media-card-top">
-
-                    <span class="media-icon">
-                        ✦
-                    </span>
-
-                    <span class="media-type">
-                        PHOTO
-                    </span>
-
-                </div>
-
-
-                <!-- CLICKABLE PHOTO -->
-
-                <a
-                    href="assets/photography/photo-2.jpg"
-                    class="photo-preview lightbox-trigger"
-                    data-image="assets/photography/photo-2.jpg"
-                    data-title="Photography 02"
-                >
-
-                    <img
-                        src="assets/photography/photo-2.jpg"
-                        alt="Photography 02"
-                        loading="lazy"
-                    >
-
-                </a>
-
-
-                <div class="media-card-content">
-
-                    <small>
-                        PHOTOGRAPHY
-                    </small>
-
-                    <h3>
-                        PHOTOGRAPHY 02
-                    </h3>
-
-                    <p>
-                        Selected photography work and
-                        visual storytelling.
-                    </p>
-
-                </div>
-
-
-                <div class="facebook-button photo-view-button">
-
-                    VIEW PHOTO
-
-                    <b>
-                        ↗
-                    </b>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- PHOTO 03 -->
-
-            <div
-                class="floating-media-card photo-floating-card"
-            >
-
-                <div class="media-card-top">
-
-                    <span class="media-icon">
-                        ✦
-                    </span>
-
-                    <span class="media-type">
-                        PHOTO
-                    </span>
-
-                </div>
-
-
-                <!-- CLICKABLE PHOTO -->
-
-                <a
-                    href="assets/photography/photo-3.jpg"
-                    class="photo-preview lightbox-trigger"
-                    data-image="assets/photography/photo-3.jpg"
-                    data-title="Photography 03"
-                >
-
-                    <img
-                        src="assets/photography/photo-3.jpg"
-                        alt="Photography 03"
-                        loading="lazy"
-                    >
-
-                </a>
-
-
-                <div class="media-card-content">
-
-                    <small>
-                        PHOTOGRAPHY
-                    </small>
-
-                    <h3>
-                        PHOTOGRAPHY 03
-                    </h3>
-
-                    <p>
-                        Selected photography work and
-                        visual storytelling.
-                    </p>
-
-                </div>
-
-
-                <div class="facebook-button photo-view-button">
-
-                    VIEW PHOTO
-
-                    <b>
-                        ↗
-                    </b>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- PHOTO 04 -->
-
-            <div
-                class="floating-media-card photo-floating-card"
-            >
-
-                <div class="media-card-top">
-
-                    <span class="media-icon">
-                        ✦
-                    </span>
-
-                    <span class="media-type">
-                        PHOTO
-                    </span>
-
-                </div>
-
-
-                <!-- CLICKABLE PHOTO -->
-
-                <a
-                    href="assets/photography/photo-4.jpg"
-                    class="photo-preview lightbox-trigger"
-                    data-image="assets/photography/photo-4.jpg"
-                    data-title="Photography 04"
-                >
-
-                    <img
-                        src="assets/photography/photo-4.jpg"
-                        alt="Photography 04"
-                        loading="lazy"
-                    >
-
-                </a>
-
-
-                <div class="media-card-content">
-
-                    <small>
-                        PHOTOGRAPHY
-                    </small>
-
-                    <h3>
-                        PHOTOGRAPHY 04
-                    </h3>
-
-                    <p>
-                        Selected photography work and
-                        visual storytelling.
-                    </p>
-
-                </div>
-
-
-                <div class="facebook-button photo-view-button">
-
-                    VIEW PHOTO
-
-                    <b>
-                        ↗
-                    </b>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- PHOTO 05 -->
-
-            <div
-                class="floating-media-card photo-floating-card"
-            >
-
-                <div class="media-card-top">
-
-                    <span class="media-icon">
-                        ✦
-                    </span>
-
-                    <span class="media-type">
-                        PHOTO
-                    </span>
-
-                </div>
-
-
-                <!-- CLICKABLE PHOTO -->
-
-                <a
-                    href="assets/photography/photo-5.jpg"
-                    class="photo-preview lightbox-trigger"
-                    data-image="assets/photography/photo-5.jpg"
-                    data-title="Photography 05"
-                >
-
-                    <img
-                        src="assets/photography/photo-5.jpg"
-                        alt="Photography 05"
-                        loading="lazy"
-                    >
-
-                </a>
-
-
-                <div class="media-card-content">
-
-                    <small>
-                        PHOTOGRAPHY
-                    </small>
-
-                    <h3>
-                        PHOTOGRAPHY 05
-                    </h3>
-
-                    <p>
-                        Selected photography work and
-                        visual storytelling.
-                    </p>
-
-                </div>
-
-
-                <div class="facebook-button photo-view-button">
-
-                    VIEW PHOTO
-
-                    <b>
-                        ↗
-                    </b>
-
-                </div>
-
-            </div>
-
+             PHOTOGRAPHY INFORMATION
+        ================================================== -->
+
+        <div class="project-content">
+
+            <span class="project-tag">
+                PHOTOGRAPHY • VISUAL STORYTELLING
+            </span>
+
+            <h2>
+                Selected Photography
+            </h2>
+
+            <h3>
+                Photography & Visual Storytelling
+            </h3>
+
+            <p>
+                A selection of event, community and creative
+                photography documenting people, moments and
+                experiences through visual storytelling.
+            </p>
 
         </div>
 
@@ -1714,19 +1516,33 @@
 
 <!-- =========================================================
      LIGHTBOX
-     NO X BUTTON
+     
+     NO "VIEW PHOTO"
+     X IS A REAL BUTTON
 ========================================================= -->
 
 <div
     class="lightbox"
     id="lightbox"
+    aria-hidden="true"
 >
+
+    <button
+        type="button"
+        class="lightbox-close"
+        id="lightboxClose"
+        aria-label="Close image"
+    >
+        ×
+    </button>
+
 
     <img
         id="lightboxImage"
         src=""
-        alt=""
+        alt="Portfolio image"
     >
+
 
     <div
         class="lightbox-title"
@@ -1742,6 +1558,370 @@
 ========================================================= -->
 
 <script src="script.js"></script>
+
+
+<!-- =========================================================
+     PHOTOGRAPHY GALLERY SCRIPT
+========================================================= -->
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+
+    /* =====================================================
+       PHOTOGRAPHY ELEMENTS
+    ===================================================== */
+
+    const mainImage =
+        document.getElementById(
+            "photographyMainImage"
+        );
+
+    const mainLink =
+        document.getElementById(
+            "photographyMainLink"
+        );
+
+    const lightbox =
+        document.getElementById(
+            "lightbox"
+        );
+
+    const lightboxImage =
+        document.getElementById(
+            "lightboxImage"
+        );
+
+    const lightboxTitle =
+        document.getElementById(
+            "lightboxTitle"
+        );
+
+    const lightboxClose =
+        document.getElementById(
+            "lightboxClose"
+        );
+
+
+
+    /* =====================================================
+       CHANGE PHOTOGRAPHY IMAGE
+    ===================================================== */
+
+    window.changePhotographyImage =
+        function (image, title, thumbnail) {
+
+            if (!mainImage || !image) {
+                return;
+            }
+
+
+            mainImage.src = image;
+
+            mainImage.alt =
+                title || "Photography";
+
+
+            if (mainLink) {
+
+                mainLink.href = image;
+
+                mainLink.setAttribute(
+                    "data-image",
+                    image
+                );
+
+                mainLink.setAttribute(
+                    "data-title",
+                    title || "Photography"
+                );
+
+            }
+
+
+            document
+                .querySelectorAll(
+                    ".thumbnail"
+                )
+                .forEach(function (item) {
+
+                    item.classList.remove(
+                        "active"
+                    );
+
+                });
+
+
+            if (thumbnail) {
+
+                thumbnail.classList.add(
+                    "active"
+                );
+
+            }
+
+        };
+
+
+
+    /* =====================================================
+       OPEN PHOTOGRAPHY LIGHTBOX
+    ===================================================== */
+
+    function openPhotographyLightbox() {
+
+        if (
+            !lightbox ||
+            !lightboxImage ||
+            !mainImage
+        ) {
+            return;
+        }
+
+
+        lightboxImage.src =
+            mainImage.src;
+
+        lightboxImage.alt =
+            mainImage.alt;
+
+
+        if (lightboxTitle) {
+
+            lightboxTitle.textContent =
+                mainImage.alt;
+
+        }
+
+
+        lightbox.classList.add(
+            "active"
+        );
+
+        lightbox.setAttribute(
+            "aria-hidden",
+            "false"
+        );
+
+        document.body.classList.add(
+            "no-scroll"
+        );
+
+    }
+
+
+
+    /* =====================================================
+       CLOSE LIGHTBOX
+    ===================================================== */
+
+    function closePhotographyLightbox() {
+
+        if (!lightbox) {
+            return;
+        }
+
+
+        lightbox.classList.remove(
+            "active"
+        );
+
+        lightbox.setAttribute(
+            "aria-hidden",
+            "true"
+        );
+
+        document.body.classList.remove(
+            "no-scroll"
+        );
+
+
+        if (lightboxImage) {
+
+            lightboxImage.src = "";
+
+        }
+
+    }
+
+
+
+    /* =====================================================
+       MAIN PHOTO CLICK
+    ===================================================== */
+
+    if (mainLink) {
+
+        mainLink.addEventListener(
+            "click",
+            function (event) {
+
+                event.preventDefault();
+
+                openPhotographyLightbox();
+
+            }
+        );
+
+    }
+
+
+
+    /* =====================================================
+       X BUTTON
+       
+       IMPORTANT:
+       STOP PROPAGATION SO THE X
+       IS ALWAYS CLICKABLE.
+    ===================================================== */
+
+    if (lightboxClose) {
+
+        lightboxClose.addEventListener(
+            "click",
+            function (event) {
+
+                event.preventDefault();
+
+                event.stopImmediatePropagation();
+
+                closePhotographyLightbox();
+
+            },
+            true
+        );
+
+    }
+
+
+
+    /* =====================================================
+       CLICK DARK BACKGROUND TO CLOSE
+    ===================================================== */
+
+    if (lightbox) {
+
+        lightbox.addEventListener(
+            "click",
+            function (event) {
+
+                if (
+                    event.target === lightbox
+                ) {
+
+                    closePhotographyLightbox();
+
+                }
+
+            }
+        );
+
+    }
+
+
+
+    /* =====================================================
+       ESCAPE KEY
+    ===================================================== */
+
+    document.addEventListener(
+        "keydown",
+        function (event) {
+
+            if (
+                event.key === "Escape" &&
+                lightbox &&
+                lightbox.classList.contains(
+                    "active"
+                )
+            ) {
+
+                closePhotographyLightbox();
+
+            }
+
+        }
+    );
+
+
+
+    /* =====================================================
+       FORCE X BUTTON TO BE CLICKABLE
+    ===================================================== */
+
+    if (lightboxClose) {
+
+        lightboxClose.style.position =
+            "absolute";
+
+        lightboxClose.style.zIndex =
+            "1000000";
+
+        lightboxClose.style.pointerEvents =
+            "auto";
+
+        lightboxClose.style.cursor =
+            "pointer";
+
+        lightboxClose.style.touchAction =
+            "manipulation";
+
+    }
+
+
+
+    /* =====================================================
+       LIGHTBOX SAFETY CSS
+    ===================================================== */
+
+    if (
+        !document.getElementById(
+            "photographyLightboxStyle"
+        )
+    ) {
+
+        const style =
+            document.createElement(
+                "style"
+            );
+
+        style.id =
+            "photographyLightboxStyle";
+
+        style.textContent = `
+
+            body.no-scroll {
+                overflow: hidden !important;
+            }
+
+            .lightbox {
+                z-index: 999999 !important;
+            }
+
+            .lightbox-close {
+                z-index: 1000000 !important;
+                pointer-events: auto !important;
+                cursor: pointer !important;
+                touch-action: manipulation;
+            }
+
+            .lightbox img {
+                z-index: 999999 !important;
+            }
+
+        `;
+
+        document.head.appendChild(
+            style
+        );
+
+    }
+
+});
+
+</script>
+
 
 </body>
 
