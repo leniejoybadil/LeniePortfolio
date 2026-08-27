@@ -1,34 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
 
-
 /* =========================================================
    LENIE JOY BADIL — PORTFOLIO
    COMPLETE RESPONSIVE STYLE
    CREAM / BROWN VIBE
 ========================================================= */
 
-
-/* =========================================================
-   VARIABLES
-========================================================= */
-
 :root {
     --cream: #f4ede3;
     --cream-light: #fffdf9;
     --cream-dark: #e5d5c1;
-
     --brown: #9a7450;
     --brown-dark: #4b392c;
-
     --text: #2c241e;
     --muted: #766c62;
-
     --border: #d9c8b4;
     --white: #ffffff;
-
     --shadow: rgba(60, 45, 30, 0.10);
 }
-
 
 /* =========================================================
    RESET
@@ -51,6 +40,10 @@ body {
     overflow-x: hidden;
 }
 
+body.no-scroll {
+    overflow: hidden;
+}
+
 a {
     color: inherit;
     text-decoration: none;
@@ -60,7 +53,6 @@ img {
     display: block;
     max-width: 100%;
 }
-
 
 /* =========================================================
    BACKGROUND
@@ -100,7 +92,6 @@ img {
 .grid {
     position: absolute;
     inset: 0;
-
     background-image:
         linear-gradient(
             rgba(154, 116, 80, 0.035) 1px,
@@ -111,10 +102,8 @@ img {
             rgba(154, 116, 80, 0.035) 1px,
             transparent 1px
         );
-
     background-size: 45px 45px;
 }
-
 
 /* =========================================================
    NAVBAR
@@ -124,15 +113,11 @@ img {
     position: absolute;
     top: 0;
     left: 0;
-
     width: 100%;
-
     padding: 25px 7%;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     z-index: 1000;
 }
 
@@ -140,7 +125,6 @@ img {
     display: flex;
     align-items: center;
     gap: 10px;
-
     font-family: "Playfair Display", serif;
     color: var(--brown-dark);
 }
@@ -148,17 +132,13 @@ img {
 .logo > span {
     width: 42px;
     height: 42px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     border: 1px solid var(--brown);
     border-radius: 50%;
-
     font-size: 14px;
     font-weight: 700;
-
     color: var(--brown);
 }
 
@@ -175,13 +155,10 @@ img {
 
 .logo small {
     margin-top: 4px;
-
     font-family: "DM Sans", sans-serif;
     font-size: 7px;
     font-weight: 700;
-
     letter-spacing: 2px;
-
     color: var(--brown);
 }
 
@@ -193,26 +170,20 @@ img {
 
 .nav-links a {
     position: relative;
-
     font-size: 10px;
     font-weight: 700;
     letter-spacing: 1px;
-
     transition: 0.25s ease;
 }
 
 .nav-links a::after {
     content: "";
-
     position: absolute;
     left: 0;
     bottom: -7px;
-
     width: 0;
     height: 1px;
-
     background: var(--brown);
-
     transition: 0.25s ease;
 }
 
@@ -226,37 +197,27 @@ img {
     color: var(--brown);
 }
 
-
 /* =========================================================
-   MOBILE MENU BUTTON
+   MOBILE MENU
 ========================================================= */
 
 .menu-toggle {
     display: none;
-
     width: 43px;
     height: 43px;
-
     padding: 9px;
-
     border: 1px solid var(--border);
     border-radius: 10px;
-
     background: rgba(255, 255, 255, 0.75);
-
     cursor: pointer;
 }
 
 .menu-toggle span {
     display: block;
-
     width: 100%;
     height: 2px;
-
     margin: 5px 0;
-
     background: var(--brown-dark);
-
     transition: 0.25s ease;
 }
 
@@ -272,26 +233,19 @@ img {
     transform: translateY(-7px) rotate(-45deg);
 }
 
-
 /* =========================================================
    HERO
 ========================================================= */
 
 .hero {
     min-height: 100vh;
-
     padding: 145px 7% 90px;
-
     display: grid;
-
     grid-template-columns:
         minmax(0, 1fr)
         minmax(500px, 0.95fr);
-
     align-items: center;
-
     gap: 80px;
-
     background: var(--cream);
 }
 
@@ -301,22 +255,16 @@ img {
 
 .small-label {
     color: var(--brown);
-
     font-size: 10px;
     font-weight: 700;
-
     letter-spacing: 3px;
 }
 
 .hero h1 {
     margin-top: 14px;
-
     font-family: "Playfair Display", serif;
-
     font-size: clamp(70px, 8vw, 110px);
-
     line-height: 0.87;
-
     letter-spacing: -4px;
 }
 
@@ -327,27 +275,19 @@ img {
 
 .hero-title {
     margin-top: 25px;
-
     color: var(--brown-dark);
-
     font-size: 11px;
     font-weight: 700;
-
     letter-spacing: 2px;
 }
 
 .hero-description {
     max-width: 530px;
-
     margin-top: 16px;
-
     color: var(--muted);
-
     font-size: 14px;
-
     line-height: 1.8;
 }
-
 
 /* =========================================================
    BUTTONS
@@ -356,28 +296,20 @@ img {
 .hero-buttons {
     display: flex;
     flex-wrap: wrap;
-
     gap: 10px;
-
     margin-top: 30px;
 }
 
 .btn {
     min-height: 45px;
-
     padding: 0 19px;
-
     display: inline-flex;
     align-items: center;
     justify-content: center;
-
     border-radius: 50px;
-
     font-size: 9px;
     font-weight: 700;
-
     letter-spacing: 0.7px;
-
     transition: 0.25s ease;
 }
 
@@ -402,7 +334,6 @@ img {
     transform: translateY(-2px);
 }
 
-
 /* =========================================================
    HERO PROFILE
 ========================================================= */
@@ -410,10 +341,8 @@ img {
 .hero-profile {
     width: 100%;
     max-width: 570px;
-
     margin: auto;
 }
-
 
 /* =========================================================
    COVER PHOTO
@@ -421,21 +350,13 @@ img {
 
 .cover-card {
     position: relative;
-
     width: 100%;
-
     height: 350px;
-
     overflow: hidden;
-
     border-radius: 22px;
-
     border: 1px solid var(--border);
-
     background: var(--cream-dark);
-
     cursor: pointer;
-
     transition:
         transform 0.3s ease,
         box-shadow 0.3s ease;
@@ -443,7 +364,6 @@ img {
 
 .cover-card:hover {
     transform: translateY(-5px);
-
     box-shadow:
         0 20px 45px rgba(60, 45, 30, 0.15);
 }
@@ -451,9 +371,7 @@ img {
 .cover-card img {
     width: 100%;
     height: 100%;
-
     object-fit: cover;
-
     transition: transform 0.5s ease;
 }
 
@@ -461,36 +379,23 @@ img {
     transform: scale(1.03);
 }
 
-
 /* =========================================================
    PROFILE CARD
 ========================================================= */
 
 .profile-card {
     position: relative;
-
     width: 88%;
-
     margin: -90px auto 0;
-
-    padding:
-        100px 35px 35px;
-
+    padding: 100px 35px 35px;
     text-align: center;
-
-    background:
-        rgba(255, 253, 249, 0.97);
-
+    background: rgba(255, 253, 249, 0.97);
     border: 1px solid var(--border);
-
     border-radius: 22px;
-
     box-shadow:
         0 18px 45px rgba(60, 45, 30, 0.11);
-
     z-index: 5;
 }
-
 
 /* =========================================================
    PROFILE PHOTO
@@ -498,38 +403,26 @@ img {
 
 .profile-photo {
     position: absolute;
-
     top: -88px;
     left: 50%;
-
     transform: translateX(-50%);
-
     width: 175px;
     height: 175px;
-
     padding: 7px;
-
     border-radius: 50%;
-
     background: white;
-
     box-shadow:
         0 10px 30px rgba(40, 30, 20, 0.18);
-
     cursor: pointer;
-
     z-index: 10;
 }
 
 .profile-photo img {
     width: 100%;
     height: 100%;
-
     object-fit: cover;
-
     border-radius: 50%;
 }
-
 
 /* =========================================================
    PROFILE CONTENT
@@ -537,63 +430,47 @@ img {
 
 .profile-content h2 {
     font-family: "Playfair Display", serif;
-
     font-size: 34px;
-
     line-height: 1.15;
 }
 
 .profile-content p {
     margin-top: 7px;
-
     color: var(--brown);
-
     font-size: 11px;
     font-weight: 700;
-
     letter-spacing: 1.5px;
 }
 
 .profile-line {
     width: 55px;
     height: 1px;
-
     margin: 15px auto;
-
     background: var(--brown);
 }
 
 .profile-content span {
     display: block;
-
     color: var(--muted);
-
     font-size: 10px;
-
     line-height: 1.6;
 }
 
-
 /* =========================================================
-   BIO / DESCRIPTION BELOW PROFILE
+   BIO
 ========================================================= */
 
 .profile-bio {
     max-width: 620px;
-
     margin: 28px auto 0;
-
     text-align: center;
 }
 
 .profile-bio p {
     color: var(--muted);
-
     font-size: 13px;
-
     line-height: 1.8;
 }
-
 
 /* =========================================================
    GENERAL SECTIONS
@@ -610,9 +487,7 @@ img {
 
 .section-heading {
     max-width: 1000px;
-
-    margin:
-        0 auto 45px;
+    margin: 0 auto 45px;
 }
 
 .section-heading.centered {
@@ -621,26 +496,22 @@ img {
 
 .section-heading h2 {
     margin-top: 10px;
-
     font-family: "Playfair Display", serif;
-
-    font-size:
-        clamp(45px, 6vw, 70px);
-
+    font-size: clamp(45px, 6vw, 70px);
     line-height: 0.95;
-
     letter-spacing: -2px;
+}
+
+.section-heading h2 em {
+    color: var(--brown);
+    font-style: normal;
 }
 
 .section-heading > p:last-child {
     max-width: 550px;
-
     margin-top: 14px;
-
     color: var(--muted);
-
     font-size: 13px;
-
     line-height: 1.7;
 }
 
@@ -649,45 +520,32 @@ img {
     margin-right: auto;
 }
 
-
 /* =========================================================
    ABOUT
 ========================================================= */
 
 .about-content {
     max-width: 1000px;
-
     margin: auto;
-
     display: grid;
-
     grid-template-columns: 1fr 1fr;
-
     gap: 60px;
-
     align-items: start;
 }
 
 .about-text p {
     margin-bottom: 18px;
-
     color: var(--muted);
-
     font-size: 14px;
-
     line-height: 1.9;
 }
 
 .text-button {
     display: inline-block;
-
     margin-top: 8px;
-
     color: var(--brown-dark);
-
     font-size: 10px;
     font-weight: 800;
-
     letter-spacing: 1px;
 }
 
@@ -695,31 +553,22 @@ img {
     color: var(--brown);
 }
 
-
 /* =========================================================
    INFO GRID
 ========================================================= */
 
 .info-grid {
     display: grid;
-
-    grid-template-columns:
-        repeat(2, 1fr);
-
+    grid-template-columns: repeat(2, 1fr);
     gap: 12px;
 }
 
 .info-box {
     min-height: 115px;
-
     padding: 20px;
-
     background: var(--cream);
-
     border: 1px solid var(--border);
-
     border-radius: 14px;
-
     transition:
         transform 0.25s ease,
         box-shadow 0.25s ease;
@@ -727,32 +576,24 @@ img {
 
 .info-box:hover {
     transform: translateY(-4px);
-
     box-shadow:
         0 12px 30px rgba(60, 45, 30, 0.08);
 }
 
 .info-box span {
     display: block;
-
     margin-bottom: 10px;
-
     color: var(--brown);
-
     font-size: 8px;
     font-weight: 800;
-
     letter-spacing: 2px;
 }
 
 .info-box strong {
     color: var(--text);
-
     font-size: 12px;
-
     line-height: 1.5;
 }
-
 
 /* =========================================================
    WORK LINKS
@@ -764,38 +605,22 @@ img {
 
 .work-links {
     max-width: 1000px;
-
     margin: auto;
-
     display: grid;
-
-    grid-template-columns:
-        repeat(2, 1fr);
-
+    grid-template-columns: repeat(2, 1fr);
     gap: 12px;
 }
 
 .work-link {
     min-height: 125px;
-
     padding: 20px;
-
     display: grid;
-
-    grid-template-columns:
-        35px 1fr 25px;
-
+    grid-template-columns: 35px 1fr 25px;
     align-items: center;
-
     gap: 10px;
-
-    background:
-        rgba(255, 253, 249, 0.7);
-
+    background: rgba(255, 253, 249, 0.7);
     border: 1px solid var(--border);
-
     border-radius: 15px;
-
     transition:
         transform 0.25s ease,
         background 0.25s ease,
@@ -804,50 +629,38 @@ img {
 
 .work-link:hover {
     transform: translateY(-3px);
-
     background: white;
-
     border-color: var(--brown);
 }
 
 .work-number {
     align-self: start;
-
     color: var(--brown);
-
     font-size: 9px;
     font-weight: 800;
 }
 
 .work-link h3 {
     font-family: "Playfair Display", serif;
-
     font-size: 19px;
 }
 
 .work-link p {
     margin-top: 5px;
-
     color: var(--muted);
-
     font-size: 10px;
-
     line-height: 1.5;
 }
 
 .work-arrow {
     color: var(--brown);
-
     font-size: 20px;
-
-    transition:
-        transform 0.25s ease;
+    transition: transform 0.25s ease;
 }
 
 .work-link:hover .work-arrow {
     transform: translateX(5px);
 }
-
 
 /* =========================================================
    INNER / PROJECT PAGES
@@ -856,42 +669,30 @@ img {
 .inner-page,
 .project-page {
     position: relative;
-
-    padding:
-        155px 7% 90px;
-
+    padding: 155px 7% 90px;
     min-height: 100vh;
 }
 
 .page-heading,
 .page-header {
     max-width: 1000px;
-
-    margin:
-        0 auto 60px;
+    margin: 0 auto 60px;
 }
 
 .page-heading > span,
 .page-header .section-number {
     color: var(--brown);
-
     font-size: 9px;
     font-weight: 800;
-
     letter-spacing: 2.5px;
 }
 
 .page-heading h1,
 .page-header h1 {
     margin-top: 12px;
-
     font-family: "Playfair Display", serif;
-
-    font-size:
-        clamp(50px, 7vw, 82px);
-
+    font-size: clamp(50px, 7vw, 82px);
     line-height: 0.95;
-
     letter-spacing: -3px;
 }
 
@@ -904,16 +705,11 @@ img {
 .page-heading p,
 .page-header p {
     max-width: 650px;
-
     margin-top: 17px;
-
     color: var(--muted);
-
     font-size: 13px;
-
     line-height: 1.8;
 }
-
 
 /* =========================================================
    PROJECT FEATURE
@@ -921,16 +717,10 @@ img {
 
 .project-feature {
     max-width: 1000px;
-
     margin: auto;
-
     display: grid;
-
-    grid-template-columns:
-        1.1fr 0.9fr;
-
+    grid-template-columns: 1.1fr 0.9fr;
     gap: 50px;
-
     align-items: center;
 }
 
@@ -940,38 +730,28 @@ img {
 
 .project-gallery > img {
     width: 100%;
-
     height: 390px;
-
     object-fit: cover;
-
     border-radius: 20px;
-
     border: 1px solid var(--border);
-
     background: var(--cream-dark);
+    cursor: pointer;
 }
 
 .thumbnail-row {
     display: flex;
-
     gap: 8px;
-
     margin-top: 10px;
+    flex-wrap: wrap;
 }
 
 .thumbnail-row img {
     width: 70px;
     height: 55px;
-
     object-fit: cover;
-
     border-radius: 8px;
-
     border: 1px solid var(--border);
-
     cursor: pointer;
-
     transition:
         transform 0.2s ease,
         border-color 0.2s ease;
@@ -979,52 +759,38 @@ img {
 
 .thumbnail-row img:hover {
     transform: translateY(-3px);
-
     border-color: var(--brown);
 }
 
 .project-content h2 {
     margin-top: 15px;
-
     font-family: "Playfair Display", serif;
-
     font-size: 29px;
-
     line-height: 1.25;
 }
 
 .project-content h3 {
     margin-top: 25px;
-
     font-size: 10px;
-
     letter-spacing: 1.5px;
-
     color: var(--brown);
 }
 
 .project-content p {
     margin-top: 10px;
-
     color: var(--muted);
-
     font-size: 12px;
-
     line-height: 1.8;
 }
 
 .project-tag,
 .project-category {
     display: inline-block;
-
     color: var(--brown);
-
     font-size: 8px;
     font-weight: 800;
-
     letter-spacing: 2px;
 }
-
 
 /* =========================================================
    PROJECT LIST
@@ -1032,87 +798,62 @@ img {
 
 .project-list {
     max-width: 1000px;
-
     margin: auto;
 }
 
 .project-row,
 .mini-project {
     display: flex;
-
     align-items: center;
     justify-content: space-between;
-
     gap: 30px;
-
     padding: 28px 0;
-
-    border-bottom:
-        1px solid var(--border);
+    border-bottom: 1px solid var(--border);
 }
 
 .project-row > div span,
 .mini-project > div span {
     color: var(--brown);
-
     font-size: 9px;
     font-weight: 800;
-
     letter-spacing: 1.5px;
 }
 
 .project-row h3,
 .mini-project h2 {
     margin-top: 7px;
-
     font-family: "Playfair Display", serif;
-
     font-size: 22px;
 }
 
 .project-row p {
     max-width: 600px;
-
     margin-top: 6px;
-
     color: var(--muted);
-
     font-size: 11px;
-
     line-height: 1.6;
 }
 
 .project-button,
 .mini-project > a {
     flex-shrink: 0;
-
     padding: 12px 17px;
-
     border: 1px solid var(--border);
-
     border-radius: 50px;
-
     color: var(--brown-dark);
-
     font-size: 8px;
     font-weight: 800;
-
     letter-spacing: 1px;
-
     transition: 0.25s ease;
 }
 
 .project-button:hover,
 .mini-project > a:hover {
     background: var(--brown-dark);
-
     color: white;
-
     border-color: var(--brown-dark);
-
     transform: translateY(-2px);
 }
-
 
 /* =========================================================
    AWARDS
@@ -1121,31 +862,21 @@ img {
 .awards-section,
 .projects-section {
     max-width: 1000px;
-
     margin: 90px auto 0;
 }
 
 .award-grid {
     display: grid;
-
-    grid-template-columns:
-        repeat(4, 1fr);
-
+    grid-template-columns: repeat(4, 1fr);
     gap: 12px;
 }
 
 .award-card {
     min-height: 190px;
-
     padding: 22px;
-
-    background:
-        rgba(255, 253, 249, 0.75);
-
+    background: rgba(255, 253, 249, 0.75);
     border: 1px solid var(--border);
-
     border-radius: 16px;
-
     transition:
         transform 0.25s ease,
         box-shadow 0.25s ease;
@@ -1153,46 +884,35 @@ img {
 
 .award-card:hover {
     transform: translateY(-5px);
-
     box-shadow:
         0 15px 35px rgba(60, 45, 30, 0.1);
 }
 
 .award-card > span {
     font-size: 22px;
-
     color: var(--brown);
 }
 
 .award-card small {
     display: block;
-
     margin-top: 20px;
-
     color: var(--brown);
-
     font-size: 7px;
     font-weight: 800;
-
     letter-spacing: 1.5px;
 }
 
 .award-card h3 {
     margin-top: 7px;
-
     font-family: "Playfair Display", serif;
-
     font-size: 17px;
 }
 
 .award-card p {
     margin-top: 5px;
-
     color: var(--muted);
-
     font-size: 9px;
 }
-
 
 /* =========================================================
    PAGE NAVIGATION
@@ -1201,108 +921,75 @@ img {
 .page-navigation,
 .back-section {
     max-width: 1000px;
-
     margin: 70px auto 0;
-
     display: flex;
-
     align-items: center;
     justify-content: space-between;
-
     gap: 15px;
 }
 
 .page-navigation a,
 .outline-button {
     padding: 13px 18px;
-
     border: 1px solid var(--border);
-
     border-radius: 50px;
-
     font-size: 8px;
     font-weight: 800;
-
     letter-spacing: 1px;
-
     transition: 0.25s ease;
 }
 
 .page-navigation a:hover,
 .outline-button:hover {
     background: var(--brown-dark);
-
     color: white;
-
     border-color: var(--brown-dark);
 }
 
-
 /* =========================================================
    WEBSITE PROJECT
-   NOTE: WEBSITE CONTENT STAYS IN website.html
 ========================================================= */
 
 .project-detail {
     max-width: 1000px;
-
     margin: auto;
-
     display: grid;
-
-    grid-template-columns:
-        70px 1fr;
-
+    grid-template-columns: 70px 1fr;
     gap: 25px;
 }
 
 .project-number {
     font-family: "Playfair Display", serif;
-
     color: var(--brown);
-
     font-size: 25px;
 }
 
 .project-heading h2 {
     margin-top: 8px;
-
     font-family: "Playfair Display", serif;
-
     font-size: 35px;
 }
 
 .project-heading p {
     margin-top: 8px;
-
     color: var(--muted);
-
     font-size: 12px;
 }
 
 .project-image-large {
     margin-top: 30px;
-
     width: 100%;
-
     overflow: hidden;
-
     border-radius: 20px;
-
     border: 1px solid var(--border);
-
     cursor: pointer;
 }
 
 .project-image-large img {
     width: 100%;
-
     max-height: 550px;
-
     object-fit: cover;
-
-    transition:
-        transform 0.5s ease;
+    transition: transform 0.5s ease;
 }
 
 .project-image-large:hover img {
@@ -1311,12 +998,8 @@ img {
 
 .project-description-grid {
     margin-top: 35px;
-
     display: grid;
-
-    grid-template-columns:
-        1.2fr 0.8fr;
-
+    grid-template-columns: 1.2fr 0.8fr;
     gap: 45px;
 }
 
@@ -1324,20 +1007,15 @@ img {
 .technology-box > span,
 .role-box span {
     color: var(--brown);
-
     font-size: 8px;
     font-weight: 800;
-
     letter-spacing: 2px;
 }
 
 .project-description-grid p {
     margin-top: 10px;
-
     color: var(--muted);
-
     font-size: 11px;
-
     line-height: 1.8;
 }
 
@@ -1347,88 +1025,58 @@ img {
 
 .feature-list {
     margin-top: 12px;
-
     list-style: none;
 }
 
 .feature-list li {
     padding: 8px 0;
-
-    border-bottom:
-        1px solid var(--border);
-
+    border-bottom: 1px solid var(--border);
     color: var(--muted);
-
     font-size: 10px;
 }
 
 .feature-list li::before {
     content: "→";
-
     margin-right: 8px;
-
     color: var(--brown);
 }
 
 .technology-box {
     margin-top: 35px;
-
     padding-top: 25px;
-
-    border-top:
-        1px solid var(--border);
+    border-top: 1px solid var(--border);
 }
 
 .technology-tags {
     display: flex;
-
     flex-wrap: wrap;
-
     gap: 7px;
-
     margin-top: 12px;
 }
 
 .technology-tags span {
     padding: 8px 11px;
-
     border: 1px solid var(--border);
-
     border-radius: 50px;
-
-    background:
-        rgba(255, 255, 255, 0.4);
-
+    background: rgba(255, 255, 255, 0.4);
     font-size: 8px;
-
     color: var(--brown-dark);
 }
 
 .role-box {
     margin-top: 30px;
-
     padding: 20px;
-
     display: grid;
-
-    grid-template-columns:
-        1fr 1fr;
-
+    grid-template-columns: 1fr 1fr;
     gap: 20px;
-
-    background:
-        rgba(255, 253, 249, 0.6);
-
+    background: rgba(255, 253, 249, 0.6);
     border: 1px solid var(--border);
-
     border-radius: 15px;
 }
 
 .role-box strong {
     display: block;
-
     margin-top: 7px;
-
     font-size: 11px;
 }
 
@@ -1438,33 +1086,22 @@ img {
 
 .main-button {
     display: inline-flex;
-
     align-items: center;
     justify-content: space-between;
-
     gap: 25px;
-
     min-height: 48px;
-
     padding: 0 18px;
-
     border-radius: 50px;
-
     background: var(--brown-dark);
-
     color: white;
-
     font-size: 8px;
     font-weight: 800;
-
     letter-spacing: 1px;
-
     transition: 0.25s ease;
 }
 
 .main-button:hover {
     background: var(--brown);
-
     transform: translateY(-3px);
 }
 
@@ -1474,14 +1111,10 @@ img {
 
 .project-divider {
     max-width: 1000px;
-
     height: 1px;
-
     margin: 90px auto;
-
     background: var(--border);
 }
-
 
 /* =========================================================
    PHOTOGRAPHY GALLERY
@@ -1489,34 +1122,23 @@ img {
 
 .visual-gallery-page {
     max-width: 1050px;
-
     margin: auto;
 }
 
 .visual-gallery {
     display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
+    grid-template-columns: repeat(3, 1fr);
     gap: 15px;
 }
 
 .visual-card {
     position: relative;
-
     height: 300px;
-
     overflow: hidden;
-
     border-radius: 16px;
-
     border: 1px solid var(--border);
-
     background: var(--cream-dark);
-
     cursor: pointer;
-
     transition:
         transform 0.3s ease,
         box-shadow 0.3s ease;
@@ -1524,7 +1146,6 @@ img {
 
 .visual-card:hover {
     transform: translateY(-5px);
-
     box-shadow:
         0 20px 40px rgba(60, 45, 30, 0.13);
 }
@@ -1532,11 +1153,8 @@ img {
 .visual-card img {
     width: 100%;
     height: 100%;
-
     object-fit: cover;
-
-    transition:
-        transform 0.5s ease;
+    transition: transform 0.5s ease;
 }
 
 .visual-card:hover img {
@@ -1546,36 +1164,29 @@ img {
 .image-overlay {
     position: absolute;
     inset: 0;
-
     display: flex;
     align-items: flex-end;
-
     padding: 18px;
-
     background:
         linear-gradient(
             transparent 50%,
             rgba(40, 30, 20, 0.6)
         );
-
     opacity: 0;
-
     transition: 0.3s ease;
 }
 
-.visual-card:hover .image-overlay {
+.visual-card:hover .image-overlay,
+.cover-card:hover .image-overlay {
     opacity: 1;
 }
 
 .image-overlay span {
     color: white;
-
     font-size: 9px;
     font-weight: 800;
-
     letter-spacing: 1px;
 }
-
 
 /* =========================================================
    LIGHTBOX
@@ -1584,20 +1195,13 @@ img {
 .lightbox {
     position: fixed;
     inset: 0;
-
     z-index: 10000;
-
     display: none;
-
     align-items: center;
     justify-content: center;
-
     flex-direction: column;
-
     padding: 30px;
-
-    background:
-        rgba(35, 27, 21, 0.92);
+    background: rgba(35, 27, 21, 0.92);
 }
 
 .lightbox.active {
@@ -1607,44 +1211,31 @@ img {
 .lightbox img {
     max-width: 90vw;
     max-height: 80vh;
-
     object-fit: contain;
-
     border-radius: 10px;
 }
 
 .lightbox-close {
     position: absolute;
-
     top: 20px;
     right: 25px;
-
     width: 45px;
     height: 45px;
-
     border: 1px solid rgba(255, 255, 255, 0.3);
-
     border-radius: 50%;
-
     background: transparent;
-
     color: white;
-
     font-size: 25px;
-
     cursor: pointer;
+    z-index: 2;
 }
 
 .lightbox-title {
     margin-top: 15px;
-
     color: white;
-
     font-size: 10px;
-
     letter-spacing: 1px;
 }
-
 
 /* =========================================================
    TOOLS
@@ -1652,42 +1243,27 @@ img {
 
 .tools-section {
     max-width: 1000px;
-
     margin: auto;
 }
 
 .tools-grid {
     display: grid;
-
-    grid-template-columns:
-        repeat(4, 1fr);
-
+    grid-template-columns: repeat(4, 1fr);
     gap: 12px;
 }
 
 .tool-card {
     min-height: 100px;
-
     padding: 20px;
-
     display: flex;
-
     align-items: flex-end;
-
-    background:
-        rgba(255, 253, 249, 0.72);
-
+    background: rgba(255, 253, 249, 0.72);
     border: 1px solid var(--border);
-
     border-radius: 15px;
-
     color: var(--brown-dark);
-
     font-size: 9px;
     font-weight: 800;
-
     letter-spacing: 1px;
-
     transition:
         transform 0.25s ease,
         background 0.25s ease,
@@ -1696,12 +1272,9 @@ img {
 
 .tool-card:hover {
     transform: translateY(-5px);
-
     background: white;
-
     border-color: var(--brown);
 }
-
 
 /* =========================================================
    SOCIAL MEDIA FLOATING BOXES
@@ -1709,45 +1282,28 @@ img {
 
 .social-media-section {
     max-width: 1050px;
-
     margin: 0 auto;
-
-    padding:
-        10px 0 80px;
+    padding: 10px 0 80px;
 }
 
 .social-media-grid {
     display: grid;
-
-    grid-template-columns:
-        repeat(2, 1fr);
-
+    grid-template-columns: repeat(2, 1fr);
     gap: 22px;
 }
 
 .social-card {
     position: relative;
-
     min-height: 390px;
-
     padding: 25px;
-
     display: flex;
-
     flex-direction: column;
-
     overflow: hidden;
-
-    background:
-        rgba(255, 253, 249, 0.78);
-
+    background: rgba(255, 253, 249, 0.78);
     border: 1px solid var(--border);
-
     border-radius: 22px;
-
     box-shadow:
         0 15px 40px rgba(60, 45, 30, 0.07);
-
     transition:
         transform 0.3s ease,
         box-shadow 0.3s ease,
@@ -1756,82 +1312,56 @@ img {
 
 .social-card:hover {
     transform: translateY(-9px);
-
     border-color: var(--brown);
-
     box-shadow:
         0 25px 55px rgba(60, 45, 30, 0.14);
 }
 
 .social-card-top {
     display: flex;
-
     align-items: center;
     justify-content: space-between;
-
     margin-bottom: 28px;
 }
 
 .social-number {
     color: var(--brown);
-
     font-size: 11px;
     font-weight: 800;
-
     letter-spacing: 2px;
 }
 
 .social-platform {
     padding: 7px 11px;
-
     border: 1px solid var(--border);
-
     border-radius: 50px;
-
     color: var(--brown-dark);
-
     font-size: 8px;
     font-weight: 800;
-
     letter-spacing: 1.5px;
-
-    background:
-        rgba(255, 255, 255, 0.55);
+    background: rgba(255, 255, 255, 0.55);
 }
 
 .social-icon {
     width: 58px;
     height: 58px;
-
     display: flex;
-
     align-items: center;
     justify-content: center;
-
     margin-bottom: 22px;
-
     border-radius: 16px;
-
     background: var(--brown-dark);
-
     color: white;
-
     font-family: Arial, sans-serif;
-
     font-size: 32px;
     font-weight: bold;
-
     box-shadow:
         0 10px 25px rgba(60, 45, 30, 0.16);
-
-    transition:
-        transform 0.3s ease;
+    transition: transform 0.3s ease;
 }
 
 .social-card:hover .social-icon {
-    transform:
-        rotate(-4deg)
-        scale(1.06);
+    transform: rotate(-4deg) scale(1.06);
 }
 
 .social-card-content {
@@ -1840,71 +1370,45 @@ img {
 
 .social-year {
     display: block;
-
     margin-bottom: 9px;
-
     color: var(--brown);
-
     font-size: 9px;
     font-weight: 800;
-
     letter-spacing: 1.5px;
 }
 
 .social-card h2 {
     max-width: 390px;
-
     font-family: "Playfair Display", serif;
-
     color: var(--text);
-
     font-size: 25px;
-
     line-height: 1.15;
-
     letter-spacing: -0.5px;
 }
 
 .social-card p {
     max-width: 400px;
-
     margin-top: 12px;
-
     color: var(--muted);
-
     font-size: 11px;
-
     line-height: 1.7;
 }
 
 .social-button {
     width: 100%;
-
     min-height: 47px;
-
     margin-top: 25px;
-
     padding: 0 17px;
-
     display: flex;
-
     align-items: center;
     justify-content: space-between;
-
     border: 1px solid var(--border);
-
     border-radius: 50px;
-
-    background:
-        rgba(255, 255, 255, 0.55);
-
+    background: rgba(255, 255, 255, 0.55);
     color: var(--brown-dark);
-
     font-size: 9px;
     font-weight: 800;
-
     letter-spacing: 1px;
-
     transition:
         background 0.25s ease,
         color 0.25s ease,
@@ -1914,82 +1418,58 @@ img {
 
 .social-button b {
     font-size: 17px;
-
     font-weight: 400;
-
-    transition:
-        transform 0.25s ease;
+    transition: transform 0.25s ease;
 }
 
 .social-button:hover {
     background: var(--brown-dark);
-
     color: white;
-
     border-color: var(--brown-dark);
-
     transform: translateY(-2px);
 }
 
 .social-button:hover b {
-    transform:
-        translate(3px, -3px);
+    transform: translate(3px, -3px);
 }
 
 .social-card::before {
     content: "";
-
     position: absolute;
-
     width: 130px;
     height: 130px;
-
     right: -65px;
     bottom: -65px;
-
     border: 1px solid var(--border);
-
     border-radius: 50%;
-
     opacity: 0.45;
-
-    transition:
-        transform 0.4s ease;
+    transition: transform 0.4s ease;
 }
 
 .social-card:hover::before {
     transform: scale(1.3);
 }
 
-
 /* =========================================================
    FOOTER
 ========================================================= */
 
 footer {
-    padding:
-        55px 7% 25px;
-
+    padding: 55px 7% 25px;
     background: #29211b;
-
     color: var(--cream-light);
 }
 
 .footer-top {
     max-width: 1000px;
-
     margin: auto;
-
     display: flex;
-
     justify-content: space-between;
-
     gap: 30px;
 }
 
 .footer-top h3 {
     font-family: "Playfair Display", serif;
-
     font-size: 19px;
 }
 
@@ -1999,23 +1479,18 @@ footer {
 
 .footer-top p {
     margin-top: 6px;
-
     color: #afa399;
-
     font-size: 10px;
 }
 
 .footer-links {
     display: flex;
-
     flex-wrap: wrap;
-
     gap: 18px;
 }
 
 .footer-links a {
     color: #d9d0c7;
-
     font-size: 10px;
 }
 
@@ -2025,41 +1500,28 @@ footer {
 
 .footer-bottom {
     max-width: 1000px;
-
     margin: 35px auto 0;
-
     padding-top: 18px;
-
-    border-top:
-        1px solid rgba(255, 255, 255, 0.1);
-
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
     color: #847a71;
-
     font-size: 9px;
 }
 
-
 /* =========================================================
    GIRL WELCOME
-   LEFT SIDE + BUBBLE NEAR HAND
+   MUCH BIGGER VERSION
 ========================================================= */
 
 .girl-welcome {
     position: fixed;
-
-    left: 18px;
-    bottom: 12px;
-
+    left: 12px;
+    bottom: 8px;
     z-index: 9999;
 
     display: flex;
-
     align-items: flex-end;
 
-    gap: 0;
-
     opacity: 1;
-
     visibility: visible;
 
     transition:
@@ -2070,23 +1532,18 @@ footer {
 
 .girl-welcome.hidden {
     opacity: 0;
-
     visibility: hidden;
-
-    transform:
-        translateY(25px);
-
+    transform: translateY(25px);
     pointer-events: none;
 }
 
-
 /* =========================================================
-   BIG GIRL ICON
+   VERY BIG GIRL ICON
 ========================================================= */
 
 .girl-icon {
-    width: 210px;
-    height: 210px;
+    width: 290px;
+    height: 290px;
 
     object-fit: contain;
 
@@ -2094,61 +1551,63 @@ footer {
 
     filter:
         drop-shadow(
-            0 14px 22px rgba(40, 30, 20, 0.25)
+            0 18px 28px rgba(40, 30, 20, 0.27)
         );
 
     transition:
-        transform 0.25s ease;
+        transform 0.25s ease,
+        filter 0.25s ease;
 }
 
 .girl-icon:hover {
     transform:
-        translateY(-8px)
+        translateY(-10px)
         scale(1.04);
+
+    filter:
+        drop-shadow(
+            0 22px 32px rgba(40, 30, 20, 0.32)
+        );
 }
 
-
 /* =========================================================
-   WELCOME MESSAGE
-   FLOATS ABOVE THE GIRL'S HAND
+   BIG WELCOME MESSAGE
 ========================================================= */
 
 .welcome-message {
     position: absolute;
 
-    left: 125px;
-    bottom: 155px;
+    left: 175px;
+    bottom: 225px;
 
-    width: 235px;
+    width: 360px;
 
-    padding:
-        16px 19px;
+    padding: 25px 28px;
 
     background: white;
 
     border: 1px solid var(--border);
 
-    border-radius: 18px;
+    border-radius: 24px;
 
     box-shadow:
-        0 12px 35px rgba(50, 40, 30, 0.16);
+        0 18px 45px rgba(50, 40, 30, 0.20);
 
     z-index: 3;
 }
 
-
-/* speech bubble little tail */
+/* Speech bubble tail */
 
 .welcome-message::after {
     content: "";
 
     position: absolute;
 
-    left: 30px;
-    bottom: -10px;
+    left: 38px;
+    bottom: -13px;
 
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
 
     background: white;
 
@@ -2158,25 +1617,25 @@ footer {
     transform: rotate(45deg);
 }
 
-
 .welcome-message strong {
     display: block;
 
-    margin-bottom: 5px;
+    margin-bottom: 9px;
 
     color: var(--brown-dark);
 
-    font-size: 14px;
+    font-size: 20px;
+    line-height: 1.3;
 }
 
 .welcome-message span {
+    display: block;
+
     color: var(--muted);
 
-    font-size: 10px;
-
-    line-height: 1.6;
+    font-size: 13px;
+    line-height: 1.7;
 }
-
 
 /* =========================================================
    TABLET
@@ -2203,15 +1662,24 @@ footer {
     .profile-photo {
         width: 155px;
         height: 155px;
-
         top: -78px;
     }
 
     .profile-card {
         padding-top: 90px;
     }
-}
 
+    .girl-icon {
+        width: 260px;
+        height: 260px;
+    }
+
+    .welcome-message {
+        left: 155px;
+        bottom: 200px;
+        width: 330px;
+    }
+}
 
 /* =========================================================
    TABLET / SMALL LAPTOP
@@ -2221,9 +1689,7 @@ footer {
 
     .hero {
         grid-template-columns: 1fr;
-
         gap: 70px;
-
         padding-top: 130px;
     }
 
@@ -2241,30 +1707,36 @@ footer {
 
     .project-feature {
         grid-template-columns: 1fr;
-
         gap: 35px;
     }
 
     .award-grid {
-        grid-template-columns:
-            repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .tools-grid {
-        grid-template-columns:
-            repeat(3, 1fr);
+        grid-template-columns: repeat(3, 1fr);
     }
 
     .visual-gallery {
-        grid-template-columns:
-            repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .social-media-grid {
         grid-template-columns: 1fr;
     }
-}
 
+    .girl-icon {
+        width: 230px;
+        height: 230px;
+    }
+
+    .welcome-message {
+        left: 140px;
+        bottom: 180px;
+        width: 310px;
+    }
+}
 
 /* =========================================================
    MOBILE
@@ -2278,15 +1750,9 @@ footer {
 
     .navbar {
         position: fixed;
-
-        padding:
-            14px 5%;
-
-        background:
-            rgba(244, 237, 227, 0.96);
-
-        backdrop-filter:
-            blur(10px);
+        padding: 14px 5%;
+        background: rgba(244, 237, 227, 0.96);
+        backdrop-filter: blur(10px);
     }
 
     .menu-toggle {
@@ -2295,36 +1761,19 @@ footer {
 
     .nav-links {
         position: fixed;
-
         top: 0;
-
         right: -100%;
-
-        width:
-            min(82vw, 320px);
-
+        width: min(82vw, 320px);
         height: 100vh;
-
-        padding:
-            85px 28px 30px;
-
+        padding: 85px 28px 30px;
         flex-direction: column;
-
         align-items: flex-start;
-
         gap: 0;
-
-        background:
-            var(--cream-light);
-
-        border-left:
-            1px solid var(--border);
-
+        background: var(--cream-light);
+        border-left: 1px solid var(--border);
         box-shadow:
             -15px 0 35px rgba(40, 30, 20, 0.12);
-
-        transition:
-            right 0.3s ease;
+        transition: right 0.3s ease;
     }
 
     .nav-links.active {
@@ -2333,15 +1782,10 @@ footer {
 
     .nav-links a {
         width: 100%;
-
         padding: 17px 0;
-
-        border-bottom:
-            1px solid var(--border);
-
+        border-bottom: 1px solid var(--border);
         font-size: 11px;
     }
-
 
     /* -------------------------
        HERO
@@ -2349,17 +1793,12 @@ footer {
 
     .hero {
         min-height: auto;
-
-        padding:
-            120px 5% 80px;
-
+        padding: 120px 5% 80px;
         gap: 65px;
     }
 
     .hero h1 {
-        font-size:
-            clamp(53px, 15vw, 75px);
-
+        font-size: clamp(53px, 15vw, 75px);
         letter-spacing: -3px;
     }
 
@@ -2369,14 +1808,12 @@ footer {
 
     .hero-buttons {
         flex-direction: column;
-
         align-items: stretch;
     }
 
     .btn {
         width: 100%;
     }
-
 
     /* -------------------------
        PROFILE
@@ -2388,27 +1825,20 @@ footer {
 
     .cover-card {
         height: 230px;
-
         border-radius: 16px;
     }
 
     .profile-card {
         width: 92%;
-
         margin-top: -65px;
-
-        padding:
-            78px 20px 28px;
-
+        padding: 78px 20px 28px;
         border-radius: 18px;
     }
 
     .profile-photo {
         width: 130px;
         height: 130px;
-
         top: -65px;
-
         padding: 6px;
     }
 
@@ -2432,21 +1862,18 @@ footer {
         font-size: 12px;
     }
 
-
     /* -------------------------
        SECTIONS
     ------------------------- */
 
     .profile-section,
     .work-section {
-        padding:
-            70px 5%;
+        padding: 70px 5%;
     }
 
     .section-heading h2 {
         font-size: 50px;
     }
-
 
     /* -------------------------
        ABOUT
@@ -2454,7 +1881,6 @@ footer {
 
     .about-content {
         grid-template-columns: 1fr;
-
         gap: 35px;
     }
 
@@ -2463,24 +1889,20 @@ footer {
     }
 
     .info-grid {
-        grid-template-columns:
-            1fr 1fr;
+        grid-template-columns: 1fr 1fr;
     }
-
 
     /* -------------------------
        WORK
     ------------------------- */
 
     .work-links {
-        grid-template-columns:
-            1fr;
+        grid-template-columns: 1fr;
     }
 
     .work-link {
         min-height: 110px;
     }
-
 
     /* -------------------------
        PROJECT PAGES
@@ -2488,8 +1910,7 @@ footer {
 
     .inner-page,
     .project-page {
-        padding:
-            120px 5% 70px;
+        padding: 120px 5% 70px;
     }
 
     .page-heading,
@@ -2500,7 +1921,6 @@ footer {
     .page-heading h1,
     .page-header h1 {
         font-size: 52px;
-
         letter-spacing: -2px;
     }
 
@@ -2516,19 +1936,15 @@ footer {
     .project-row,
     .mini-project {
         flex-direction: column;
-
         align-items: flex-start;
-
         gap: 15px;
     }
 
     .project-button,
     .mini-project > a {
         width: 100%;
-
         text-align: center;
     }
-
 
     /* -------------------------
        WEBSITE
@@ -2536,7 +1952,6 @@ footer {
 
     .project-detail {
         grid-template-columns: 1fr;
-
         gap: 10px;
     }
 
@@ -2550,7 +1965,6 @@ footer {
 
     .project-description-grid {
         grid-template-columns: 1fr;
-
         gap: 30px;
     }
 
@@ -2558,16 +1972,13 @@ footer {
         grid-template-columns: 1fr;
     }
 
-
     /* -------------------------
        AWARDS
     ------------------------- */
 
     .award-grid {
-        grid-template-columns:
-            1fr 1fr;
+        grid-template-columns: 1fr 1fr;
     }
-
 
     /* -------------------------
        PHOTOGRAPHY
@@ -2581,38 +1992,30 @@ footer {
         height: 280px;
     }
 
-
     /* -------------------------
        TOOLS
     ------------------------- */
 
     .tools-grid {
-        grid-template-columns:
-            1fr 1fr;
+        grid-template-columns: 1fr 1fr;
     }
-
 
     /* -------------------------
        SOCIAL MEDIA
     ------------------------- */
 
     .social-media-section {
-        padding:
-            10px 0 60px;
+        padding: 10px 0 60px;
     }
 
     .social-media-grid {
-        grid-template-columns:
-            1fr;
-
+        grid-template-columns: 1fr;
         gap: 16px;
     }
 
     .social-card {
         min-height: 350px;
-
         padding: 21px;
-
         border-radius: 18px;
     }
 
@@ -2627,12 +2030,9 @@ footer {
     .social-icon {
         width: 53px;
         height: 53px;
-
         font-size: 29px;
-
         border-radius: 14px;
     }
-
 
     /* -------------------------
        PAGE NAVIGATION
@@ -2641,7 +2041,6 @@ footer {
     .page-navigation,
     .back-section {
         flex-direction: column;
-
         align-items: stretch;
     }
 
@@ -2649,7 +2048,6 @@ footer {
     .outline-button {
         text-align: center;
     }
-
 
     /* -------------------------
        FOOTER
@@ -2659,54 +2057,44 @@ footer {
         flex-direction: column;
     }
 
-
     /* =====================================================
-       GIRL — MOBILE
-       LEFT SIDE
+       BIG GIRL — MOBILE
     ===================================================== */
 
     .girl-welcome {
-        left: 2px;
-        bottom: 2px;
-
-        align-items: flex-end;
+        left: 0;
+        bottom: 0;
     }
 
     .girl-icon {
-        width: 145px;
-        height: 145px;
+        width: 190px;
+        height: 190px;
     }
 
     .welcome-message {
-        left: 82px;
-        bottom: 108px;
-
-        width: 185px;
-
-        padding:
-            12px 14px;
-
-        border-radius: 15px;
+        left: 115px;
+        bottom: 145px;
+        width: 260px;
+        padding: 20px 22px;
+        border-radius: 21px;
     }
 
     .welcome-message strong {
-        font-size: 11px;
+        font-size: 17px;
     }
 
     .welcome-message span {
-        font-size: 9px;
+        font-size: 11px;
+        line-height: 1.65;
     }
 
     .welcome-message::after {
-        left: 24px;
-
-        width: 15px;
-        height: 15px;
-
-        bottom: -8px;
+        left: 28px;
+        width: 20px;
+        height: 20px;
+        bottom: -11px;
     }
 }
-
 
 /* =========================================================
    SMALL PHONES
@@ -2737,13 +2125,11 @@ footer {
     .profile-photo {
         width: 115px;
         height: 115px;
-
         top: -58px;
     }
 
     .profile-card {
         margin-top: -58px;
-
         padding-top: 70px;
     }
 
@@ -2751,21 +2137,30 @@ footer {
         font-size: 24px;
     }
 
+    /* BIG GIRL ON SMALL PHONES */
+
     .girl-icon {
-        width: 125px;
-        height: 125px;
+        width: 165px;
+        height: 165px;
     }
 
     .welcome-message {
-        left: 70px;
-        bottom: 92px;
+        left: 98px;
+        bottom: 125px;
+        width: 235px;
+        padding: 17px 19px;
+    }
 
-        width: 160px;
+    .welcome-message strong {
+        font-size: 15px;
+    }
+
+    .welcome-message span {
+        font-size: 10px;
     }
 
     .social-card {
         min-height: 335px;
-
         padding: 18px;
     }
 
@@ -2775,12 +2170,9 @@ footer {
 
     .social-platform {
         font-size: 7px;
-
-        padding:
-            6px 8px;
+        padding: 6px 8px;
     }
 }
-
 
 /* =========================================================
    VERY SMALL HEIGHT / LANDSCAPE PHONES
@@ -2789,13 +2181,12 @@ footer {
 @media (max-height: 600px) and (max-width: 700px) {
 
     .girl-icon {
-        width: 105px;
-        height: 105px;
+        width: 145px;
+        height: 145px;
     }
 
     .welcome-message {
-        bottom: 78px;
-
-        width: 165px;
+        bottom: 105px;
+        width: 230px;
     }
 }

@@ -1,49 +1,31 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-
     /* =========================================
        MOBILE MENU
     ========================================== */
 
-    const menuToggle =
-        document.getElementById("menuToggle");
-
-    const navLinks =
-        document.getElementById("navLinks");
-
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
 
     if (menuToggle && navLinks) {
 
-        menuToggle.addEventListener("click", function () {
+        menuToggle.addEventListener("click", function (event) {
+            event.preventDefault();
 
-            const opened =
-                navLinks.classList.toggle("active");
+            const opened = navLinks.classList.toggle("active");
 
-
-            menuToggle.classList.toggle(
-                "active",
-                opened
-            );
-
+            menuToggle.classList.toggle("active", opened);
 
             menuToggle.setAttribute(
                 "aria-expanded",
-                opened
+                opened ? "true" : "false"
             );
-
         });
 
-
-        const navigationLinks =
-            navLinks.querySelectorAll("a");
-
-
-        navigationLinks.forEach(function (link) {
-
+        navLinks.querySelectorAll("a").forEach(function (link) {
             link.addEventListener("click", function () {
 
                 navLinks.classList.remove("active");
-
                 menuToggle.classList.remove("active");
 
                 menuToggle.setAttribute(
@@ -52,16 +34,13 @@ document.addEventListener("DOMContentLoaded", function () {
                 );
 
             });
-
         });
-
 
         document.addEventListener("keydown", function (event) {
 
             if (event.key === "Escape") {
 
                 navLinks.classList.remove("active");
-
                 menuToggle.classList.remove("active");
 
                 menuToggle.setAttribute(
@@ -72,46 +51,49 @@ document.addEventListener("DOMContentLoaded", function () {
             }
 
         });
-
     }
 
 
     /* =========================================
        WELCOME GIRL
+       REAL IMAGE:
+       assets/girl-icon.png
     ========================================== */
 
-    const girlWelcome =
-        document.getElementById("girlWelcome");
-
-    const girlIcon =
-        document.getElementById("girlIcon");
-
+    const girlWelcome = document.getElementById("girlWelcome");
+    const girlIcon = document.getElementById("girlIcon");
 
     if (girlWelcome && girlIcon) {
 
+        // Make absolutely sure the correct image is used
+        girlIcon.setAttribute(
+            "src",
+            "assets/girl-icon.png"
+        );
+
+        girlIcon.setAttribute(
+            "alt",
+            "Welcome to Lenie Joy Badil's Portfolio"
+        );
+
         girlWelcome.classList.remove("hidden");
 
-
-        const timer = setTimeout(function () {
-
+        let girlTimer = setTimeout(function () {
             girlWelcome.classList.add("hidden");
-
-        }, 8000);
-
+        }, 10000);
 
         girlIcon.addEventListener("click", function () {
 
-            clearTimeout(timer);
+            clearTimeout(girlTimer);
 
-            girlWelcome.classList.add("hidden");
+            girlWelcome.classList.toggle("hidden");
 
         });
-
     }
 
 
     /* =========================================
-       LIGHTBOX
+       LIGHTBOX ELEMENTS
     ========================================== */
 
     const lightbox =
@@ -127,25 +109,25 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("lightboxClose");
 
 
-    const lightboxTriggers =
-        document.querySelectorAll(".lightbox-trigger");
-
+    /* =========================================
+       OPEN LIGHTBOX
+    ========================================== */
 
     function openLightbox(image, title) {
 
-        if (!lightbox || !lightboxImage) {
+        if (!lightbox || !lightboxImage || !image) {
             return;
         }
 
-
         lightboxImage.src = image;
 
-        lightboxImage.alt = title || "Portfolio image";
+        lightboxImage.alt =
+            title || "Portfolio image";
 
         if (lightboxTitle) {
-            lightboxTitle.textContent = title || "";
+            lightboxTitle.textContent =
+                title || "";
         }
-
 
         lightbox.classList.add("active");
 
@@ -154,54 +136,155 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
+    /* =========================================
+       CLOSE LIGHTBOX
+    ========================================== */
+
     function closeLightbox() {
 
         if (!lightbox) {
             return;
         }
 
-
         lightbox.classList.remove("active");
 
         document.body.classList.remove("no-scroll");
 
+        setTimeout(function () {
+
+            if (
+                !lightbox.classList.contains("active") &&
+                lightboxImage
+            ) {
+                lightboxImage.src = "";
+            }
+
+        }, 200);
+
     }
+
+
+    /* =========================================
+       ALL LIGHTBOX TRIGGERS
+    ========================================== */
+
+    const lightboxTriggers =
+        document.querySelectorAll(
+            ".lightbox-trigger"
+        );
 
 
     lightboxTriggers.forEach(function (item) {
 
-        item.addEventListener("click", function () {
+        item.style.cursor = "pointer";
 
-            const image =
-                item.getAttribute("data-image");
+        item.addEventListener(
+            "click",
+            function (event) {
 
-            const title =
-                item.getAttribute("data-title");
+                event.preventDefault();
+                event.stopPropagation();
+
+                const image =
+                    item.getAttribute(
+                        "data-image"
+                    );
+
+                const title =
+                    item.getAttribute(
+                        "data-title"
+                    );
 
 
-            if (image) {
+                if (image) {
 
-                openLightbox(
-                    image,
-                    title
-                );
+                    openLightbox(
+                        image,
+                        title
+                    );
+
+                }
 
             }
-
-        });
+        );
 
     });
 
+
+    /* =========================================
+       MAKE IMAGES WITH data-image CLICKABLE
+       EVEN IF CLASS IS MISSING
+    ========================================== */
+
+    document.querySelectorAll(
+        "[data-image]"
+    ).forEach(function (item) {
+
+        if (
+            !item.classList.contains(
+                "lightbox-trigger"
+            )
+        ) {
+
+            item.style.cursor = "pointer";
+
+            item.addEventListener(
+                "click",
+                function (event) {
+
+                    event.preventDefault();
+                    event.stopPropagation();
+
+                    const image =
+                        item.getAttribute(
+                            "data-image"
+                        );
+
+                    const title =
+                        item.getAttribute(
+                            "data-title"
+                        );
+
+                    if (image) {
+
+                        openLightbox(
+                            image,
+                            title
+                        );
+
+                    }
+
+                }
+            );
+        }
+
+    });
+
+
+    /* =========================================
+       CLOSE BUTTON
+    ========================================== */
 
     if (lightboxClose) {
 
         lightboxClose.addEventListener(
             "click",
-            closeLightbox
+            function (event) {
+
+                event.preventDefault();
+                event.stopPropagation();
+
+                closeLightbox();
+
+            }
         );
 
     }
 
+
+    /* =========================================
+       CLICK BACKGROUND TO CLOSE
+    ========================================== */
 
     if (lightbox) {
 
@@ -209,7 +292,9 @@ document.addEventListener("DOMContentLoaded", function () {
             "click",
             function (event) {
 
-                if (event.target === lightbox) {
+                if (
+                    event.target === lightbox
+                ) {
 
                     closeLightbox();
 
@@ -220,6 +305,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
+
+    /* =========================================
+       ESCAPE KEY
+    ========================================== */
 
     document.addEventListener(
         "keydown",
@@ -236,65 +325,201 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =========================================
-       TECHNICAL GALLERY
+       TECHNICAL / IoT GALLERY
     ========================================== */
 
     const technicalMainImage =
-        document.getElementById("technicalMainImage");
+        document.getElementById(
+            "technicalMainImage"
+        );
+
+    const galleryMain =
+        document.querySelector(
+            ".gallery-main"
+        );
 
     const thumbnails =
-        document.querySelectorAll(".thumbnail");
+        document.querySelectorAll(
+            ".thumbnail"
+        );
 
 
-    if (technicalMainImage && thumbnails.length) {
+    if (
+        technicalMainImage &&
+        thumbnails.length
+    ) {
 
-        thumbnails.forEach(function (thumbnail) {
+        thumbnails.forEach(
+            function (thumbnail) {
 
-            thumbnail.addEventListener(
-                "click",
-                function () {
+                thumbnail.addEventListener(
+                    "click",
+                    function (event) {
 
-                    const newImage =
-                        thumbnail.getAttribute("data-main");
+                        event.preventDefault();
+                        event.stopPropagation();
 
+                        const newImage =
+                            thumbnail.getAttribute(
+                                "data-main"
+                            );
 
-                    if (!newImage) {
-                        return;
-                    }
-
-
-                    technicalMainImage.src =
-                        newImage;
-
-
-                    thumbnails.forEach(function (item) {
-
-                        item.classList.remove("active");
-
-                    });
+                        if (!newImage) {
+                            return;
+                        }
 
 
-                    thumbnail.classList.add("active");
+                        /* Change main image */
+
+                        technicalMainImage.src =
+                            newImage;
 
 
-                    const galleryMain =
-                        document.querySelector(".gallery-main");
+                        /* Update active thumbnail */
 
+                        thumbnails.forEach(
+                            function (item) {
 
-                    if (galleryMain) {
+                                item.classList.remove(
+                                    "active"
+                                );
 
-                        galleryMain.setAttribute(
-                            "data-image",
-                            newImage
+                            }
                         );
 
+                        thumbnail.classList.add(
+                            "active"
+                        );
+
+
+                        /* Update lightbox */
+
+                        if (galleryMain) {
+
+                            galleryMain.setAttribute(
+                                "data-image",
+                                newImage
+                            );
+
+                            galleryMain.setAttribute(
+                                "data-title",
+                                thumbnail.getAttribute(
+                                    "data-title"
+                                ) ||
+                                "Technical & IoT Project"
+                            );
+
+                        }
+
                     }
+                );
+
+            }
+        );
+    }
+
+
+    /* =========================================
+       TECHNICAL MAIN IMAGE CLICK
+    ========================================== */
+
+    if (technicalMainImage) {
+
+        technicalMainImage.style.cursor =
+            "pointer";
+
+        technicalMainImage.addEventListener(
+            "click",
+            function (event) {
+
+                event.preventDefault();
+
+                const image =
+                    technicalMainImage.getAttribute(
+                        "src"
+                    );
+
+                if (image) {
+
+                    openLightbox(
+                        image,
+                        "Technical & IoT Project"
+                    );
 
                 }
-            );
 
-        });
+            }
+        );
 
     }
+
+
+    /* =========================================
+       AUTOMATICALLY MAKE NORMAL PORTFOLIO
+       IMAGES CLICKABLE
+       
+       Excludes:
+       - girl icon
+       - lightbox image
+       - thumbnails
+    ========================================== */
+
+    document.querySelectorAll(
+        "img"
+    ).forEach(function (image) {
+
+        image.addEventListener(
+            "error",
+            function () {
+
+                console.warn(
+                    "Image could not be loaded:",
+                    image.src
+                );
+
+            }
+        );
+
+    });
+
+
+    /* =========================================
+       NO SCROLL WHILE LIGHTBOX IS OPEN
+    ========================================== */
+
+    if (!document.getElementById(
+        "lightboxNoScrollStyle"
+    )) {
+
+        const style =
+            document.createElement("style");
+
+        style.id =
+            "lightboxNoScrollStyle";
+
+        style.textContent = `
+            body.no-scroll {
+                overflow: hidden !important;
+            }
+        `;
+
+        document.head.appendChild(style);
+
+    }
+
+
+    /* =========================================
+       PAGE LOAD
+       START AT TOP
+    ========================================== */
+
+    if ("scrollRestoration" in history) {
+
+        history.scrollRestoration =
+            "manual";
+
+    }
+
+    window.scrollTo(0, 0);
 
 });
