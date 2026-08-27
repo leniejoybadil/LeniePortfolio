@@ -719,48 +719,124 @@ img {
     max-width: 1000px;
     margin: auto;
     display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    gap: 50px;
+    grid-template-columns: 1fr 0.9fr;
+    gap: 45px;
     align-items: center;
 }
 
+/* =========================================================
+   TECHNICAL GALLERY
+   SMALLER / CONTROLLED SIZE
+========================================================= */
+
 .project-gallery {
     width: 100%;
+    max-width: 470px;
+    margin: 0 auto;
 }
 
-.project-gallery > img {
+/* Main clickable image container */
+.gallery-main {
+    position: relative;
+    display: block;
     width: 100%;
-    height: 390px;
-    object-fit: cover;
-    border-radius: 20px;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 18px;
     border: 1px solid var(--border);
     background: var(--cream-dark);
     cursor: pointer;
 }
 
+/* Main technical image */
+.gallery-main img,
+#technicalMainImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Hover overlay */
+.gallery-main .image-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: flex-end;
+    padding: 18px;
+    background:
+        linear-gradient(
+            transparent 45%,
+            rgba(40, 30, 20, 0.65)
+        );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-main:hover .image-overlay {
+    opacity: 1;
+}
+
+.gallery-main:hover img {
+    transform: scale(1.03);
+}
+
+.gallery-main img {
+    transition: transform 0.4s ease;
+}
+
+.gallery-main .image-overlay span {
+    color: white;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+/* =========================================================
+   THUMBNAILS
+========================================================= */
+
 .thumbnail-row {
     display: flex;
     gap: 8px;
-    margin-top: 10px;
+    margin-top: 12px;
     flex-wrap: wrap;
 }
 
-.thumbnail-row img {
-    width: 70px;
-    height: 55px;
-    object-fit: cover;
+.thumbnail {
+    width: 66px;
+    height: 52px;
+    padding: 0;
+    overflow: hidden;
+    border: 2px solid transparent;
     border-radius: 8px;
-    border: 1px solid var(--border);
+    background: transparent;
     cursor: pointer;
     transition:
         transform 0.2s ease,
-        border-color 0.2s ease;
+        border-color 0.2s ease,
+        opacity 0.2s ease;
 }
 
-.thumbnail-row img:hover {
+.thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.thumbnail:hover {
     transform: translateY(-3px);
     border-color: var(--brown);
 }
+
+.thumbnail.active {
+    border-color: var(--brown-dark);
+    opacity: 1;
+}
+
+/* =========================================================
+   PROJECT CONTENT
+========================================================= */
 
 .project-content h2 {
     margin-top: 15px;
@@ -865,6 +941,10 @@ img {
     margin: 90px auto 0;
 }
 
+.awards-section .section-heading {
+    margin-bottom: 30px;
+}
+
 .award-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -879,17 +959,20 @@ img {
     border-radius: 16px;
     transition:
         transform 0.25s ease,
-        box-shadow 0.25s ease;
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
 }
 
 .award-card:hover {
     transform: translateY(-5px);
     box-shadow:
         0 15px 35px rgba(60, 45, 30, 0.1);
+    border-color: var(--brown);
 }
 
 .award-card > span {
-    font-size: 22px;
+    display: block;
+    font-size: 24px;
     color: var(--brown);
 }
 
@@ -912,6 +995,7 @@ img {
     margin-top: 5px;
     color: var(--muted);
     font-size: 9px;
+    line-height: 1.5;
 }
 
 /* =========================================================
@@ -1277,7 +1361,7 @@ img {
 }
 
 /* =========================================================
-   SOCIAL MEDIA FLOATING BOXES
+   SOCIAL MEDIA
 ========================================================= */
 
 .social-media-section {
@@ -1509,7 +1593,6 @@ footer {
 
 /* =========================================================
    GIRL WELCOME
-   MUCH BIGGER VERSION
 ========================================================= */
 
 .girl-welcome {
@@ -1517,13 +1600,10 @@ footer {
     left: 12px;
     bottom: 8px;
     z-index: 9999;
-
     display: flex;
     align-items: flex-end;
-
     opacity: 1;
     visibility: visible;
-
     transition:
         opacity 0.3s ease,
         transform 0.3s ease,
@@ -1537,23 +1617,15 @@ footer {
     pointer-events: none;
 }
 
-/* =========================================================
-   VERY BIG GIRL ICON
-========================================================= */
-
 .girl-icon {
     width: 290px;
     height: 290px;
-
     object-fit: contain;
-
     cursor: pointer;
-
     filter:
         drop-shadow(
             0 18px 28px rgba(40, 30, 20, 0.27)
         );
-
     transition:
         transform 0.25s ease,
         filter 0.25s ease;
@@ -1563,76 +1635,50 @@ footer {
     transform:
         translateY(-10px)
         scale(1.04);
-
     filter:
         drop-shadow(
             0 22px 32px rgba(40, 30, 20, 0.32)
         );
 }
 
-/* =========================================================
-   BIG WELCOME MESSAGE
-========================================================= */
-
 .welcome-message {
     position: absolute;
-
     left: 175px;
     bottom: 225px;
-
     width: 360px;
-
     padding: 25px 28px;
-
     background: white;
-
     border: 1px solid var(--border);
-
     border-radius: 24px;
-
     box-shadow:
         0 18px 45px rgba(50, 40, 30, 0.20);
-
     z-index: 3;
 }
 
-/* Speech bubble tail */
-
 .welcome-message::after {
     content: "";
-
     position: absolute;
-
     left: 38px;
     bottom: -13px;
-
     width: 25px;
     height: 25px;
-
     background: white;
-
     border-right: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
-
     transform: rotate(45deg);
 }
 
 .welcome-message strong {
     display: block;
-
     margin-bottom: 9px;
-
     color: var(--brown-dark);
-
     font-size: 20px;
     line-height: 1.3;
 }
 
 .welcome-message span {
     display: block;
-
     color: var(--muted);
-
     font-size: 13px;
     line-height: 1.7;
 }
@@ -1647,7 +1693,6 @@ footer {
         grid-template-columns:
             minmax(0, 1fr)
             minmax(420px, 0.9fr);
-
         gap: 45px;
     }
 
@@ -1679,6 +1724,10 @@ footer {
         bottom: 200px;
         width: 330px;
     }
+
+    .project-gallery {
+        max-width: 430px;
+    }
 }
 
 /* =========================================================
@@ -1708,6 +1757,15 @@ footer {
     .project-feature {
         grid-template-columns: 1fr;
         gap: 35px;
+    }
+
+    .project-gallery {
+        max-width: 500px;
+        width: 100%;
+    }
+
+    .gallery-main {
+        height: 310px;
     }
 
     .award-grid {
@@ -1744,9 +1802,7 @@ footer {
 
 @media (max-width: 700px) {
 
-    /* -------------------------
-       NAV
-    ------------------------- */
+    /* NAV */
 
     .navbar {
         position: fixed;
@@ -1787,9 +1843,7 @@ footer {
         font-size: 11px;
     }
 
-    /* -------------------------
-       HERO
-    ------------------------- */
+    /* HERO */
 
     .hero {
         min-height: auto;
@@ -1815,9 +1869,7 @@ footer {
         width: 100%;
     }
 
-    /* -------------------------
-       PROFILE
-    ------------------------- */
+    /* PROFILE */
 
     .hero-profile {
         width: 100%;
@@ -1862,9 +1914,7 @@ footer {
         font-size: 12px;
     }
 
-    /* -------------------------
-       SECTIONS
-    ------------------------- */
+    /* SECTIONS */
 
     .profile-section,
     .work-section {
@@ -1875,9 +1925,7 @@ footer {
         font-size: 50px;
     }
 
-    /* -------------------------
-       ABOUT
-    ------------------------- */
+    /* ABOUT */
 
     .about-content {
         grid-template-columns: 1fr;
@@ -1892,9 +1940,7 @@ footer {
         grid-template-columns: 1fr 1fr;
     }
 
-    /* -------------------------
-       WORK
-    ------------------------- */
+    /* WORK */
 
     .work-links {
         grid-template-columns: 1fr;
@@ -1904,9 +1950,7 @@ footer {
         min-height: 110px;
     }
 
-    /* -------------------------
-       PROJECT PAGES
-    ------------------------- */
+    /* PROJECT */
 
     .inner-page,
     .project-page {
@@ -1924,13 +1968,29 @@ footer {
         letter-spacing: -2px;
     }
 
-    .project-gallery > img {
-        height: 260px;
+    /* SMALLER TECHNICAL IMAGE */
+
+    .project-gallery {
+        max-width: 100%;
+        width: 100%;
     }
 
-    .thumbnail-row img {
-        width: 58px;
-        height: 48px;
+    .gallery-main {
+        height: 235px;
+        border-radius: 15px;
+    }
+
+    #technicalMainImage {
+        height: 100%;
+    }
+
+    .thumbnail {
+        width: 55px;
+        height: 45px;
+    }
+
+    .project-content h2 {
+        font-size: 25px;
     }
 
     .project-row,
@@ -1946,9 +2006,7 @@ footer {
         text-align: center;
     }
 
-    /* -------------------------
-       WEBSITE
-    ------------------------- */
+    /* WEBSITE */
 
     .project-detail {
         grid-template-columns: 1fr;
@@ -1972,17 +2030,28 @@ footer {
         grid-template-columns: 1fr;
     }
 
-    /* -------------------------
-       AWARDS
-    ------------------------- */
+    /* AWARDS */
+
+    .awards-section,
+    .projects-section {
+        margin-top: 65px;
+    }
 
     .award-grid {
         grid-template-columns: 1fr 1fr;
+        gap: 10px;
     }
 
-    /* -------------------------
-       PHOTOGRAPHY
-    ------------------------- */
+    .award-card {
+        min-height: 170px;
+        padding: 18px;
+    }
+
+    .award-card h3 {
+        font-size: 15px;
+    }
+
+    /* PHOTOGRAPHY */
 
     .visual-gallery {
         grid-template-columns: 1fr;
@@ -1992,17 +2061,13 @@ footer {
         height: 280px;
     }
 
-    /* -------------------------
-       TOOLS
-    ------------------------- */
+    /* TOOLS */
 
     .tools-grid {
         grid-template-columns: 1fr 1fr;
     }
 
-    /* -------------------------
-       SOCIAL MEDIA
-    ------------------------- */
+    /* SOCIAL MEDIA */
 
     .social-media-section {
         padding: 10px 0 60px;
@@ -2034,9 +2099,7 @@ footer {
         border-radius: 14px;
     }
 
-    /* -------------------------
-       PAGE NAVIGATION
-    ------------------------- */
+    /* PAGE NAVIGATION */
 
     .page-navigation,
     .back-section {
@@ -2049,17 +2112,13 @@ footer {
         text-align: center;
     }
 
-    /* -------------------------
-       FOOTER
-    ------------------------- */
+    /* FOOTER */
 
     .footer-top {
         flex-direction: column;
     }
 
-    /* =====================================================
-       BIG GIRL — MOBILE
-    ===================================================== */
+    /* GIRL */
 
     .girl-welcome {
         left: 0;
@@ -2137,7 +2196,22 @@ footer {
         font-size: 24px;
     }
 
-    /* BIG GIRL ON SMALL PHONES */
+    /* SMALLER TECHNICAL IMAGE */
+
+    .gallery-main {
+        height: 205px;
+    }
+
+    .thumbnail {
+        width: 50px;
+        height: 41px;
+    }
+
+    .project-content h2 {
+        font-size: 23px;
+    }
+
+    /* GIRL */
 
     .girl-icon {
         width: 165px;
@@ -2188,5 +2262,46 @@ footer {
     .welcome-message {
         bottom: 105px;
         width: 230px;
+    }
+}
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible,
+a:focus-visible {
+    outline: 2px solid var(--brown);
+    outline-offset: 3px;
+}
+
+/* =========================================================
+   LIGHTBOX IMAGE FIX
+========================================================= */
+
+.lightbox img {
+    width: auto;
+    height: auto;
+    max-width: 92vw;
+    max-height: 82vh;
+}
+
+/* =========================================================
+   TECHNICAL PROJECT — DESKTOP SIZE CONTROL
+========================================================= */
+
+@media (min-width: 901px) {
+
+    .project-gallery {
+        max-width: 460px;
+    }
+
+    .gallery-main {
+        height: 290px;
     }
 }
