@@ -120,26 +120,26 @@
     <!-- =====================================================
          PHOTOGRAPHY GALLERY
          
-         NOW MATCHES THE TECHNICAL PAGE STYLE
+         ONLY THIS PART IS CHANGED.
+         IT NOW MATCHES TECHNICAL.HTML
     ====================================================== -->
 
     <section class="project-feature">
 
 
         <!-- =================================================
-             PHOTOGRAPHY GALLERY
+             GALLERY
         ================================================== -->
 
         <div class="project-gallery">
 
 
-            <!-- MAIN PHOTO -->
+            <!-- MAIN IMAGE -->
 
             <a
                 href="assets/photography/photo-1.jpg"
                 class="gallery-main"
                 id="photographyMainLink"
-                aria-label="Open photography image"
             >
 
                 <img
@@ -167,7 +167,6 @@
                         'Photography 01',
                         this
                     )"
-                    aria-label="Show Photography 01"
                 >
 
                     <img
@@ -189,7 +188,6 @@
                         'Photography 02',
                         this
                     )"
-                    aria-label="Show Photography 02"
                 >
 
                     <img
@@ -211,7 +209,6 @@
                         'Photography 03',
                         this
                     )"
-                    aria-label="Show Photography 03"
                 >
 
                     <img
@@ -233,7 +230,6 @@
                         'Photography 04',
                         this
                     )"
-                    aria-label="Show Photography 04"
                 >
 
                     <img
@@ -255,7 +251,6 @@
                         'Photography 05',
                         this
                     )"
-                    aria-label="Show Photography 05"
                 >
 
                     <img
@@ -273,7 +268,7 @@
 
 
         <!-- =================================================
-             PHOTOGRAPHY INFORMATION
+             PHOTO INFORMATION
         ================================================== -->
 
         <div class="project-content">
@@ -291,9 +286,9 @@
             </h3>
 
             <p>
-                A selection of event, community and creative
-                photography documenting people, moments and
-                experiences through visual storytelling.
+                A selection of photography work and visual
+                storytelling projects documenting events,
+                communities, people and memorable moments.
             </p>
 
         </div>
@@ -304,6 +299,8 @@
 
     <!-- =====================================================
          VIDEOGRAPHY
+         KEEPING YOUR FACEBOOK FLOATING CARDS
+         EXACTLY AS PROVIDED
     ====================================================== -->
 
     <section class="media-category">
@@ -547,6 +544,7 @@
 
     <!-- =====================================================
          PAGEANTS
+         KEEPING FACEBOOK FLOATING CARDS
     ====================================================== -->
 
     <section class="media-category">
@@ -1516,9 +1514,6 @@
 
 <!-- =========================================================
      LIGHTBOX
-     
-     NO "VIEW PHOTO"
-     X IS A REAL BUTTON
 ========================================================= -->
 
 <div
@@ -1560,6 +1555,7 @@
 <script src="script.js"></script>
 
 
+
 <!-- =========================================================
      PHOTOGRAPHY GALLERY SCRIPT
 ========================================================= -->
@@ -1568,41 +1564,23 @@
 
 document.addEventListener("DOMContentLoaded", function () {
 
-
-    /* =====================================================
-       PHOTOGRAPHY ELEMENTS
-    ===================================================== */
-
     const mainImage =
-        document.getElementById(
-            "photographyMainImage"
-        );
+        document.getElementById("photographyMainImage");
 
     const mainLink =
-        document.getElementById(
-            "photographyMainLink"
-        );
+        document.getElementById("photographyMainLink");
 
     const lightbox =
-        document.getElementById(
-            "lightbox"
-        );
+        document.getElementById("lightbox");
 
     const lightboxImage =
-        document.getElementById(
-            "lightboxImage"
-        );
+        document.getElementById("lightboxImage");
 
     const lightboxTitle =
-        document.getElementById(
-            "lightboxTitle"
-        );
+        document.getElementById("lightboxTitle");
 
     const lightboxClose =
-        document.getElementById(
-            "lightboxClose"
-        );
-
+        document.getElementById("lightboxClose");
 
 
     /* =====================================================
@@ -1615,7 +1593,6 @@ document.addEventListener("DOMContentLoaded", function () {
             if (!mainImage || !image) {
                 return;
             }
-
 
             mainImage.src = image;
 
@@ -1642,31 +1619,26 @@ document.addEventListener("DOMContentLoaded", function () {
 
             document
                 .querySelectorAll(
-                    ".thumbnail"
+                    ".project-gallery .thumbnail"
                 )
                 .forEach(function (item) {
 
-                    item.classList.remove(
-                        "active"
-                    );
+                    item.classList.remove("active");
 
                 });
 
 
             if (thumbnail) {
 
-                thumbnail.classList.add(
-                    "active"
-                );
+                thumbnail.classList.add("active");
 
             }
 
         };
 
 
-
     /* =====================================================
-       OPEN PHOTOGRAPHY LIGHTBOX
+       OPEN LIGHTBOX
     ===================================================== */
 
     function openPhotographyLightbox() {
@@ -1695,9 +1667,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
 
-        lightbox.classList.add(
-            "active"
-        );
+        lightbox.classList.add("active");
 
         lightbox.setAttribute(
             "aria-hidden",
@@ -1711,7 +1681,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-
     /* =====================================================
        CLOSE LIGHTBOX
     ===================================================== */
@@ -1723,9 +1692,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
 
-        lightbox.classList.remove(
-            "active"
-        );
+        lightbox.classList.remove("active");
 
         lightbox.setAttribute(
             "aria-hidden",
@@ -1746,9 +1713,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-
     /* =====================================================
-       MAIN PHOTO CLICK
+       MAIN PHOTO
     ===================================================== */
 
     if (mainLink) {
@@ -1767,13 +1733,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-
     /* =====================================================
        X BUTTON
-       
-       IMPORTANT:
-       STOP PROPAGATION SO THE X
-       IS ALWAYS CLICKABLE.
     ===================================================== */
 
     if (lightboxClose) {
@@ -1784,7 +1745,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 event.preventDefault();
 
-                event.stopImmediatePropagation();
+                event.stopPropagation();
 
                 closePhotographyLightbox();
 
@@ -1795,9 +1756,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-
     /* =====================================================
-       CLICK DARK BACKGROUND TO CLOSE
+       CLICK OUTSIDE IMAGE
     ===================================================== */
 
     if (lightbox) {
@@ -1820,9 +1780,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-
     /* =====================================================
-       ESCAPE KEY
+       ESCAPE
     ===================================================== */
 
     document.addEventListener(
@@ -1832,9 +1791,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (
                 event.key === "Escape" &&
                 lightbox &&
-                lightbox.classList.contains(
-                    "active"
-                )
+                lightbox.classList.contains("active")
             ) {
 
                 closePhotographyLightbox();
@@ -1845,9 +1802,8 @@ document.addEventListener("DOMContentLoaded", function () {
     );
 
 
-
     /* =====================================================
-       FORCE X BUTTON TO BE CLICKABLE
+       FORCE CLICKABLE X
     ===================================================== */
 
     if (lightboxClose) {
@@ -1870,9 +1826,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-
     /* =====================================================
-       LIGHTBOX SAFETY CSS
+       LIGHTBOX SAFETY
     ===================================================== */
 
     if (
@@ -1882,9 +1837,7 @@ document.addEventListener("DOMContentLoaded", function () {
     ) {
 
         const style =
-            document.createElement(
-                "style"
-            );
+            document.createElement("style");
 
         style.id =
             "photographyLightboxStyle";
@@ -1903,18 +1856,20 @@ document.addEventListener("DOMContentLoaded", function () {
                 z-index: 1000000 !important;
                 pointer-events: auto !important;
                 cursor: pointer !important;
-                touch-action: manipulation;
+                touch-action: manipulation !important;
             }
 
             .lightbox img {
                 z-index: 999999 !important;
             }
 
+            .project-gallery .gallery-main {
+                cursor: pointer;
+            }
+
         `;
 
-        document.head.appendChild(
-            style
-        );
+        document.head.appendChild(style);
 
     }
 
