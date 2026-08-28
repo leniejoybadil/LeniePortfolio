@@ -2888,3 +2888,169 @@ a:focus-visible {
         2px solid var(--brown);
     outline-offset: 3px;
 }
+/* =========================================================
+   FACEBOOK LINK CATEGORIES (VIDEOGRAPHY, PAGEANTS, ETC.)
+   ========================================================= */
+
+/* Keep the top Photography Gallery unchanged */
+.photography-grid{
+    grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+}
+
+/* FB Link Sections - 2 columns on desktop */
+.media-category .floating-media-grid:not(.photography-grid){
+    display:grid;
+    grid-template-columns:repeat(2,minmax(320px,1fr));
+    gap:24px;
+    align-items:start;
+}
+
+/* Floating Card */
+.media-category .floating-media-grid:not(.photography-grid) .floating-media-card{
+    position:relative;
+    min-height:250px;
+    padding:24px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+
+    background:rgba(255,253,249,.92);
+    border:1px solid var(--border);
+    border-radius:22px;
+
+    box-shadow:0 14px 35px rgba(60,45,30,.08);
+
+    transition:.35s ease;
+    overflow:hidden;
+}
+
+/* Staggered desktop layout */
+.media-category .floating-media-grid:not(.photography-grid) .floating-media-card:nth-child(2n){
+    transform:translateY(28px);
+}
+
+.media-category .floating-media-grid:not(.photography-grid) .floating-media-card:hover{
+    transform:translateY(-10px)!important;
+    border-color:var(--brown);
+    box-shadow:0 24px 55px rgba(60,45,30,.16);
+}
+
+/* Decorative circle */
+.media-category .floating-media-grid:not(.photography-grid) .floating-media-card::before{
+    content:"";
+    position:absolute;
+    width:140px;
+    height:140px;
+    right:-70px;
+    bottom:-70px;
+    border:1px solid var(--border);
+    border-radius:50%;
+    opacity:.45;
+}
+
+/* Top */
+.media-card-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:24px;
+}
+
+.media-icon{
+    width:50px;
+    height:50px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:14px;
+    background:var(--brown-dark);
+    color:#fff;
+    font-size:22px;
+}
+
+.media-type{
+    padding:7px 12px;
+    border:1px solid var(--border);
+    border-radius:50px;
+    font-size:8px;
+    font-weight:800;
+    letter-spacing:1.5px;
+}
+
+/* Content */
+.media-card-content h3{
+    font-family:"Playfair Display",serif;
+    font-size:24px;
+    line-height:1.15;
+}
+
+.media-card-content p{
+    margin-top:10px;
+    color:var(--muted);
+    font-size:11px;
+    line-height:1.7;
+}
+
+/* Button */
+.facebook-button{
+    margin-top:24px;
+    padding:14px 18px;
+    border:1px solid var(--border);
+    border-radius:50px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    font-size:9px;
+    font-weight:800;
+    letter-spacing:1px;
+    transition:.3s ease;
+}
+
+.floating-media-card:hover .facebook-button{
+    background:var(--brown-dark);
+    color:#fff;
+    border-color:var(--brown-dark);
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media(max-width:900px){
+
+.media-category .floating-media-grid:not(.photography-grid){
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
+}
+
+.media-category .floating-media-grid:not(.photography-grid) .floating-media-card:nth-child(2n){
+    transform:translateY(14px);
+}
+
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media(max-width:700px){
+
+.media-category .floating-media-grid:not(.photography-grid){
+    grid-template-columns:1fr;
+    gap:16px;
+}
+
+.media-category .floating-media-grid:not(.photography-grid) .floating-media-card:nth-child(2n){
+    transform:none;
+}
+
+.media-category .floating-media-grid:not(.photography-grid) .floating-media-card{
+    min-height:230px;
+    padding:20px;
+}
+
+.media-card-content h3{
+    font-size:22px;
+}
+
+}
