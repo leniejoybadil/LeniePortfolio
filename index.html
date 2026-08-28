@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,44 +5,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Lenie Joy Cases Badil | Portfolio</title>
+    <title>Lenie Joy Badil | Portfolio</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- =========================
+<!-- =====================================================
      BACKGROUND
-========================= -->
+===================================================== -->
 
 <div class="background">
+
     <div class="orb orb1"></div>
     <div class="orb orb2"></div>
     <div class="grid"></div>
+
 </div>
 
 
-<!-- =========================
+
+<!-- =====================================================
      NAVIGATION
-========================= -->
+===================================================== -->
 
 <header class="navbar">
 
+    <!-- LOGO / HOME -->
     <a href="index.html" class="logo">
+
         <span>LB</span>
 
         <div>
             <strong>LENIE JOY</strong>
             <small>PORTFOLIO</small>
         </div>
+
     </a>
 
 
-    <button class="menu-toggle"
-            id="menuToggle"
-            aria-expanded="false"
-            aria-label="Toggle navigation">
+    <!-- HAMBURGER MENU
+         VISIBLE ON DESKTOP + MOBILE -->
+
+    <button
+        class="menu-toggle"
+        id="menuToggle"
+        type="button"
+        aria-label="Open navigation"
+        aria-expanded="false"
+    >
 
         <span></span>
         <span></span>
@@ -52,9 +63,17 @@
     </button>
 
 
-    <nav class="nav-links" id="navLinks">
+    <!-- NAVIGATION LINKS -->
 
-        <a href="index.html" class="active">
+    <nav
+        class="nav-links"
+        id="navLinks"
+    >
+
+        <a
+            href="index.html"
+            class="active"
+        >
             Home
         </a>
 
@@ -76,507 +95,651 @@
 
 
 
-<!-- =========================
-     GIRL INTRO ICON
-     SHOWS FOR 8 SECONDS
-========================= -->
+<!-- =====================================================
+     MAIN
+===================================================== -->
 
-<div class="girl-intro" id="girlIntro">
-
-    <button class="girl-close"
-            id="girlClose"
-            aria-label="Close introduction">
-
-        ×
-
-    </button>
-
-    <img src="assets/girl-icon.png"
-         alt="Lenie Joy Portfolio Introduction">
-
-</div>
+<main>
 
 
 
-<!-- =========================
-     MAIN HOME
-========================= -->
+<!-- =====================================================
+     HERO SECTION
+===================================================== -->
 
-<main class="home-page">
-
-
-    <!-- =========================
-         HERO
-    ========================= -->
-
-    <section class="hero-section">
+<section class="hero">
 
 
-        <div class="hero-content">
+    <!-- =================================================
+         HERO TEXT
+    ================================================== -->
 
-            <span class="section-number">
-                01 / PORTFOLIO
+    <div class="hero-text">
+
+        <span class="small-label">
+            COMPUTER ENGINEERING • CREATIVE TECHNOLOGY
+        </span>
+
+
+        <h1>
+
+            Lenie Joy
+
+            <span>
+                Cases Badil
             </span>
 
-
-            <h1>
-                LENIE JOY
-                <span>CASES BADIL</span>
-            </h1>
+        </h1>
 
 
-            <p class="hero-description">
-                Computer Engineering graduate, creative professional
-                and youth leader with experience in technology,
-                website development, digital media, graphic design,
-                administration and community work.
+        <div class="hero-title">
+            ENGINEER • WEB DEVELOPER • CREATIVE
+        </div>
+
+
+        <p class="hero-description">
+
+            A Computer Engineering graduate combining technology,
+            creativity, digital design, web development and community
+            experience to create meaningful digital solutions.
+
+        </p>
+
+
+        <!-- HERO BUTTONS -->
+
+        <div class="hero-buttons">
+
+            <a
+                href="technical.html"
+                class="btn btn-primary"
+            >
+                EXPLORE MY WORK →
+            </a>
+
+
+            <a
+                href="resume.html"
+                class="btn btn-outline"
+            >
+                VIEW RESUME
+            </a>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =================================================
+         PROFILE + COVER
+         DESKTOP = RIGHT SIDE
+    ================================================== -->
+
+    <div class="hero-profile">
+
+
+        <!-- =================================================
+             CLICKABLE COVER PHOTO
+        ================================================== -->
+
+        <a
+            href="assets/cover.jpg"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="cover-card"
+            aria-label="Open cover photo"
+        >
+
+            <img
+                src="assets/cover.jpg"
+                alt="Lenie Joy Badil Cover"
+            >
+
+        </a>
+
+
+
+        <!-- =================================================
+             PROFILE CARD
+        ================================================== -->
+
+        <div class="profile-card">
+
+
+            <!-- CLICKABLE PROFILE PHOTO -->
+
+            <a
+                href="assets/profile.jpg"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="profile-photo"
+                aria-label="Open profile photo"
+            >
+
+                <img
+                    src="assets/profile.jpg"
+                    alt="Lenie Joy Badil Profile"
+                >
+
+            </a>
+
+
+
+            <!-- PROFILE INFORMATION -->
+
+            <div class="profile-content">
+
+                <h2>
+                    Lenie Joy Badil
+                </h2>
+
+
+                <p>
+                    COMPUTER ENGINEER
+                </p>
+
+
+                <div class="profile-line"></div>
+
+
+                <span>
+                    Social Media Management • Technology • Creativity • Leadership
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     ABOUT ME
+===================================================== -->
+
+<section class="profile-section">
+
+
+    <div class="section-heading">
+
+        <span class="small-label">
+            ABOUT ME
+        </span>
+
+
+        <h2>
+
+            Where technology<br>
+
+            meets <em>creativity.</em>
+
+        </h2>
+
+    </div>
+
+
+
+    <div class="about-content">
+
+
+        <!-- ABOUT TEXT -->
+
+        <div class="about-text">
+
+            <p>
+
+                I am a Computer Engineering graduate with experience
+                in web development, IoT, electronics, digital design,
+                photography, social media management and community
+                projects.
+
             </p>
 
 
-            <!-- =========================
-                 PROFILE INFORMATION
-            ========================= -->
+            <p>
 
-            <div class="profile-info">
+                My work combines technical problem-solving with
+                creative communication. I enjoy turning ideas into
+                organized, functional and visually engaging projects.
 
-                <div class="profile-item">
-
-                    <strong>
-                        22
-                    </strong>
-
-                    <span>
-                        YEARS OLD
-                    </span>
-
-                </div>
+            </p>
 
 
-                <div class="profile-item">
+            <a
+                href="resume.html"
+                class="text-button"
+            >
+                MORE ABOUT ME →
+            </a>
 
-                    <strong>
-                        5'0"
-                    </strong>
-
-                    <span>
-                        HEIGHT
-                    </span>
-
-                </div>
+        </div>
 
 
-                <div class="profile-item">
 
-                    <strong>
-                        46 kg
-                    </strong>
+        <!-- INFORMATION BOXES -->
 
-                    <span>
-                        WEIGHT
-                    </span>
+        <div class="info-grid">
 
-                </div>
+
+            <div class="info-box">
+
+                <span>
+                    EDUCATION
+                </span>
+
+                <strong>
+                    BS Computer Engineering
+                </strong>
 
             </div>
 
 
-            <div class="profile-address">
+
+            <div class="info-box">
 
                 <span>
-                    ADDRESS
+                    FOCUS
                 </span>
 
+                <strong>
+                    Web & IoT Development
+                </strong>
+
+            </div>
+
+
+
+            <div class="info-box">
+
+                <span>
+                    CREATIVE
+                </span>
+
+                <strong>
+                    Graphic Design & Photography
+                </strong>
+
+            </div>
+
+
+
+            <div class="info-box">
+
+                <span>
+                    EXPERIENCE
+                </span>
+
+                <strong>
+                    Leadership & Digital Projects
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SELECTED WORK
+===================================================== -->
+
+<section class="work-section">
+
+
+    <div class="section-heading centered">
+
+        <span class="small-label">
+            SELECTED WORK
+        </span>
+
+
+        <h2>
+            What I <em>create.</em>
+        </h2>
+
+
+        <p>
+
+            Explore different areas of my technical,
+            creative and professional experience.
+
+        </p>
+
+    </div>
+
+
+
+    <!-- WORK LINKS -->
+
+    <div class="work-links">
+
+
+        <!-- 01 -->
+
+        <a
+            href="technical.html"
+            class="work-link"
+        >
+
+            <span class="work-number">
+                01
+            </span>
+
+
+            <div>
+
+                <h3>
+                    Technical & IoT
+                </h3>
+
                 <p>
-                    Barangay Dalagdag, Calinan,
-                    Davao City
+                    Electronics, embedded systems,
+                    sensors and IoT projects.
                 </p>
 
             </div>
 
 
-        </div>
+            <span class="work-arrow">
+                →
+            </span>
+
+        </a>
 
 
 
-        <!-- =========================
-             PROFILE PHOTO
-        ========================= -->
+        <!-- 02 -->
 
-        <div class="hero-visual">
+        <a
+            href="website.html"
+            class="work-link"
+        >
 
-            <div class="profile-photo-card">
-
-                <div class="photo-label">
-                    PROFILE / 2 × 2
-                </div>
-
-
-                <img src="assets/profile.jpg"
-                     alt="Lenie Joy Cases Badil"
-                     loading="eager">
+            <span class="work-number">
+                02
+            </span>
 
 
-                <div class="photo-caption">
+            <div>
 
-                    <strong>
-                        LENIE JOY BADIL
-                    </strong>
+                <h3>
+                    Website Development
+                </h3>
 
-                    <span>
-                        COMPUTER ENGINEERING
-                    </span>
-
-                </div>
+                <p>
+                    Websites, portals and digital systems.
+                </p>
 
             </div>
 
-        </div>
 
-    </section>
-
-
-
-    <!-- =========================
-         COVER PHOTO
-    ========================= -->
-
-    <section class="cover-section">
-
-        <div class="cover-card">
-
-            <img src="assets/cover.jpg"
-                 alt="Lenie Joy Badil Portfolio Cover"
-                 loading="lazy">
-
-
-            <div class="cover-overlay">
-
-                <span>
-                    LENIE JOY CASES BADIL
-                </span>
-
-                <small>
-                    TECHNOLOGY • CREATIVE • LEADERSHIP
-                </small>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =========================
-         MAIN BUTTONS
-    ========================= -->
-
-    <section class="home-actions">
-
-        <div class="action-intro">
-
-            <span class="project-tag">
-                EXPLORE MY PORTFOLIO
+            <span class="work-arrow">
+                →
             </span>
 
-            <h2>
-                What I <em>do.</em>
-            </h2>
-
-            <p>
-                Explore my professional experience, projects,
-                technical work, creative work and leadership
-                activities.
-            </p>
-
-        </div>
+        </a>
 
 
 
-        <div class="action-buttons">
+        <!-- 03 -->
 
+        <a
+            href="graphic-design.html"
+            class="work-link"
+        >
 
-            <!-- VIEW MY WORK -->
-
-            <a href="technical.html"
-               class="main-action work-action">
-
-                <div class="action-icon">
-                    ↗
-                </div>
-
-                <div class="action-text">
-
-                    <span>
-                        EXPLORE
-                    </span>
-
-                    <strong>
-                        VIEW MY WORK
-                    </strong>
-
-                    <small>
-                        Technical • Creative • Leadership
-                    </small>
-
-                </div>
-
-            </a>
-
-
-
-            <!-- RESUME -->
-
-            <a href="resume.html"
-               class="main-action">
-
-                <div class="action-icon">
-                    ↗
-                </div>
-
-                <div class="action-text">
-
-                    <span>
-                        PROFESSIONAL
-                    </span>
-
-                    <strong>
-                        RESUME
-                    </strong>
-
-                    <small>
-                        Education • Experience • Skills
-                    </small>
-
-                </div>
-
-            </a>
-
-
-
-            <!-- CONTACT -->
-
-            <a href="contact.html"
-               class="main-action">
-
-                <div class="action-icon">
-                    ↗
-                </div>
-
-                <div class="action-text">
-
-                    <span>
-                        GET IN TOUCH
-                    </span>
-
-                    <strong>
-                        CONTACT INFORMATION
-                    </strong>
-
-                    <small>
-                        Connect with me
-                    </small>
-
-                </div>
-
-            </a>
-
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =========================
-         QUICK WORK PREVIEW
-    ========================= -->
-
-    <section class="work-preview">
-
-        <div class="section-heading">
-
-            <span class="section-number">
-                MY WORK
+            <span class="work-number">
+                03
             </span>
 
-            <h2>
-                Areas of <span>Work</span>
-            </h2>
 
-        </div>
+            <div>
 
-
-        <div class="work-preview-grid">
-
-
-            <a href="technical.html"
-               class="preview-card">
-
-                <span>
-                    01
-                </span>
-
-                <strong>
-                    Technical & IoT
-                </strong>
-
-                <small>
-                    Electronics • ESP32 • IoT
-                </small>
-
-            </a>
-
-
-
-            <a href="website.html"
-               class="preview-card">
-
-                <span>
-                    02
-                </span>
-
-                <strong>
-                    Website Developer
-                </strong>
-
-                <small>
-                    HTML • CSS • Web Projects
-                </small>
-
-            </a>
-
-
-
-            <a href="social-media.html"
-               class="preview-card">
-
-                <span>
-                    03
-                </span>
-
-                <strong>
-                    Social Media Manager
-                </strong>
-
-                <small>
-                    Content • Pages • Digital Media
-                </small>
-
-            </a>
-
-
-
-            <a href="graphic-design.html"
-               class="preview-card">
-
-                <span>
-                    04
-                </span>
-
-                <strong>
+                <h3>
                     Graphic Design
-                </strong>
+                </h3>
 
-                <small>
-                    Posters • Layouts • Visuals
-                </small>
+                <p>
+                    Posters, layouts, branding and visual content.
+                </p>
 
-            </a>
+            </div>
 
 
+            <span class="work-arrow">
+                →
+            </span>
 
-            <a href="photography.html"
-               class="preview-card">
-
-                <span>
-                    05
-                </span>
-
-                <strong>
-                    Photography & Videography
-                </strong>
-
-                <small>
-                    Photography • Video • Events
-                </small>
-
-            </a>
+        </a>
 
 
 
-            <a href="leadership.html"
-               class="preview-card">
+        <!-- 04 -->
 
-                <span>
-                    06
-                </span>
+        <a
+            href="photography.html"
+            class="work-link"
+        >
 
-                <strong>
-                    Administrative & Leadership
-                </strong>
-
-                <small>
-                    Community • Youth • Organizations
-                </small>
-
-            </a>
+            <span class="work-number">
+                04
+            </span>
 
 
+            <div>
 
-            <a href="internship.html"
-               class="preview-card">
+                <h3>
+                    Photography
+                </h3>
 
-                <span>
-                    07
-                </span>
+                <p>
+                    Event, community and creative photography.
+                </p>
 
-                <strong>
+            </div>
+
+
+            <span class="work-arrow">
+                →
+            </span>
+
+        </a>
+
+
+
+        <!-- 05 -->
+
+        <a
+            href="social-media.html"
+            class="work-link"
+        >
+
+            <span class="work-number">
+                05
+            </span>
+
+
+            <div>
+
+                <h3>
+                    Social Media Manager
+                </h3>
+
+                <p>
+                    Digital content and community pages.
+                </p>
+
+            </div>
+
+
+            <span class="work-arrow">
+                →
+            </span>
+
+        </a>
+
+
+
+        <!-- 06 -->
+
+        <a
+            href="leadership.html"
+            class="work-link"
+        >
+
+            <span class="work-number">
+                06
+            </span>
+
+
+            <div>
+
+                <h3>
+                    Leadership
+                </h3>
+
+                <p>
+                    Youth leadership and community involvement.
+                </p>
+
+            </div>
+
+
+            <span class="work-arrow">
+                →
+            </span>
+
+        </a>
+
+
+
+        <!-- 07 -->
+
+        <a
+            href="internship.html"
+            class="work-link"
+        >
+
+            <span class="work-number">
+                07
+            </span>
+
+
+            <div>
+
+                <h3>
                     Internship
-                </strong>
+                </h3>
 
-                <small>
-                    Professional • Technical Experience
-                </small>
+                <p>
+                    Professional experience and workplace projects.
+                </p>
 
-            </a>
+            </div>
+
+
+            <span class="work-arrow">
+                →
+            </span>
+
+        </a>
 
 
 
-            <a href="tools.html"
-               class="preview-card">
+        <!-- 08 -->
 
-                <span>
-                    08
-                </span>
+        <a
+            href="tools.html"
+            class="work-link"
+        >
 
-                <strong>
+            <span class="work-number">
+                08
+            </span>
+
+
+            <div>
+
+                <h3>
                     Digital Tools
-                </strong>
+                </h3>
 
-                <small>
-                    Software • Platforms • Workflow
-                </small>
+                <p>
+                    Platforms and software used in my workflow.
+                </p>
 
-            </a>
+            </div>
 
 
-        </div>
+            <span class="work-arrow">
+                →
+            </span>
 
-    </section>
+        </a>
 
+    </div>
+
+</section>
 
 </main>
 
 
 
-<!-- =========================
+<!-- =====================================================
+     WELCOME GIRL
+===================================================== -->
+
+<div
+    class="girl-welcome"
+    id="girlWelcome"
+>
+
+
+    <!-- SPEECH BUBBLE -->
+
+    <div class="welcome-message">
+
+        <strong>
+            Hello, I'm Lenie! 👋
+        </strong>
+
+        <span>
+            Welcome to my portfolio. Explore my work and get to know me!
+        </span>
+
+    </div>
+
+
+    <!-- GIRL ICON -->
+
+    <img
+        src="assets/girl-icon.png"
+        id="girlIcon"
+        class="girl-icon"
+        alt="Welcome"
+    >
+
+</div>
+
+
+
+<!-- =====================================================
      FOOTER
-========================= -->
+===================================================== -->
 
 <footer>
 
+
     <div class="footer-top">
+
 
         <div>
 
@@ -584,14 +747,24 @@
                 LENIE JOY <span>BADIL</span>
             </h3>
 
+
             <p>
-                Computer Engineering • Technology • Creative Work • Leadership
+                Computer Engineering • Creative Technology • Leadership
             </p>
 
         </div>
 
 
+
         <div class="footer-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="technical.html">
+                My Work
+            </a>
 
             <a href="resume.html">
                 Resume
@@ -606,6 +779,7 @@
     </div>
 
 
+
     <div class="footer-bottom">
 
         © 2026 Lenie Joy Cases Badil. All Rights Reserved.
@@ -616,57 +790,11 @@
 
 
 
-<!-- =========================
-     SCRIPT
-========================= -->
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
 
 <script src="script.js"></script>
-
-
-<!-- =========================
-     GIRL ICON TIMER
-     ONLY HOME PAGE
-========================= -->
-
-<script>
-
-document.addEventListener("DOMContentLoaded", function () {
-
-    const girlIntro = document.getElementById("girlIntro");
-    const girlClose = document.getElementById("girlClose");
-
-    if (!girlIntro) return;
-
-
-    /* Show when home page loads */
-
-    girlIntro.classList.add("show");
-
-
-    /* Close manually */
-
-    if (girlClose) {
-
-        girlClose.addEventListener("click", function () {
-
-            girlIntro.classList.remove("show");
-
-        });
-
-    }
-
-
-    /* Automatically disappear after 8 seconds */
-
-    setTimeout(function () {
-
-        girlIntro.classList.remove("show");
-
-    }, 8000);
-
-});
-
-</script>
 
 </body>
 </html>
