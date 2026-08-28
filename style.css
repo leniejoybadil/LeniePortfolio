@@ -379,163 +379,334 @@ img {
     border-color: var(--brown);
     transform: translateY(-2px);
 }
-/* =====================================================
-   FACEBOOK-STYLE COVER + PROFILE PHOTO
-===================================================== */
+
+/* =========================================================
+   HERO PROFILE AREA
+========================================================= */
 
 .hero-profile {
-    position: relative;
     width: 100%;
-    max-width: 520px;
-    margin: 0 auto;
+    max-width: 650px;
+    margin: auto;
+    position: relative;
 }
 
-
-/* COVER PHOTO */
+/* =========================================================
+   COVER PHOTO
+========================================================= */
 
 .cover-card {
     position: relative;
-    display: block;
-
     width: 100%;
-    height: 260px;
-
+    height: 390px;
     overflow: hidden;
-    border-radius: 22px;
-
+    border-radius: 26px;
+    border: 1px solid var(--border);
+    background: var(--cream-dark);
     cursor: pointer;
+    box-shadow:
+        0 20px 55px rgba(60, 45, 30, 0.12);
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.cover-card:hover {
+    transform: translateY(-6px);
+    box-shadow:
+        0 28px 65px rgba(60, 45, 30, 0.19);
 }
 
 .cover-card img {
     width: 100%;
     height: 100%;
-
     object-fit: cover;
-    display: block;
-
-    transition: transform 0.3s ease;
+    transition:
+        transform 0.6s ease,
+        filter 0.3s ease;
 }
 
 .cover-card:hover img {
-    transform: scale(1.03);
+    transform: scale(1.035);
 }
 
+.cover-card::after {
+    content: "↗";
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(255, 253, 249, 0.88);
+    color: var(--brown-dark);
+    font-size: 17px;
+    opacity: 0;
+    transform: translateY(-5px);
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease;
+}
 
-/* =====================================================
+.cover-card:hover::after {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =========================================================
    PROFILE CARD
-   OVERLAPS THE COVER LIKE FACEBOOK
-===================================================== */
+========================================================= */
 
 .profile-card {
     position: relative;
-
-    margin-top: -65px;
-
-    padding: 80px 25px 25px;
-
-    background: rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
-
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 0 0 22px 22px;
-
+    width: 88%;
+    margin: -100px auto 0;
+    padding: 110px 40px 40px;
     text-align: center;
-
-    z-index: 2;
+    background: rgba(255, 253, 249, 0.98);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    box-shadow:
+        0 22px 55px rgba(60, 45, 30, 0.13);
+    z-index: 5;
 }
 
-
-/* =====================================================
+/* =========================================================
    PROFILE PHOTO
-===================================================== */
+========================================================= */
 
 .profile-photo {
     position: absolute;
-
+    top: -100px;
     left: 50%;
-    top: -75px;
-
     transform: translateX(-50%);
-
-    width: 150px;
-    height: 150px;
-
+    width: 195px;
+    height: 195px;
+    padding: 8px;
     border-radius: 50%;
-
-    overflow: hidden;
-
-    border: 6px solid #fff;
-
-    background: #fff;
-
-    z-index: 5;
-
+    background: white;
+    box-shadow:
+        0 14px 38px rgba(40, 30, 20, 0.20);
     cursor: pointer;
+    z-index: 10;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
 
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+.profile-photo:hover {
+    transform:
+        translateX(-50%)
+        scale(1.04);
+    box-shadow:
+        0 20px 45px rgba(40, 30, 20, 0.25);
 }
 
 .profile-photo img {
     width: 100%;
     height: 100%;
-
     object-fit: cover;
-
-    display: block;
-
-    transition: transform 0.3s ease;
+    border-radius: 50%;
 }
 
-.profile-photo:hover img {
-    transform: scale(1.05);
+.profile-photo::after {
+    content: "↗";
+    position: absolute;
+    right: 5px;
+    bottom: 12px;
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--brown-dark);
+    color: white;
+    font-size: 15px;
+    opacity: 0;
+    transform: scale(0.8);
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease;
 }
 
-
-/* =====================================================
-   PROFILE INFORMATION
-===================================================== */
-
-.profile-content {
-    position: relative;
-    z-index: 3;
+.profile-photo:hover::after {
+    opacity: 1;
+    transform: scale(1);
 }
+
+/* =========================================================
+   PROFILE CONTENT
+========================================================= */
 
 .profile-content h2 {
-    margin-top: 0;
+    font-family: "Playfair Display", serif;
+    font-size: 38px;
+    line-height: 1.15;
 }
 
+.profile-content p {
+    margin-top: 8px;
+    color: var(--brown);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
 
-/* =====================================================
-   MOBILE
-===================================================== */
+.profile-line {
+    width: 60px;
+    height: 1px;
+    margin: 17px auto;
+    background: var(--brown);
+}
 
-@media (max-width: 600px) {
+.profile-content span {
+    display: block;
+    color: var(--muted);
+    font-size: 10px;
+    line-height: 1.7;
+}
 
-    .hero-profile {
-        max-width: 100%;
-    }
+/* =========================================================
+   BIO
+========================================================= */
 
-    .cover-card {
-        height: 210px;
-        border-radius: 18px;
-    }
+.profile-bio {
+    max-width: 620px;
+    margin: 28px auto 0;
+    text-align: center;
+}
 
-    .profile-card {
-        margin-top: -55px;
-        padding: 70px 18px 22px;
-        border-radius: 0 0 18px 18px;
-    }
+.profile-bio p {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.8;
+}
 
-    .profile-photo {
-        width: 125px;
-        height: 125px;
+/* =========================================================
+   GENERAL SECTIONS
+========================================================= */
 
-        top: -62px;
+.profile-section,
+.work-section {
+    padding: 100px 7%;
+}
 
-        border-width: 5px;
-    }
+.profile-section {
+    background: var(--cream-light);
+}
 
+.section-heading {
+    max-width: 1000px;
+    margin: 0 auto 45px;
+}
+
+.section-heading.centered {
+    text-align: center;
+}
+
+.section-heading h2 {
+    margin-top: 10px;
+    font-family: "Playfair Display", serif;
+    font-size: clamp(45px, 6vw, 70px);
+    line-height: 0.95;
+    letter-spacing: -2px;
+}
+
+.section-heading h2 em {
+    color: var(--brown);
+    font-style: normal;
+}
+
+.section-heading > p:last-child {
+    max-width: 550px;
+    margin-top: 14px;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.centered > p:last-child {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about-content {
+    max-width: 1000px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.about-text p {
+    margin-bottom: 18px;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.text-button {
+    display: inline-block;
+    margin-top: 8px;
+    color: var(--brown-dark);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.text-button:hover {
+    color: var(--brown);
+}
+
+/* =========================================================
+   INFO GRID
+========================================================= */
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.info-box {
+    min-height: 115px;
+    padding: 20px;
+    background: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.info-box:hover {
+    transform: translateY(-4px);
+    box-shadow:
+        0 12px 30px rgba(60, 45, 30, 0.08);
+}
+
+.info-box span {
+    display: block;
+    margin-bottom: 10px;
+    color: var(--brown);
+    font-size: 8px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.info-box strong {
+    color: var(--text);
+    font-size: 12px;
+    line-height: 1.5;
 }
 
 /* =========================================================
