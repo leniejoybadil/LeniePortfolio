@@ -3997,3 +3997,135 @@ MOBILE
         width: 100%;
     }
 }
+/* =====================================================
+   CLICKABLE PROFILE & COVER PHOTO
+===================================================== */
+
+.clickable-photo {
+    cursor: pointer;
+}
+
+.clickable-photo img {
+    cursor: pointer;
+}
+
+
+/* =====================================================
+   PHOTO POPUP
+===================================================== */
+
+.photo-modal {
+    position: fixed;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.88);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+
+    opacity: 0;
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transition: opacity 0.25s ease,
+                visibility 0.25s ease;
+
+    z-index: 999999;
+}
+
+.photo-modal.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+
+/* LARGE PHOTO */
+
+.photo-modal img {
+    max-width: 90%;
+    max-height: 85vh;
+
+    width: auto;
+    height: auto;
+
+    object-fit: contain;
+
+    border-radius: 18px;
+
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+
+/* =====================================================
+   X BUTTON
+===================================================== */
+
+.photo-close {
+    position: absolute;
+
+    top: 25px;
+    right: 30px;
+
+    width: 50px;
+    height: 50px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.18);
+
+    color: white;
+
+    font-size: 36px;
+    line-height: 1;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 1000000;
+
+    transition: 0.2s ease;
+}
+
+.photo-close:hover {
+    background: rgba(255, 255, 255, 0.35);
+    transform: scale(1.08);
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .photo-modal {
+        padding: 20px;
+    }
+
+    .photo-modal img {
+        max-width: 95%;
+        max-height: 80vh;
+        border-radius: 12px;
+    }
+
+    .photo-close {
+        top: 15px;
+        right: 15px;
+
+        width: 45px;
+        height: 45px;
+
+        font-size: 30px;
+    }
+
+}

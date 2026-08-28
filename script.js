@@ -667,3 +667,122 @@ document.addEventListener("DOMContentLoaded", function () {
     );
 
 });
+
+/* =====================================================
+   PROFILE & COVER PHOTO VIEWER
+===================================================== */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const photoModal = document.getElementById("photoModal");
+    const modalPhoto = document.getElementById("modalPhoto");
+    const photoClose = document.getElementById("photoClose");
+
+    const coverPhoto = document.getElementById("coverPhoto");
+    const profilePhoto = document.getElementById("profilePhoto");
+
+
+    function openPhoto(image, altText) {
+
+        modalPhoto.src = image;
+        modalPhoto.alt = altText;
+
+        photoModal.classList.add("active");
+
+        document.body.style.overflow = "hidden";
+    }
+
+
+    function closePhoto() {
+
+        photoModal.classList.remove("active");
+
+        document.body.style.overflow = "";
+
+        setTimeout(function () {
+            modalPhoto.src = "";
+        }, 250);
+    }
+
+
+    /* COVER PHOTO */
+
+    if (coverPhoto) {
+
+        coverPhoto.addEventListener("click", function () {
+
+            openPhoto(
+                "assets/cover.jpg",
+                "Lenie Joy Badil Cover"
+            );
+
+        });
+
+    }
+
+
+    /* PROFILE PHOTO */
+
+    if (profilePhoto) {
+
+        profilePhoto.addEventListener("click", function () {
+
+            openPhoto(
+                "assets/profile.jpg",
+                "Lenie Joy Badil Profile"
+            );
+
+        });
+
+    }
+
+
+    /* X BUTTON */
+
+    if (photoClose) {
+
+        photoClose.addEventListener("click", function (event) {
+
+            event.stopPropagation();
+
+            closePhoto();
+
+        });
+
+    }
+
+
+    /* CLICK OUTSIDE PHOTO */
+
+    if (photoModal) {
+
+        photoModal.addEventListener("click", function (event) {
+
+            if (event.target === photoModal) {
+
+                closePhoto();
+
+            }
+
+        });
+
+    }
+
+
+    /* ESC KEY */
+
+    document.addEventListener("keydown", function (event) {
+
+        if (event.key === "Escape") {
+
+            if (photoModal.classList.contains("active")) {
+
+                closePhoto();
+
+            }
+
+        }
+
+    });
+
+});
