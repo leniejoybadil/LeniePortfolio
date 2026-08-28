@@ -183,21 +183,24 @@
         <!-- =================================================
              CLICKABLE COVER PHOTO
         ================================================= -->
+<!-- =================================================
+     CLICKABLE COVER PHOTO
+================================================== -->
 
-        <div
-            class="cover-card clickable-photo"
-            onclick="openPhoto('assets/cover.jpg', 'Lenie Joy Badil Cover')"
-            role="button"
-            tabindex="0"
-            aria-label="View cover photo"
-        >
+<div
+    class="cover-card"
+    onclick="openPhoto('assets/cover.jpg', 'Lenie Joy Badil Cover')"
+    role="button"
+    tabindex="0"
+    aria-label="View cover photo"
+>
 
-            <img
-                src="assets/cover.jpg"
-                alt="Lenie Joy Badil Cover"
-            >
+    <img
+        src="assets/cover.jpg"
+        alt="Lenie Joy Badil Cover"
+    >
 
-        </div>
+</div>
 
 
 
@@ -205,25 +208,22 @@
              PROFILE CARD
         ================================================= -->
 
-        <div class="profile-card">
+       <!-- CLICKABLE PROFILE PHOTO -->
 
+<div
+    class="profile-photo"
+    onclick="openPhoto('assets/profile.jpg', 'Lenie Joy Badil Profile')"
+    role="button"
+    tabindex="0"
+    aria-label="View profile photo"
+>
 
-            <!-- CLICKABLE PROFILE PHOTO -->
+    <img
+        src="assets/profile.jpg"
+        alt="Lenie Joy Badil Profile"
+    >
 
-            <div
-                class="profile-photo clickable-photo"
-                onclick="openPhoto('assets/profile.jpg', 'Lenie Joy Badil Profile')"
-                role="button"
-                tabindex="0"
-                aria-label="View profile photo"
-            >
-
-                <img
-                    src="assets/profile.jpg"
-                    alt="Lenie Joy Badil Profile"
-                >
-
-            </div>
+</div>
 
 
 
@@ -737,27 +737,26 @@
 ===================================================== -->
 
 <div
-    class="photo-modal"
-    id="photoModal"
+    id="photoViewer"
+    class="photo-viewer"
+    onclick="closePhoto(event)"
 >
 
     <button
         class="photo-close"
-        id="photoClose"
-        type="button"
+        onclick="closePhoto()"
         aria-label="Close photo"
     >
         ×
     </button>
 
     <img
-        id="modalPhoto"
+        id="viewerImage"
         src=""
         alt=""
     >
 
 </div>
-
 
 <!-- =====================================================
      FOOTER

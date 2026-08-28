@@ -669,120 +669,57 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 /* =====================================================
-   PROFILE & COVER PHOTO VIEWER
+   PROFILE / COVER PHOTO VIEWER
 ===================================================== */
 
-document.addEventListener("DOMContentLoaded", function () {
+function openPhoto(imageSrc, imageAlt) {
 
-    const photoModal = document.getElementById("photoModal");
-    const modalPhoto = document.getElementById("modalPhoto");
-    const photoClose = document.getElementById("photoClose");
+    const viewer = document.getElementById("photoViewer");
+    const image = document.getElementById("viewerImage");
 
-    const coverPhoto = document.getElementById("coverPhoto");
-    const profilePhoto = document.getElementById("profilePhoto");
+    if (!viewer || !image) return;
+
+    image.src = imageSrc;
+    image.alt = imageAlt;
+
+    viewer.classList.add("show");
+
+    document.body.style.overflow = "hidden";
+}
 
 
-    function openPhoto(image, altText) {
+function closePhoto(event) {
 
-        modalPhoto.src = image;
-        modalPhoto.alt = altText;
-
-        photoModal.classList.add("active");
-
-        document.body.style.overflow = "hidden";
+    /* Don't close when clicking directly on the image */
+    if (
+        event &&
+        event.target &&
+        event.target.id === "viewerImage"
+    ) {
+        return;
     }
 
+    const viewer = document.getElementById("photoViewer");
+    const image = document.getElementById("viewerImage");
 
-    function closePhoto() {
+    if (!viewer) return;
 
-        photoModal.classList.remove("active");
+    viewer.classList.remove("show");
 
-        document.body.style.overflow = "";
-
-        setTimeout(function () {
-            modalPhoto.src = "";
-        }, 250);
+    if (image) {
+        image.src = "";
     }
 
+    document.body.style.overflow = "";
+}
 
-    /* COVER PHOTO */
 
-    if (coverPhoto) {
+/* ESC KEY TO CLOSE */
 
-        coverPhoto.addEventListener("click", function () {
+document.addEventListener("keydown", function(event) {
 
-            openPhoto(
-                "assets/cover.jpg",
-                "Lenie Joy Badil Cover"
-            );
-
-        });
-
+    if (event.key === "Escape") {
+        closePhoto();
     }
-
-
-    /* PROFILE PHOTO */
-
-    if (profilePhoto) {
-
-        profilePhoto.addEventListener("click", function () {
-
-            openPhoto(
-                "assets/profile.jpg",
-                "Lenie Joy Badil Profile"
-            );
-
-        });
-
-    }
-
-
-    /* X BUTTON */
-
-    if (photoClose) {
-
-        photoClose.addEventListener("click", function (event) {
-
-            event.stopPropagation();
-
-            closePhoto();
-
-        });
-
-    }
-
-
-    /* CLICK OUTSIDE PHOTO */
-
-    if (photoModal) {
-
-        photoModal.addEventListener("click", function (event) {
-
-            if (event.target === photoModal) {
-
-                closePhoto();
-
-            }
-
-        });
-
-    }
-
-
-    /* ESC KEY */
-
-    document.addEventListener("keydown", function (event) {
-
-        if (event.key === "Escape") {
-
-            if (photoModal.classList.contains("active")) {
-
-                closePhoto();
-
-            }
-
-        }
-
-    });
 
 });
