@@ -2,6 +2,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
+
 /* =========================================================
    RESET
 ========================================================= */
@@ -40,6 +41,7 @@ textarea {
     font-family: inherit;
 }
 
+
 /* =========================================================
    GLOBAL CONTAINER
 ========================================================= */
@@ -48,6 +50,7 @@ textarea {
     width: min(1180px, 90%);
     margin: 0 auto;
 }
+
 
 /* =========================================================
    HEADER / NAVIGATION
@@ -63,6 +66,7 @@ header {
     width: min(1180px, 90%);
     margin: 0 auto;
     padding: 25px 0;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -101,6 +105,7 @@ header {
     color: #b85c38;
 }
 
+
 /* =========================================================
    HOME BUTTON
 ========================================================= */
@@ -108,14 +113,20 @@ header {
 .home-btn {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 8px;
+
     padding: 11px 19px;
+
     border: 1px solid #d8cbbb;
     border-radius: 50px;
+
     background: rgba(255, 252, 246, 0.8);
     color: #393229;
+
     font-size: 0.88rem;
     font-weight: 600;
+
     transition: all 0.3s ease;
 }
 
@@ -123,9 +134,12 @@ header {
     background: #b85c38;
     border-color: #b85c38;
     color: #fffaf2;
+
     transform: translateY(-2px);
+
     box-shadow: 0 8px 20px rgba(184, 92, 56, 0.18);
 }
+
 
 /* =========================================================
    HERO
@@ -133,8 +147,10 @@ header {
 
 .hero {
     min-height: 78vh;
+
     display: flex;
     align-items: center;
+
     padding: 80px 0;
 }
 
@@ -144,19 +160,26 @@ header {
 
 .hero-label {
     display: inline-block;
+
     margin-bottom: 18px;
+
     color: #b85c38;
+
     font-size: 0.82rem;
     font-weight: 700;
+
     text-transform: uppercase;
     letter-spacing: 2px;
 }
 
 .hero h1 {
     font-family: 'Space Grotesk', sans-serif;
+
     font-size: clamp(3rem, 7vw, 6.5rem);
+
     line-height: 0.95;
     letter-spacing: -4px;
+
     margin-bottom: 25px;
 }
 
@@ -166,22 +189,16 @@ header {
 
 .hero p {
     max-width: 650px;
+
     color: #756d62;
+
     font-size: 1.05rem;
 }
+
 
 /* =========================================================
    PROFILE / GIRL ICON / COVER AREA
 ========================================================= */
-
-/*
-   Main visual area.
-   Works with common class names:
-   .profile-section
-   .profile-area
-   .profile-wrapper
-   .hero-profile
-*/
 
 .profile-section,
 .profile-area,
@@ -190,16 +207,19 @@ header {
     position: relative;
 }
 
-/* Main profile visual container */
-
 .profile-area,
 .profile-wrapper,
 .hero-profile {
+    width: 100%;
+
     display: flex;
+
     align-items: center;
     justify-content: center;
+
     gap: 35px;
 }
+
 
 /* =========================================================
    GIRL ICON
@@ -210,16 +230,26 @@ header {
 .profile-girl,
 .hero-girl {
     position: relative;
+
     width: 260px;
     height: 420px;
-    flex-shrink: 0;
+
+    flex: 0 0 260px;
+
     z-index: 3;
+
     display: flex;
+
     align-items: flex-end;
     justify-content: center;
-}
 
-/* Make the actual girl image much larger */
+    cursor: pointer;
+
+    transition:
+        opacity 0.6s ease,
+        transform 0.6s ease,
+        visibility 0.6s ease;
+}
 
 .girl-icon img,
 .girl-character img,
@@ -227,9 +257,79 @@ header {
 .hero-girl img {
     width: 100%;
     height: 100%;
+
     object-fit: contain;
     object-position: center bottom;
+
+    cursor: pointer;
 }
+
+
+/* Girl hidden state */
+
+.girl-icon.girl-hidden,
+.girl-character.girl-hidden,
+.profile-girl.girl-hidden,
+.hero-girl.girl-hidden {
+    opacity: 0;
+
+    transform:
+        translateY(35px)
+        scale(0.92);
+
+    visibility: hidden;
+
+    pointer-events: none;
+}
+
+
+/* Girl click hint */
+
+.girl-icon::after,
+.girl-character::after,
+.profile-girl::after,
+.hero-girl::after {
+    content: "CLICK ME";
+
+    position: absolute;
+
+    bottom: 15px;
+    left: 50%;
+
+    transform:
+        translateX(-50%)
+        translateY(8px);
+
+    padding: 6px 12px;
+
+    background: rgba(41, 37, 31, 0.82);
+    color: #fffaf2;
+
+    border-radius: 50px;
+
+    font-size: 0.65rem;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition: 0.3s ease;
+}
+
+.girl-icon:hover::after,
+.girl-character:hover::after,
+.profile-girl:hover::after,
+.hero-girl:hover::after {
+    opacity: 1;
+
+    transform:
+        translateX(-50%)
+        translateY(0);
+}
+
 
 /* =========================================================
    SPEECH / BUBBLE MESSAGE
@@ -240,88 +340,113 @@ header {
 .bubble-message,
 .profile-bubble {
     position: absolute;
+
     z-index: 8;
+
     top: 15px;
     right: -85px;
+
     max-width: 270px;
     min-width: 210px;
+
     padding: 17px 21px;
+
     border-radius: 20px;
+
     background: #fffaf3;
     border: 1px solid #ded0bf;
-    box-shadow: 0 14px 35px rgba(70, 54, 39, 0.10);
+
+    box-shadow:
+        0 14px 35px rgba(70, 54, 39, 0.10);
+
     color: #4c453c;
+
     font-size: 0.86rem;
     line-height: 1.55;
 }
-
-/* Bubble tail */
 
 .message-bubble::after,
 .speech-bubble::after,
 .bubble-message::after,
 .profile-bubble::after {
     content: "";
+
     position: absolute;
+
     left: 25px;
     bottom: -11px;
+
     width: 20px;
     height: 20px;
+
     background: #fffaf3;
+
     border-right: 1px solid #ded0bf;
     border-bottom: 1px solid #ded0bf;
+
     transform: rotate(45deg);
 }
 
+
 /* =========================================================
-   PROFILE + COVER PHOTOS
+   PROFILE + COVER PHOTO SIDE
 ========================================================= */
-
-/*
-   Put your profile and cover photos in links.
-
-   Example structure supported by these styles:
-
-   <div class="photo-side">
-       <a href="profile.html" class="profile-photo-link">
-           <img src="assets/profile.jpg">
-       </a>
-
-       <a href="cover.html" class="cover-photo-link">
-           <img src="assets/cover.jpg">
-       </a>
-   </div>
-*/
-
-/* Photo side */
 
 .photo-side,
 .profile-photo-side,
 .photo-links {
+    width: 360px;
+
+    flex: 0 0 360px;
+
     display: flex;
     flex-direction: column;
+
     align-items: center;
     justify-content: center;
+
     gap: 22px;
-    width: 360px;
+
     position: relative;
+
     z-index: 5;
 }
 
-/* Profile photo */
+
+/* =========================================================
+   PHOTO WRAPPER
+========================================================= */
+
+.photo-wrapper {
+    position: relative;
+
+    display: inline-block;
+}
+
+
+/* =========================================================
+   PROFILE PHOTO
+========================================================= */
 
 .profile-photo-link,
 .profile-photo {
     width: 190px;
     height: 190px;
+
     display: block;
+
     border-radius: 50%;
+
     overflow: hidden;
+
     background: #eadfd1;
+
     border: 7px solid #fffaf3;
+
     box-shadow:
         0 12px 35px rgba(73, 57, 42, 0.14),
         0 0 0 1px #d9cbb9;
+
     transition:
         transform 0.35s ease,
         box-shadow 0.35s ease;
@@ -329,33 +454,54 @@ header {
 
 .profile-photo-link:hover,
 .profile-photo:hover {
-    transform: translateY(-8px) scale(1.04);
+    transform:
+        translateY(-8px)
+        scale(1.04);
+
     box-shadow:
         0 20px 45px rgba(73, 57, 42, 0.18),
-        0 0 0 1px #b85c38;
+        0 0 0 2px #b85c38;
 }
 
 .profile-photo-link img,
 .profile-photo img {
     width: 100%;
     height: 100%;
+
     object-fit: cover;
+
+    transition: transform 0.4s ease;
 }
 
-/* Cover photo */
+.profile-photo-link:hover img,
+.profile-photo:hover img {
+    transform: scale(1.05);
+}
+
+
+/* =========================================================
+   COVER PHOTO
+========================================================= */
 
 .cover-photo-link,
 .cover-photo {
     width: 340px;
     height: 190px;
+
     display: block;
+
     overflow: hidden;
+
     border-radius: 24px;
+
     background: #eadfd1;
+
     border: 6px solid #fffaf3;
+
     box-shadow:
         0 12px 35px rgba(73, 57, 42, 0.13),
         0 0 0 1px #d9cbb9;
+
     transition:
         transform 0.35s ease,
         box-shadow 0.35s ease;
@@ -363,69 +509,188 @@ header {
 
 .cover-photo-link:hover,
 .cover-photo:hover {
-    transform: translateY(-8px) scale(1.025);
+    transform:
+        translateY(-8px)
+        scale(1.025);
+
     box-shadow:
         0 22px 48px rgba(73, 57, 42, 0.18),
-        0 0 0 1px #b85c38;
+        0 0 0 2px #b85c38;
 }
 
 .cover-photo-link img,
 .cover-photo img {
     width: 100%;
     height: 100%;
+
     object-fit: cover;
+
+    transition: transform 0.45s ease;
 }
 
-/* Click indicator */
+.cover-photo-link:hover img,
+.cover-photo:hover img {
+    transform: scale(1.05);
+}
 
-.profile-photo-link::after,
-.cover-photo-link::after {
-    content: "VIEW";
+
+/* =========================================================
+   PHOTO LABEL
+========================================================= */
+
+.photo-label {
     position: absolute;
+
+    left: 50%;
+    bottom: 14px;
+
+    transform:
+        translateX(-50%)
+        translateY(10px);
+
+    padding: 7px 14px;
+
+    border-radius: 50px;
+
+    background: rgba(41, 37, 31, 0.85);
+
+    color: #fffaf2;
+
+    font-size: 0.68rem;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
     opacity: 0;
+
     pointer-events: none;
+
     transition: 0.3s ease;
 }
 
-.profile-photo-link:hover::after,
-.cover-photo-link:hover::after {
+.photo-wrapper:hover .photo-label {
     opacity: 1;
+
+    transform:
+        translateX(-50%)
+        translateY(0);
 }
+
+
+/* =========================================================
+   PHOTO CLOSE BUTTON
+========================================================= */
+
+.photo-close {
+    position: absolute;
+
+    top: -11px;
+    right: -11px;
+
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #fffaf3;
+
+    border: 1px solid #d8cbbb;
+
+    color: #29251f;
+
+    font-size: 24px;
+    font-weight: 500;
+
+    line-height: 1;
+
+    z-index: 30;
+
+    box-shadow:
+        0 8px 22px rgba(73, 57, 42, 0.16);
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.photo-close:hover {
+    background: #b85c38;
+
+    color: #fffaf2;
+
+    border-color: #b85c38;
+
+    transform:
+        rotate(90deg)
+        scale(1.1);
+
+    box-shadow:
+        0 12px 28px rgba(184, 92, 56, 0.25);
+}
+
 
 /* =========================================================
    ALTERNATIVE PHOTO CLASSES
-   Useful if your HTML uses simpler names
 ========================================================= */
 
 .profile-pic {
     width: 190px;
     height: 190px;
+
     border-radius: 50%;
+
     object-fit: cover;
+
     border: 7px solid #fffaf3;
-    box-shadow: 0 12px 35px rgba(73, 57, 42, 0.14);
+
+    box-shadow:
+        0 12px 35px rgba(73, 57, 42, 0.14);
+
     transition: 0.35s ease;
 }
 
 .profile-pic:hover {
-    transform: translateY(-8px) scale(1.04);
-    box-shadow: 0 20px 45px rgba(73, 57, 42, 0.18);
+    transform:
+        translateY(-8px)
+        scale(1.04);
+
+    box-shadow:
+        0 20px 45px rgba(73, 57, 42, 0.18);
 }
 
 .cover-pic {
     width: 340px;
     height: 190px;
+
     border-radius: 24px;
+
     object-fit: cover;
+
     border: 6px solid #fffaf3;
-    box-shadow: 0 12px 35px rgba(73, 57, 42, 0.13);
+
+    box-shadow:
+        0 12px 35px rgba(73, 57, 42, 0.13);
+
     transition: 0.35s ease;
 }
 
 .cover-pic:hover {
-    transform: translateY(-8px) scale(1.025);
-    box-shadow: 0 22px 48px rgba(73, 57, 42, 0.18);
+    transform:
+        translateY(-8px)
+        scale(1.025);
+
+    box-shadow:
+        0 22px 48px rgba(73, 57, 42, 0.18);
 }
+
 
 /* =========================================================
    PAGE HEADER
@@ -437,9 +702,13 @@ header {
 
 .page-header h1 {
     font-family: 'Space Grotesk', sans-serif;
+
     font-size: clamp(2.8rem, 6vw, 5rem);
+
     line-height: 1;
+
     letter-spacing: -3px;
+
     margin-bottom: 18px;
 }
 
@@ -449,9 +718,12 @@ header {
 
 .page-header p {
     max-width: 700px;
+
     color: #756d62;
+
     font-size: 1rem;
 }
+
 
 /* =========================================================
    SECTION
@@ -467,19 +739,27 @@ section {
 
 .section-title small {
     display: block;
+
     color: #b85c38;
+
     font-size: 0.75rem;
     font-weight: 700;
+
     letter-spacing: 2px;
+
     text-transform: uppercase;
+
     margin-bottom: 8px;
 }
 
 .section-title h2 {
     font-family: 'Space Grotesk', sans-serif;
+
     font-size: clamp(2rem, 4vw, 3.5rem);
+
     letter-spacing: -2px;
 }
+
 
 /* =========================================================
    BUTTONS
@@ -487,39 +767,54 @@ section {
 
 .btn {
     display: inline-flex;
+
     justify-content: center;
     align-items: center;
+
     gap: 10px;
+
     padding: 13px 22px;
+
     border-radius: 50px;
+
     border: 1px solid #cdbfae;
+
     font-size: 0.9rem;
     font-weight: 600;
+
     transition: all 0.3s ease;
 }
 
 .btn-primary {
     background: #29251f;
+
     border-color: #29251f;
+
     color: #fffaf2;
 }
 
 .btn-primary:hover {
     background: #b85c38;
+
     border-color: #b85c38;
+
     transform: translateY(-2px);
 }
 
 .btn-outline {
     background: transparent;
+
     color: #393229;
 }
 
 .btn-outline:hover {
     background: #29251f;
+
     color: #fffaf2;
+
     transform: translateY(-2px);
 }
+
 
 /* =========================================================
    GENERAL CARDS
@@ -527,17 +822,25 @@ section {
 
 .card {
     background: rgba(255, 252, 246, 0.8);
+
     border: 1px solid #e1d6c8;
+
     border-radius: 22px;
+
     padding: 30px;
+
     transition: all 0.35s ease;
 }
 
 .card:hover {
     transform: translateY(-7px);
+
     border-color: #cdbba7;
-    box-shadow: 0 18px 45px rgba(74, 59, 44, 0.09);
+
+    box-shadow:
+        0 18px 45px rgba(74, 59, 44, 0.09);
 }
+
 
 /* =========================================================
    TOOLS PAGE
@@ -552,43 +855,56 @@ section {
 .tools-grid,
 .tool-list {
     list-style: none !important;
+
     padding: 0 !important;
     margin: 0 !important;
 }
-
-/* Remove numbering from ordered lists too */
 
 .tools-grid ol,
 .tools-grid ul,
 .tools-list ol,
-.tools-list ul {
+.tools-list ul,
+.tool-list ol,
+.tool-list ul {
     list-style: none !important;
+
     padding: 0 !important;
     margin: 0 !important;
 }
 
-/* Main tools grid */
-
 .tools-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
     gap: 25px;
 }
 
-/* Individual floating tool card */
-
 .tool-card {
     position: relative;
+
     min-height: 190px;
+
     padding: 30px;
+
     border-radius: 24px;
+
     background: rgba(255, 252, 246, 0.88);
+
     border: 1px solid #e1d6c8;
-    box-shadow: 0 10px 30px rgba(73, 57, 42, 0.055);
+
+    box-shadow:
+        0 10px 30px rgba(73, 57, 42, 0.055);
+
     display: flex;
+
     flex-direction: column;
+
     justify-content: space-between;
+
     overflow: hidden;
+
     transition:
         transform 0.35s ease,
         box-shadow 0.35s ease,
@@ -596,17 +912,21 @@ section {
         background 0.35s ease;
 }
 
-/* Decorative circle */
-
 .tool-card::before {
     content: "";
+
     position: absolute;
+
     width: 110px;
     height: 110px;
+
     border-radius: 50%;
+
     background: rgba(184, 92, 56, 0.055);
+
     top: -45px;
     right: -35px;
+
     transition: transform 0.4s ease;
 }
 
@@ -616,73 +936,101 @@ section {
 
 .tool-card:hover {
     transform: translateY(-10px);
-    background: #fffaf3;
-    border-color: #d0bca6;
-    box-shadow: 0 22px 50px rgba(73, 57, 42, 0.12);
-}
 
-/* Tool icon */
+    background: #fffaf3;
+
+    border-color: #d0bca6;
+
+    box-shadow:
+        0 22px 50px rgba(73, 57, 42, 0.12);
+}
 
 .tool-icon {
     width: 54px;
     height: 54px;
+
     border-radius: 16px;
+
     display: flex;
+
     align-items: center;
     justify-content: center;
+
     background: #f0e5d7;
+
     color: #b85c38;
+
     font-size: 1.45rem;
+
     margin-bottom: 22px;
+
     transition: all 0.3s ease;
 }
 
 .tool-card:hover .tool-icon {
     background: #b85c38;
-    color: #fffaf2;
-    transform: rotate(-4deg) scale(1.05);
-}
 
-/* Tool title */
+    color: #fffaf2;
+
+    transform:
+        rotate(-4deg)
+        scale(1.05);
+}
 
 .tool-card h3 {
     position: relative;
+
     z-index: 1;
+
     font-family: 'Space Grotesk', sans-serif;
+
     font-size: 1.2rem;
+
     margin-bottom: 8px;
+
     color: #29251f;
 }
 
-/* Tool description */
-
 .tool-card p {
     position: relative;
+
     z-index: 1;
+
     color: #756d62;
+
     font-size: 0.88rem;
+
     line-height: 1.65;
 }
 
-/* Tool links */
-
 .tool-card a {
     position: relative;
+
     z-index: 2;
+
     display: inline-flex;
+
     align-items: center;
+
     gap: 7px;
+
     width: fit-content;
+
     margin-top: 22px;
+
     color: #b85c38;
+
     font-size: 0.85rem;
+
     font-weight: 700;
+
     transition: gap 0.3s ease;
 }
 
 .tool-card a:hover {
     gap: 12px;
 }
+
 
 /* =========================================================
    TOOL CATEGORY
@@ -694,22 +1042,29 @@ section {
 
 .tool-category-title {
     display: flex;
+
     align-items: center;
+
     gap: 14px;
+
     margin-bottom: 25px;
 }
 
 .tool-category-title h2 {
     font-family: 'Space Grotesk', sans-serif;
+
     font-size: 1.7rem;
+
     letter-spacing: -0.7px;
 }
 
 .tool-category-title span {
     width: 38px;
     height: 2px;
+
     background: #b85c38;
 }
+
 
 /* =========================================================
    PROJECT GRID
@@ -717,27 +1072,39 @@ section {
 
 .project-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
     gap: 28px;
 }
 
 .project-card {
     position: relative;
+
     overflow: hidden;
+
     border-radius: 24px;
+
     background: #fffaf3;
+
     border: 1px solid #e1d6c8;
+
     transition: 0.35s ease;
 }
 
 .project-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 20px 45px rgba(73, 57, 42, 0.1);
+
+    box-shadow:
+        0 20px 45px rgba(73, 57, 42, 0.1);
 }
 
 .project-image {
     width: 100%;
+
     height: 320px;
+
     object-fit: cover;
 }
 
@@ -747,13 +1114,16 @@ section {
 
 .project-content h3 {
     font-family: 'Space Grotesk', sans-serif;
+
     margin-bottom: 8px;
 }
 
 .project-content p {
     color: #756d62;
+
     font-size: 0.9rem;
 }
+
 
 /* =========================================================
    GALLERY
@@ -761,22 +1131,32 @@ section {
 
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
     gap: 20px;
 }
 
 .gallery-item {
     position: relative;
+
     overflow: hidden;
+
     border-radius: 20px;
+
     background: #e9dfd2;
+
     cursor: pointer;
 }
 
 .gallery-item img {
     width: 100%;
+
     height: 280px;
+
     object-fit: cover;
+
     transition: transform 0.5s ease;
 }
 
@@ -784,43 +1164,63 @@ section {
     transform: scale(1.06);
 }
 
+
 /* =========================================================
    SOCIAL MEDIA FLOATING CARDS
 ========================================================= */
 
 .social-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
     gap: 25px;
 }
 
 .social-card {
     min-height: 170px;
+
     padding: 28px;
+
     border-radius: 22px;
+
     background: rgba(255, 252, 246, 0.85);
+
     border: 1px solid #e1d6c8;
+
     display: flex;
+
     flex-direction: column;
+
     justify-content: space-between;
+
     transition: 0.35s ease;
 }
 
 .social-card:hover {
     transform: translateY(-9px);
-    box-shadow: 0 20px 45px rgba(73, 57, 42, 0.1);
+
+    box-shadow:
+        0 20px 45px rgba(73, 57, 42, 0.1);
+
+    border-color: #d0bca6;
 }
 
 .social-card h3 {
     font-family: 'Space Grotesk', sans-serif;
+
     font-size: 1.15rem;
 }
 
 .social-card a {
     color: #b85c38;
+
     font-size: 0.85rem;
+
     font-weight: 700;
 }
+
 
 /* =========================================================
    ABOUT
@@ -828,34 +1228,48 @@ section {
 
 .about-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1fr);
+
     gap: 70px;
+
     align-items: center;
 }
 
 .about-image {
     border-radius: 25px;
+
     overflow: hidden;
+
     background: #e9dfd2;
 }
 
 .about-image img {
     width: 100%;
+
     height: 550px;
+
     object-fit: cover;
 }
 
 .about-text h2 {
     font-family: 'Space Grotesk', sans-serif;
+
     font-size: 2.5rem;
+
     line-height: 1.1;
+
     margin-bottom: 22px;
 }
 
 .about-text p {
     color: #756d62;
+
     margin-bottom: 18px;
 }
+
 
 /* =========================================================
    SKILLS
@@ -863,24 +1277,35 @@ section {
 
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
     gap: 18px;
 }
 
 .skill {
     padding: 18px 20px;
+
     background: #fffaf3;
+
     border: 1px solid #e1d6c8;
+
     border-radius: 15px;
+
     font-size: 0.9rem;
+
     font-weight: 600;
+
     transition: 0.3s ease;
 }
 
 .skill:hover {
     transform: translateY(-4px);
+
     border-color: #b85c38;
 }
+
 
 /* =========================================================
    CONTACT
@@ -888,13 +1313,19 @@ section {
 
 .contact-grid {
     display: grid;
-    grid-template-columns: 0.8fr 1.2fr;
+
+    grid-template-columns:
+        minmax(0, 0.8fr)
+        minmax(0, 1.2fr);
+
     gap: 50px;
 }
 
 .contact-info h2 {
     font-family: 'Space Grotesk', sans-serif;
+
     font-size: 2.5rem;
+
     margin-bottom: 18px;
 }
 
@@ -908,24 +1339,34 @@ section {
 
 .contact-item small {
     display: block;
+
     color: #b85c38;
+
     font-size: 0.75rem;
+
     font-weight: 700;
+
     text-transform: uppercase;
+
     letter-spacing: 1px;
+
     margin-bottom: 4px;
 }
 
 .contact-item a,
 .contact-item span {
     color: #393229;
+
     font-weight: 500;
 }
 
 .contact-form {
     padding: 35px;
+
     background: #fffaf3;
+
     border: 1px solid #e1d6c8;
+
     border-radius: 25px;
 }
 
@@ -935,33 +1376,46 @@ section {
 
 .form-group label {
     display: block;
+
     margin-bottom: 8px;
+
     font-size: 0.85rem;
+
     font-weight: 600;
 }
 
 .form-group input,
 .form-group textarea {
     width: 100%;
+
     border: 1px solid #d9cdbf;
+
     background: #f9f3ea;
+
     border-radius: 12px;
+
     padding: 13px 15px;
+
     outline: none;
+
     color: #29251f;
+
     transition: 0.3s ease;
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
     border-color: #b85c38;
+
     background: #fffaf3;
 }
 
 .form-group textarea {
     min-height: 150px;
+
     resize: vertical;
 }
+
 
 /* =========================================================
    FOOTER
@@ -969,30 +1423,39 @@ section {
 
 footer {
     margin-top: 80px;
+
     border-top: 1px solid #dfd3c4;
+
     padding: 35px 0;
 }
 
 .footer-content {
     display: flex;
+
     justify-content: space-between;
+
     align-items: center;
+
     gap: 20px;
 }
 
 .footer-content p {
     color: #81786c;
+
     font-size: 0.8rem;
 }
 
 .footer-links {
     display: flex;
+
     gap: 20px;
 }
 
 .footer-links a {
     color: #756d62;
+
     font-size: 0.8rem;
+
     transition: 0.3s ease;
 }
 
@@ -1000,25 +1463,31 @@ footer {
     color: #b85c38;
 }
 
+
 /* =========================================================
    FADE ANIMATION
 ========================================================= */
 
 .fade-up {
     opacity: 0;
+
     transform: translateY(25px);
-    animation: fadeUp 0.8s ease forwards;
+
+    animation:
+        fadeUp 0.8s ease forwards;
 }
 
 @keyframes fadeUp {
     to {
         opacity: 1;
+
         transform: translateY(0);
     }
 }
 
+
 /* =========================================================
-   TABLET
+   TABLET — 1100px
 ========================================================= */
 
 @media (max-width: 1100px) {
@@ -1035,16 +1504,28 @@ footer {
     .hero-girl {
         width: 220px;
         height: 370px;
+
+        flex-basis: 220px;
     }
 
     .photo-side,
     .profile-photo-side,
     .photo-links {
         width: 300px;
+
+        flex-basis: 300px;
+    }
+
+    .profile-photo-link,
+    .profile-photo,
+    .profile-pic {
+        width: 175px;
+        height: 175px;
     }
 
     .cover-photo-link,
-    .cover-photo {
+    .cover-photo,
+    .cover-pic {
         width: 280px;
         height: 160px;
     }
@@ -1057,33 +1538,40 @@ footer {
     }
 }
 
+
 /* =========================================================
-   TABLET
+   TABLET — 900px
 ========================================================= */
 
 @media (max-width: 900px) {
 
     .navbar {
         flex-direction: column;
+
         gap: 18px;
     }
 
     .nav-links {
         flex-wrap: wrap;
+
         justify-content: center;
+
         gap: 15px 20px;
     }
 
     .tools-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
     }
 
     .social-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
     }
 
     .gallery-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
     }
 
     .project-grid {
@@ -1093,19 +1581,42 @@ footer {
     .about-grid,
     .contact-grid {
         grid-template-columns: 1fr;
+
         gap: 40px;
     }
 
     .skills-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
     }
 
-    /* Profile area */
+
+    /* Profile */
 
     .profile-area,
     .profile-wrapper,
     .hero-profile {
         flex-wrap: wrap;
+
+        gap: 25px;
+    }
+
+    .girl-icon,
+    .girl-character,
+    .profile-girl,
+    .hero-girl {
+        width: 230px;
+        height: 380px;
+
+        flex-basis: 230px;
+    }
+
+    .photo-side,
+    .profile-photo-side,
+    .photo-links {
+        width: 320px;
+
+        flex-basis: 320px;
     }
 
     .message-bubble,
@@ -1116,8 +1627,9 @@ footer {
     }
 }
 
+
 /* =========================================================
-   MOBILE
+   MOBILE — 600px
 ========================================================= */
 
 @media (max-width: 600px) {
@@ -1141,17 +1653,25 @@ footer {
 
     .home-btn {
         padding: 9px 15px;
+
         font-size: 0.8rem;
     }
 
+
+    /* Hero */
+
     .hero {
         min-height: 65vh;
+
         padding: 60px 0;
     }
 
     .hero h1 {
         letter-spacing: -2px;
     }
+
+
+    /* Sections */
 
     section {
         padding: 65px 0;
@@ -1165,6 +1685,7 @@ footer {
         letter-spacing: -2px;
     }
 
+
     /* =====================================================
        MOBILE PROFILE AREA
     ===================================================== */
@@ -1172,9 +1693,20 @@ footer {
     .profile-area,
     .profile-wrapper,
     .hero-profile {
+        width: 100%;
+
+        display: flex;
+
         flex-direction: column;
+
+        align-items: center;
+        justify-content: center;
+
         gap: 25px;
     }
+
+
+    /* Girl on top */
 
     .girl-icon,
     .girl-character,
@@ -1182,14 +1714,32 @@ footer {
     .hero-girl {
         width: 250px;
         height: 390px;
+
+        flex: 0 0 390px;
+
         order: 1;
     }
+
+
+    /* Photos underneath */
 
     .photo-side,
     .profile-photo-side,
     .photo-links {
         width: 100%;
+
+        flex: 0 0 auto;
+
         order: 2;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+        justify-content: center;
+
+        gap: 22px;
     }
 
     .profile-photo-link,
@@ -1206,37 +1756,48 @@ footer {
         height: 185px;
     }
 
+
+    /* Bubble */
+
     .message-bubble,
     .speech-bubble,
     .bubble-message,
     .profile-bubble {
         top: 0;
+
         right: -15px;
+
         max-width: 230px;
         min-width: 180px;
+
         font-size: 0.8rem;
+
         padding: 14px 17px;
     }
 
-    /* =====================================================
-       MOBILE TOOLS
-    ===================================================== */
+
+    /* Tools */
 
     .tools-grid {
         grid-template-columns: 1fr;
+
         gap: 18px;
     }
 
     .tool-card {
         min-height: 175px;
+
         padding: 25px;
+
         border-radius: 20px;
     }
 
     .tool-icon {
         width: 48px;
         height: 48px;
+
         font-size: 1.2rem;
+
         margin-bottom: 17px;
     }
 
@@ -1256,13 +1817,15 @@ footer {
         font-size: 1.35rem;
     }
 
-    /* =====================================================
-       OTHER SECTIONS
-    ===================================================== */
+
+    /* Social */
 
     .social-grid {
         grid-template-columns: 1fr;
     }
+
+
+    /* Gallery */
 
     .gallery-grid {
         grid-template-columns: 1fr;
@@ -1272,31 +1835,46 @@ footer {
         height: 250px;
     }
 
+
+    /* Skills */
+
     .skills-grid {
         grid-template-columns: 1fr;
     }
+
+
+    /* About */
 
     .about-image img {
         height: 400px;
     }
 
+
+    /* Contact */
+
     .contact-form {
         padding: 25px;
     }
 
+
+    /* Footer */
+
     .footer-content {
         flex-direction: column;
+
         text-align: center;
     }
 
     .footer-links {
         justify-content: center;
+
         flex-wrap: wrap;
     }
 }
 
+
 /* =========================================================
-   VERY SMALL DEVICES
+   VERY SMALL DEVICES — 380px
 ========================================================= */
 
 @media (max-width: 380px) {
@@ -1315,6 +1893,8 @@ footer {
     .hero-girl {
         width: 220px;
         height: 350px;
+
+        flex-basis: 350px;
     }
 
     .tool-card {
@@ -1330,6 +1910,21 @@ footer {
     .bubble-message,
     .profile-bubble {
         right: -5px;
+
         max-width: 205px;
+    }
+
+    .profile-photo-link,
+    .profile-photo,
+    .profile-pic {
+        width: 160px;
+        height: 160px;
+    }
+
+    .cover-photo-link,
+    .cover-photo,
+    .cover-pic {
+        width: 94%;
+        height: 175px;
     }
 }
