@@ -1,11 +1,6 @@
-/* =========================================================
-   LENIE JOY BADIL — PORTFOLIO
-   COMPLETE STYLE.CSS
-   Cream / Warm Minimal Portfolio
-========================================================= */
+
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap');
-
 
 /* =========================================================
    RESET
@@ -45,7 +40,6 @@ textarea {
     font-family: inherit;
 }
 
-
 /* =========================================================
    GLOBAL CONTAINER
 ========================================================= */
@@ -54,7 +48,6 @@ textarea {
     width: min(1180px, 90%);
     margin: 0 auto;
 }
-
 
 /* =========================================================
    HEADER / NAVIGATION
@@ -108,7 +101,6 @@ header {
     color: #b85c38;
 }
 
-
 /* =========================================================
    HOME BUTTON
 ========================================================= */
@@ -134,7 +126,6 @@ header {
     transform: translateY(-2px);
     box-shadow: 0 8px 20px rgba(184, 92, 56, 0.18);
 }
-
 
 /* =========================================================
    HERO
@@ -179,10 +170,18 @@ header {
     font-size: 1.05rem;
 }
 
-
 /* =========================================================
    PROFILE / GIRL ICON / COVER AREA
 ========================================================= */
+
+/*
+   Main visual area.
+   Works with common class names:
+   .profile-section
+   .profile-area
+   .profile-wrapper
+   .hero-profile
+*/
 
 .profile-section,
 .profile-area,
@@ -190,6 +189,8 @@ header {
 .hero-profile {
     position: relative;
 }
+
+/* Main profile visual container */
 
 .profile-area,
 .profile-wrapper,
@@ -200,7 +201,6 @@ header {
     gap: 35px;
 }
 
-
 /* =========================================================
    GIRL ICON
 ========================================================= */
@@ -210,23 +210,16 @@ header {
 .profile-girl,
 .hero-girl {
     position: relative;
-    width: 280px;
-    height: 450px;
+    width: 260px;
+    height: 420px;
     flex-shrink: 0;
     z-index: 3;
     display: flex;
     align-items: flex-end;
     justify-content: center;
-    cursor: pointer;
-
-    transition:
-        opacity 0.6s ease,
-        transform 0.6s ease,
-        visibility 0.6s ease;
 }
 
-
-/* Actual girl image */
+/* Make the actual girl image much larger */
 
 .girl-icon img,
 .girl-character img,
@@ -236,57 +229,7 @@ header {
     height: 100%;
     object-fit: contain;
     object-position: center bottom;
-    cursor: pointer;
 }
-
-
-/*
-   When JavaScript adds .girl-hidden,
-   the girl disappears.
-*/
-
-.girl-icon.girl-hidden,
-.girl-character.girl-hidden,
-.profile-girl.girl-hidden,
-.hero-girl.girl-hidden {
-    opacity: 0;
-    transform: translateY(35px) scale(0.92);
-    visibility: hidden;
-    pointer-events: none;
-}
-
-
-/* Small hint that the girl can be clicked */
-
-.girl-icon::after,
-.girl-character::after,
-.profile-girl::after,
-.hero-girl::after {
-    content: "CLICK ME";
-    position: absolute;
-    bottom: 15px;
-    left: 50%;
-    transform: translateX(-50%) translateY(8px);
-    padding: 6px 12px;
-    background: rgba(41, 37, 31, 0.82);
-    color: #fffaf2;
-    border-radius: 50px;
-    font-size: 0.65rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-    opacity: 0;
-    pointer-events: none;
-    transition: 0.3s ease;
-}
-
-.girl-icon:hover::after,
-.girl-character:hover::after,
-.profile-girl:hover::after,
-.hero-girl:hover::after {
-    opacity: 1;
-    transform: translateX(-50%) translateY(0);
-}
-
 
 /* =========================================================
    SPEECH / BUBBLE MESSAGE
@@ -312,7 +255,6 @@ header {
     line-height: 1.55;
 }
 
-
 /* Bubble tail */
 
 .message-bubble::after,
@@ -331,10 +273,27 @@ header {
     transform: rotate(45deg);
 }
 
-
 /* =========================================================
    PROFILE + COVER PHOTOS
 ========================================================= */
+
+/*
+   Put your profile and cover photos in links.
+
+   Example structure supported by these styles:
+
+   <div class="photo-side">
+       <a href="profile.html" class="profile-photo-link">
+           <img src="assets/profile.jpg">
+       </a>
+
+       <a href="cover.html" class="cover-photo-link">
+           <img src="assets/cover.jpg">
+       </a>
+   </div>
+*/
+
+/* Photo side */
 
 .photo-side,
 .profile-photo-side,
@@ -343,236 +302,130 @@ header {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 25px;
-    width: 380px;
+    gap: 22px;
+    width: 360px;
     position: relative;
     z-index: 5;
 }
 
+/* Profile photo */
 
-/* =========================================================
-   PHOTO WRAPPER
-========================================================= */
-
-.photo-wrapper {
-    position: relative;
-    display: inline-block;
-}
-
-
-/* =========================================================
-   PROFILE PHOTO — CLICKABLE
-========================================================= */
-
-.profile-photo-link {
-    width: 210px;
-    height: 210px;
+.profile-photo-link,
+.profile-photo {
+    width: 190px;
+    height: 190px;
     display: block;
     border-radius: 50%;
     overflow: hidden;
     background: #eadfd1;
     border: 7px solid #fffaf3;
-
     box-shadow:
-        0 14px 40px rgba(73, 57, 42, 0.16),
+        0 12px 35px rgba(73, 57, 42, 0.14),
         0 0 0 1px #d9cbb9;
-
     transition:
         transform 0.35s ease,
         box-shadow 0.35s ease;
 }
 
-.profile-photo-link:hover {
-    transform: translateY(-9px) scale(1.045);
-
+.profile-photo-link:hover,
+.profile-photo:hover {
+    transform: translateY(-8px) scale(1.04);
     box-shadow:
-        0 22px 50px rgba(73, 57, 42, 0.20),
-        0 0 0 2px #b85c38;
+        0 20px 45px rgba(73, 57, 42, 0.18),
+        0 0 0 1px #b85c38;
 }
 
-.profile-photo-link img {
+.profile-photo-link img,
+.profile-photo img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.4s ease;
 }
 
-.profile-photo-link:hover img {
-    transform: scale(1.05);
-}
+/* Cover photo */
 
-
-/* =========================================================
-   COVER PHOTO — CLICKABLE
-========================================================= */
-
-.cover-photo-link {
-    width: 370px;
-    height: 210px;
+.cover-photo-link,
+.cover-photo {
+    width: 340px;
+    height: 190px;
     display: block;
     overflow: hidden;
-    border-radius: 27px;
+    border-radius: 24px;
     background: #eadfd1;
     border: 6px solid #fffaf3;
-
     box-shadow:
-        0 14px 40px rgba(73, 57, 42, 0.15),
+        0 12px 35px rgba(73, 57, 42, 0.13),
         0 0 0 1px #d9cbb9;
-
     transition:
         transform 0.35s ease,
         box-shadow 0.35s ease;
 }
 
-.cover-photo-link:hover {
-    transform: translateY(-9px) scale(1.025);
-
+.cover-photo-link:hover,
+.cover-photo:hover {
+    transform: translateY(-8px) scale(1.025);
     box-shadow:
-        0 24px 52px rgba(73, 57, 42, 0.20),
-        0 0 0 2px #b85c38;
+        0 22px 48px rgba(73, 57, 42, 0.18),
+        0 0 0 1px #b85c38;
 }
 
-.cover-photo-link img {
+.cover-photo-link img,
+.cover-photo img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.45s ease;
 }
 
-.cover-photo-link:hover img {
-    transform: scale(1.05);
-}
+/* Click indicator */
 
-
-/* =========================================================
-   X BUTTON — RETURN TO HOME
-========================================================= */
-
-.photo-close {
+.profile-photo-link::after,
+.cover-photo-link::after {
+    content: "VIEW";
     position: absolute;
-    top: -11px;
-    right: -11px;
-    width: 38px;
-    height: 38px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 50%;
-    background: #fffaf3;
-    border: 1px solid #d8cbbb;
-    color: #29251f;
-    font-size: 24px;
-    font-weight: 500;
-    line-height: 1;
-
-    z-index: 30;
-
-    box-shadow:
-        0 8px 22px rgba(73, 57, 42, 0.16);
-
-    transition:
-        background 0.3s ease,
-        color 0.3s ease,
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
-}
-
-.photo-close:hover {
-    background: #b85c38;
-    color: #fffaf2;
-    border-color: #b85c38;
-    transform: rotate(90deg) scale(1.1);
-
-    box-shadow:
-        0 12px 28px rgba(184, 92, 56, 0.25);
-}
-
-
-/* =========================================================
-   PHOTO LABEL
-========================================================= */
-
-.photo-label {
-    position: absolute;
-    left: 50%;
-    bottom: 14px;
-
-    transform:
-        translateX(-50%)
-        translateY(10px);
-
-    padding: 7px 14px;
-    border-radius: 50px;
-
-    background: rgba(41, 37, 31, 0.85);
-    color: #fffaf2;
-
-    font-size: 0.68rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-
     opacity: 0;
     pointer-events: none;
-
     transition: 0.3s ease;
 }
 
-.photo-wrapper:hover .photo-label {
+.profile-photo-link:hover::after,
+.cover-photo-link:hover::after {
     opacity: 1;
-
-    transform:
-        translateX(-50%)
-        translateY(0);
 }
-
 
 /* =========================================================
    ALTERNATIVE PHOTO CLASSES
+   Useful if your HTML uses simpler names
 ========================================================= */
 
 .profile-pic {
-    width: 210px;
-    height: 210px;
+    width: 190px;
+    height: 190px;
     border-radius: 50%;
     object-fit: cover;
     border: 7px solid #fffaf3;
-
-    box-shadow:
-        0 14px 40px rgba(73, 57, 42, 0.15);
-
+    box-shadow: 0 12px 35px rgba(73, 57, 42, 0.14);
     transition: 0.35s ease;
 }
 
 .profile-pic:hover {
     transform: translateY(-8px) scale(1.04);
-
-    box-shadow:
-        0 22px 48px rgba(73, 57, 42, 0.18);
+    box-shadow: 0 20px 45px rgba(73, 57, 42, 0.18);
 }
 
 .cover-pic {
-    width: 370px;
-    height: 210px;
-    border-radius: 27px;
+    width: 340px;
+    height: 190px;
+    border-radius: 24px;
     object-fit: cover;
     border: 6px solid #fffaf3;
-
-    box-shadow:
-        0 14px 40px rgba(73, 57, 42, 0.14);
-
+    box-shadow: 0 12px 35px rgba(73, 57, 42, 0.13);
     transition: 0.35s ease;
 }
 
 .cover-pic:hover {
     transform: translateY(-8px) scale(1.025);
-
-    box-shadow:
-        0 22px 50px rgba(73, 57, 42, 0.18);
+    box-shadow: 0 22px 48px rgba(73, 57, 42, 0.18);
 }
-
 
 /* =========================================================
    PAGE HEADER
@@ -599,7 +452,6 @@ header {
     color: #756d62;
     font-size: 1rem;
 }
-
 
 /* =========================================================
    SECTION
@@ -628,7 +480,6 @@ section {
     font-size: clamp(2rem, 4vw, 3.5rem);
     letter-spacing: -2px;
 }
-
 
 /* =========================================================
    BUTTONS
@@ -670,7 +521,6 @@ section {
     transform: translateY(-2px);
 }
 
-
 /* =========================================================
    GENERAL CARDS
 ========================================================= */
@@ -686,11 +536,8 @@ section {
 .card:hover {
     transform: translateY(-7px);
     border-color: #cdbba7;
-
-    box-shadow:
-        0 18px 45px rgba(74, 59, 44, 0.09);
+    box-shadow: 0 18px 45px rgba(74, 59, 44, 0.09);
 }
-
 
 /* =========================================================
    TOOLS PAGE
@@ -709,6 +556,8 @@ section {
     margin: 0 !important;
 }
 
+/* Remove numbering from ordered lists too */
+
 .tools-grid ol,
 .tools-grid ul,
 .tools-list ol,
@@ -718,11 +567,15 @@ section {
     margin: 0 !important;
 }
 
+/* Main tools grid */
+
 .tools-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 25px;
 }
+
+/* Individual floating tool card */
 
 .tool-card {
     position: relative;
@@ -731,22 +584,19 @@ section {
     border-radius: 24px;
     background: rgba(255, 252, 246, 0.88);
     border: 1px solid #e1d6c8;
-
-    box-shadow:
-        0 10px 30px rgba(73, 57, 42, 0.055);
-
+    box-shadow: 0 10px 30px rgba(73, 57, 42, 0.055);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
     overflow: hidden;
-
     transition:
         transform 0.35s ease,
         box-shadow 0.35s ease,
         border-color 0.35s ease,
         background 0.35s ease;
 }
+
+/* Decorative circle */
 
 .tool-card::before {
     content: "";
@@ -768,79 +618,71 @@ section {
     transform: translateY(-10px);
     background: #fffaf3;
     border-color: #d0bca6;
-
-    box-shadow:
-        0 22px 50px rgba(73, 57, 42, 0.12);
+    box-shadow: 0 22px 50px rgba(73, 57, 42, 0.12);
 }
+
+/* Tool icon */
 
 .tool-icon {
     width: 54px;
     height: 54px;
     border-radius: 16px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     background: #f0e5d7;
     color: #b85c38;
-
     font-size: 1.45rem;
     margin-bottom: 22px;
-
     transition: all 0.3s ease;
 }
 
 .tool-card:hover .tool-icon {
     background: #b85c38;
     color: #fffaf2;
-
-    transform:
-        rotate(-4deg)
-        scale(1.05);
+    transform: rotate(-4deg) scale(1.05);
 }
+
+/* Tool title */
 
 .tool-card h3 {
     position: relative;
     z-index: 1;
-
     font-family: 'Space Grotesk', sans-serif;
     font-size: 1.2rem;
     margin-bottom: 8px;
     color: #29251f;
 }
 
+/* Tool description */
+
 .tool-card p {
     position: relative;
     z-index: 1;
-
     color: #756d62;
     font-size: 0.88rem;
     line-height: 1.65;
 }
 
+/* Tool links */
+
 .tool-card a {
     position: relative;
     z-index: 2;
-
     display: inline-flex;
     align-items: center;
     gap: 7px;
     width: fit-content;
-
     margin-top: 22px;
-
     color: #b85c38;
     font-size: 0.85rem;
     font-weight: 700;
-
     transition: gap 0.3s ease;
 }
 
 .tool-card a:hover {
     gap: 12px;
 }
-
 
 /* =========================================================
    TOOL CATEGORY
@@ -869,7 +711,6 @@ section {
     background: #b85c38;
 }
 
-
 /* =========================================================
    PROJECT GRID
 ========================================================= */
@@ -891,9 +732,7 @@ section {
 
 .project-card:hover {
     transform: translateY(-8px);
-
-    box-shadow:
-        0 20px 45px rgba(73, 57, 42, 0.1);
+    box-shadow: 0 20px 45px rgba(73, 57, 42, 0.1);
 }
 
 .project-image {
@@ -915,7 +754,6 @@ section {
     color: #756d62;
     font-size: 0.9rem;
 }
-
 
 /* =========================================================
    GALLERY
@@ -946,7 +784,6 @@ section {
     transform: scale(1.06);
 }
 
-
 /* =========================================================
    SOCIAL MEDIA FLOATING CARDS
 ========================================================= */
@@ -963,19 +800,15 @@ section {
     border-radius: 22px;
     background: rgba(255, 252, 246, 0.85);
     border: 1px solid #e1d6c8;
-
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
     transition: 0.35s ease;
 }
 
 .social-card:hover {
     transform: translateY(-9px);
-
-    box-shadow:
-        0 20px 45px rgba(73, 57, 42, 0.1);
+    box-shadow: 0 20px 45px rgba(73, 57, 42, 0.1);
 }
 
 .social-card h3 {
@@ -988,7 +821,6 @@ section {
     font-size: 0.85rem;
     font-weight: 700;
 }
-
 
 /* =========================================================
    ABOUT
@@ -1025,7 +857,6 @@ section {
     margin-bottom: 18px;
 }
 
-
 /* =========================================================
    SKILLS
 ========================================================= */
@@ -1050,7 +881,6 @@ section {
     transform: translateY(-4px);
     border-color: #b85c38;
 }
-
 
 /* =========================================================
    CONTACT
@@ -1133,7 +963,6 @@ section {
     resize: vertical;
 }
 
-
 /* =========================================================
    FOOTER
 ========================================================= */
@@ -1171,7 +1000,6 @@ footer {
     color: #b85c38;
 }
 
-
 /* =========================================================
    FADE ANIMATION
 ========================================================= */
@@ -1189,9 +1017,8 @@ footer {
     }
 }
 
-
 /* =========================================================
-   TABLET — 1100px
+   TABLET
 ========================================================= */
 
 @media (max-width: 1100px) {
@@ -1206,24 +1033,20 @@ footer {
     .girl-character,
     .profile-girl,
     .hero-girl {
-        width: 240px;
-        height: 400px;
+        width: 220px;
+        height: 370px;
     }
 
     .photo-side,
     .profile-photo-side,
     .photo-links {
-        width: 320px;
-    }
-
-    .profile-photo-link {
-        width: 190px;
-        height: 190px;
-    }
-
-    .cover-photo-link {
         width: 300px;
-        height: 175px;
+    }
+
+    .cover-photo-link,
+    .cover-photo {
+        width: 280px;
+        height: 160px;
     }
 
     .message-bubble,
@@ -1234,9 +1057,8 @@ footer {
     }
 }
 
-
 /* =========================================================
-   TABLET — 900px
+   TABLET
 ========================================================= */
 
 @media (max-width: 900px) {
@@ -1278,6 +1100,8 @@ footer {
         grid-template-columns: repeat(2, 1fr);
     }
 
+    /* Profile area */
+
     .profile-area,
     .profile-wrapper,
     .hero-profile {
@@ -1292,9 +1116,8 @@ footer {
     }
 }
 
-
 /* =========================================================
-   MOBILE — 600px
+   MOBILE
 ========================================================= */
 
 @media (max-width: 600px) {
@@ -1342,7 +1165,6 @@ footer {
         letter-spacing: -2px;
     }
 
-
     /* =====================================================
        MOBILE PROFILE AREA
     ===================================================== */
@@ -1370,14 +1192,18 @@ footer {
         order: 2;
     }
 
-    .profile-photo-link {
-        width: 180px;
-        height: 180px;
+    .profile-photo-link,
+    .profile-photo,
+    .profile-pic {
+        width: 170px;
+        height: 170px;
     }
 
-    .cover-photo-link {
-        width: min(360px, 95%);
-        height: 190px;
+    .cover-photo-link,
+    .cover-photo,
+    .cover-pic {
+        width: min(340px, 95%);
+        height: 185px;
     }
 
     .message-bubble,
@@ -1391,15 +1217,6 @@ footer {
         font-size: 0.8rem;
         padding: 14px 17px;
     }
-
-    .photo-close {
-        width: 34px;
-        height: 34px;
-        top: -9px;
-        right: -9px;
-        font-size: 21px;
-    }
-
 
     /* =====================================================
        MOBILE TOOLS
@@ -1438,7 +1255,6 @@ footer {
     .tool-category-title h2 {
         font-size: 1.35rem;
     }
-
 
     /* =====================================================
        OTHER SECTIONS
@@ -1479,7 +1295,6 @@ footer {
     }
 }
 
-
 /* =========================================================
    VERY SMALL DEVICES
 ========================================================= */
@@ -1516,15 +1331,5 @@ footer {
     .profile-bubble {
         right: -5px;
         max-width: 205px;
-    }
-
-    .profile-photo-link {
-        width: 165px;
-        height: 165px;
-    }
-
-    .cover-photo-link {
-        width: 94%;
-        height: 175px;
     }
 }
