@@ -3382,111 +3382,106 @@ MOBILE
 
 }
 /* =========================================================
-DIGITAL TOOLS — 4 ROW FLOATING CARD LAYOUT
+   DIGITAL TOOLS — FLOATING CARD LAYOUT
 ========================================================= */
 
 .tools-grid {
-display: grid;
-
-/* 6 cards across */
-grid-template-columns: repeat(6, minmax(0, 1fr));
-
-gap: 20px;
-
-width: 100%;
-
-align-items: start;
-
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 20px;
+    width: 100%;
+    align-items: start;
 }
 
+
 /* =========================================================
-FLOATING TOOL CARD
+   FLOATING TOOL CARD
 ========================================================= */
 
 .tool-card {
-position: relative;
+    position: relative;
 
-min-height: 120px;
+    min-height: 120px;
+    padding: 20px 15px;
 
-padding: 20px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-display: flex;
-align-items: center;
-justify-content: center;
+    text-align: center;
 
-text-align: center;
+    background: rgba(255, 253, 249, 0.92);
 
-background: rgba(255, 253, 249, 0.92);
+    border: 1px solid var(--border);
+    border-radius: 20px;
 
-border: 1px solid var(--border);
+    color: var(--brown-dark);
 
-border-radius: 20px;
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
 
-color: var(--brown-dark);
+    line-height: 1.4;
 
-font-family: "Space Grotesk", sans-serif;
+    box-shadow:
+        0 14px 35px rgba(60, 45, 30, 0.08);
 
-font-size: 11px;
+    overflow: hidden;
 
-font-weight: 800;
-
-letter-spacing: 1px;
-
-box-shadow:
-    0 14px 35px rgba(60, 45, 30, 0.08);
-
-overflow: hidden;
-
-transition:
-    transform 0.35s ease,
-    box-shadow 0.35s ease,
-    border-color 0.35s ease;
-
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
 }
 
-/* Decorative circle */
+
+/* =========================================================
+   DECORATIVE CIRCLE
+========================================================= */
 
 .tool-card::before {
-content: "";
+    content: "";
 
-position: absolute;
+    position: absolute;
 
-width: 90px;
-height: 90px;
+    width: 90px;
+    height: 90px;
 
-right: -45px;
-bottom: -45px;
+    right: -45px;
+    bottom: -45px;
 
-border: 1px solid var(--border);
+    border: 1px solid var(--border);
+    border-radius: 50%;
 
-border-radius: 50%;
+    opacity: 0.5;
 
-opacity: 0.5;
-
-pointer-events: none;
-
+    pointer-events: none;
 }
 
-/* Decorative dot */
+
+/* =========================================================
+   DECORATIVE DOT
+========================================================= */
 
 .tool-card::after {
-content: "";
+    content: "";
 
-position: absolute;
+    position: absolute;
 
-width: 5px;
-height: 5px;
+    width: 5px;
+    height: 5px;
 
-left: 16px;
-top: 16px;
+    left: 16px;
+    top: 16px;
 
-border-radius: 50%;
+    border-radius: 50%;
 
-background: var(--brown);
+    background: var(--brown);
 
-opacity: 0.5;
-
+    opacity: 0.5;
 }
+
 
 /* =========================================================
    STAGGERED FLOATING EFFECT
@@ -3500,82 +3495,88 @@ opacity: 0.5;
     transform: translateY(18px);
 }
 
+
 /* =========================================================
-HOVER
+   HOVER
 ========================================================= */
 
-.tool-card {
-transform: translateY(-8px) !important;
+.tool-card:hover {
+    transform: translateY(-8px) !important;
 
-border-color: var(--brown);
+    border-color: var(--brown);
 
-box-shadow:
-    0 24px 50px rgba(60, 45, 30, 0.15);
-
+    box-shadow:
+        0 24px 50px rgba(60, 45, 30, 0.15);
 }
 
+
+/* Keep the lower cards lower while hovering */
+
+.tool-card:nth-child(even):hover {
+    transform: translateY(10px) !important;
+}
+
+
 /* =========================================================
-LARGE TABLET
+   LARGE TABLET
 ========================================================= */
 
 @media (max-width: 1100px) {
 
-.tools-grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-}
+    .tools-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
 
 }
+
 
 /* =========================================================
-TABLET
+   TABLET
 ========================================================= */
 
 @media (max-width: 800px) {
 
-.tools-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    .tools-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 16px;
+    }
 
-    gap: 16px;
+    .tool-card {
+        min-height: 105px;
+    }
+
 }
 
-.tool-card {
-    min-height: 105px;
-}
-
-}
 
 /* =========================================================
-MOBILE
+   MOBILE
 ========================================================= */
 
 @media (max-width: 600px) {
 
-.tools-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    .tools-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+    }
 
-    gap: 14px;
-}
+    .tool-card {
+        min-height: 95px;
+        padding: 18px 10px;
+        font-size: 10px;
+        line-height: 1.35;
+        border-radius: 17px;
+    }
 
-.tool-card {
-    min-height: 95px;
+    /* Remove stagger on mobile */
 
-    padding: 18px 10px;
+    .tool-card:nth-child(odd),
+    .tool-card:nth-child(even) {
+        transform: none;
+    }
 
-    font-size: 10px;
-
-    border-radius: 17px;
-}
-
-/* Remove stagger on mobile */
-
-.tool-card:nth-child(odd),
-.tool-card:nth-child(even) {
-    transform: none;
-}
-
-.tool-card:hover {
-    transform: translateY(-5px) !important;
-}
+    .tool-card:hover {
+        transform: translateY(-5px) !important;
+    }
 
 }
 /* =========================================================
