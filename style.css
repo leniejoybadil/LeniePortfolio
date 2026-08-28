@@ -4246,3 +4246,189 @@ MOBILE
     }
 
 }
+/* =====================================================
+   CONTACT INFORMATION
+===================================================== */
+
+.contact-information {
+    width: 100%;
+    margin-top: 60px;
+}
+
+
+.contact-information .section-heading {
+    margin-bottom: 30px;
+}
+
+
+.contact-info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+
+/* =====================================================
+   CONTACT INFO RECTANGLE
+===================================================== */
+
+.contact-info-card {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    gap: 20px;
+
+    min-height: 120px;
+
+    padding: 24px 28px;
+
+    text-decoration: none;
+
+    border-radius: 20px;
+
+    background: rgba(255, 255, 255, 0.07);
+
+    border: 1px solid rgba(255, 255, 255, 0.14);
+
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+
+    overflow: hidden;
+}
+
+
+.contact-info-card:hover {
+    transform: translateY(-6px);
+
+    background: rgba(255, 255, 255, 0.11);
+
+    border-color: rgba(255, 255, 255, 0.28);
+
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+
+/* =====================================================
+   ICON
+===================================================== */
+
+.contact-info-icon {
+    flex-shrink: 0;
+
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 16px;
+
+    background: rgba(255, 255, 255, 0.12);
+
+    border: 1px solid rgba(255, 255, 255, 0.16);
+
+    font-family: Arial, sans-serif;
+
+    font-size: 22px;
+    font-weight: 700;
+
+    color: inherit;
+}
+
+
+/* =====================================================
+   CONTACT TEXT
+===================================================== */
+
+.contact-info-content {
+    flex: 1;
+
+    min-width: 0;
+}
+
+
+.contact-info-content span {
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    opacity: 0.6;
+}
+
+
+.contact-info-content h3 {
+    margin: 0;
+
+    font-size: 17px;
+
+    font-weight: 600;
+
+    word-break: break-word;
+}
+
+
+/* =====================================================
+   ARROW
+===================================================== */
+
+.contact-info-arrow {
+    flex-shrink: 0;
+
+    font-size: 22px;
+
+    opacity: 0.55;
+
+    transition:
+        transform 0.3s ease,
+        opacity 0.3s ease;
+}
+
+
+.contact-info-card:hover .contact-info-arrow {
+    transform: translate(4px, -4px);
+
+    opacity: 1;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 768px) {
+
+    .contact-info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-info-card {
+        min-height: 100px;
+
+        padding: 20px;
+    }
+
+    .contact-info-icon {
+        width: 52px;
+        height: 52px;
+    }
+
+    .contact-info-content h3 {
+        font-size: 15px;
+    }
+
+}
