@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -181,14 +182,14 @@
 
         <!-- =================================================
              CLICKABLE COVER PHOTO
-        ================================================== -->
+        ================================================= -->
 
-        <a
-            href="assets/cover.jpg"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="cover-card"
-            aria-label="Open cover photo"
+        <div
+            class="cover-card clickable-photo"
+            onclick="openPhoto('assets/cover.jpg', 'Lenie Joy Badil Cover')"
+            role="button"
+            tabindex="0"
+            aria-label="View cover photo"
         >
 
             <img
@@ -196,25 +197,25 @@
                 alt="Lenie Joy Badil Cover"
             >
 
-        </a>
+        </div>
 
 
 
         <!-- =================================================
              PROFILE CARD
-        ================================================== -->
+        ================================================= -->
 
         <div class="profile-card">
 
 
             <!-- CLICKABLE PROFILE PHOTO -->
 
-            <a
-                href="assets/profile.jpg"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="profile-photo"
-                aria-label="Open profile photo"
+            <div
+                class="profile-photo clickable-photo"
+                onclick="openPhoto('assets/profile.jpg', 'Lenie Joy Badil Profile')"
+                role="button"
+                tabindex="0"
+                aria-label="View profile photo"
             >
 
                 <img
@@ -222,7 +223,7 @@
                     alt="Lenie Joy Badil Profile"
                 >
 
-            </a>
+            </div>
 
 
 
@@ -725,6 +726,35 @@
         id="girlIcon"
         class="girl-icon"
         alt="Welcome"
+    >
+
+</div>
+
+
+
+<!-- =====================================================
+     PHOTO VIEWER
+===================================================== -->
+
+<div
+    class="photo-modal"
+    id="photoModal"
+    aria-hidden="true"
+>
+
+    <button
+        class="photo-close"
+        id="photoClose"
+        type="button"
+        aria-label="Close photo"
+    >
+        ×
+    </button>
+
+    <img
+        id="modalPhoto"
+        src=""
+        alt=""
     >
 
 </div>
